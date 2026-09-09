@@ -1,0 +1,409 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 30px;
+
+    background: #f4f7fc;
+
+    font-family: "Inter", sans-serif;
+
+    color: #0b1c30;
+}
+
+.contenedor-principal {
+    width: 100%;
+    max-width: 720px;
+
+    background: #ffffff;
+
+    border-radius: 24px;
+
+    overflow: hidden;
+
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+}
+
+.encabezado {
+    padding: 40px 48px 25px;
+}
+
+
+.barra-progreso {
+    display: flex;
+
+    gap: 10px;
+
+    margin-bottom: 28px;
+}
+
+.progreso {
+    height: 7px;
+
+    flex: 1;
+
+    border-radius: 20px;
+
+    background: #dbe5f5;
+
+    transition: 0.3s;
+}
+
+.progreso.activo {
+    background: #2563eb;
+}
+
+
+.numero-paso {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #6b7280;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+}
+
+
+h1 {
+    font-size: 32px;
+
+    line-height: 1.25;
+
+    font-weight: 700;
+
+    color: #0b1c30;
+
+    margin-bottom: 8px;
+}
+
+
+.descripcion {
+    color: #667085;
+
+    font-size: 15px;
+
+    line-height: 24px;
+}
+
+
+.contenido {
+    padding: 20px 48px 40px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 35px;
+}
+
+
+.grupo-formulario {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+}
+
+.grupo-formulario label {
+    font-size: 18px;
+
+    font-weight: 600;
+
+    color: #0b1c30;
+}
+
+#nombre-hogar {
+    width: 100%;
+
+    height: 55px;
+
+    padding: 0 18px;
+
+    border: 2px solid transparent;
+
+    border-radius: 12px;
+
+    background: #f1f5f9;
+
+    color: #0b1c30;
+
+    font-family: "Inter", sans-serif;
+
+    font-size: 15px;
+
+    outline: none;
+
+    transition: 0.2s;
+}
+
+#nombre-hogar::placeholder {
+    color: #8a94a6;
+}
+
+#nombre-hogar:focus {
+    background: #ffffff;
+
+    border-color: #2563eb;
+
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.10);
+}
+
+.mensaje-error {
+    min-height: 18px;
+
+    color: #dc2626;
+
+    font-size: 13px;
+}
+
+
+.opciones-vivienda {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 14px;
+}
+
+
+.tarjeta-vivienda {
+    min-height: 125px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    border: 2px solid #d8dee9;
+
+    border-radius: 16px;
+
+    background: #ffffff;
+
+    cursor: pointer;
+
+    font-family: "Inter", sans-serif;
+
+    transition: all 0.2s ease;
+}
+
+.tarjeta-vivienda:hover {
+    border-color: #2563eb;
+
+    background: #f5f8ff;
+
+    transform: translateY(-2px);
+}
+
+
+.tarjeta-vivienda.seleccionada {
+    border-color: #2563eb;
+
+    background: #eff5ff;
+
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.10);
+}
+
+
+.icono-vivienda {
+    font-size: 38px;
+
+    color: #697386;
+
+    font-variation-settings:
+        "FILL" 0;
+}
+
+.tarjeta-vivienda.seleccionada .icono-vivienda {
+    color: #2563eb;
+
+    font-variation-settings:
+        "FILL" 1;
+}
+
+
+.nombre-vivienda {
+    color: #263548;
+
+    font-size: 14px;
+
+    font-weight: 600;
+}
+
+.tarjeta-vivienda.seleccionada .nombre-vivienda {
+    color: #2563eb;
+}
+
+
+.contador {
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+}
+
+.boton-contador {
+    width: 48px;
+
+    height: 48px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: #e4edfc;
+
+    color: #18304f;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.boton-contador:hover {
+    background: #d5e3fa;
+
+    transform: scale(1.05);
+}
+
+.boton-contador:active {
+    transform: scale(0.95);
+}
+
+
+.cantidad-residentes {
+    width: 50px;
+
+    text-align: center;
+
+    font-size: 30px;
+
+    font-weight: 700;
+}
+
+
+.ayuda {
+    color: #7a8494;
+
+    font-size: 13px;
+}
+
+
+.pie {
+    padding: 25px 48px 40px;
+
+    border-top: 1px solid #e8edf5;
+}
+
+
+.boton-siguiente {
+    width: 100%;
+
+    height: 55px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    border: none;
+
+    border-radius: 14px;
+
+    background: #2563eb;
+
+    color: #ffffff;
+
+    font-family: "Inter", sans-serif;
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: all 0.2s ease;
+}
+
+.boton-siguiente:hover {
+    background: #1d4ed8;
+
+    transform: translateY(-1px);
+}
+
+.boton-siguiente:active {
+    transform: scale(0.98);
+}
+
+
+@media (max-width: 650px) {
+
+    body {
+        padding: 15px;
+    }
+
+    .encabezado {
+        padding: 30px 25px 20px;
+    }
+
+    .contenido {
+        padding: 20px 25px 30px;
+    }
+
+    .pie {
+        padding: 20px 25px 30px;
+    }
+
+    h1 {
+        font-size: 26px;
+    }
+
+    .opciones-vivienda {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 400px) {
+
+    .opciones-vivienda {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .tarjeta-vivienda {
+        min-height: 105px;
+    }
+
+}
