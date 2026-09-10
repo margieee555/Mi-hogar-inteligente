@@ -21,24 +21,17 @@ const botonSiguiente =
     document.getElementById("boton-siguiente");
 
 
-/* ==========================================
-   CONFIGURACIÓN INICIAL
-========================================== */
+
 
 let numeroResidentes = 1;
 
 let viviendaSeleccionada = "Casa";
 
 
-/* ==========================================
-   SELECCIONAR TIPO DE VIVIENDA
-========================================== */
-
 tarjetasVivienda.forEach(tarjeta => {
 
     tarjeta.addEventListener("click", () => {
 
-        // Quitar selección anterior
         tarjetasVivienda.forEach(tarjetaActual => {
 
             tarjetaActual.classList.remove("seleccionada");
@@ -46,7 +39,6 @@ tarjetasVivienda.forEach(tarjeta => {
         });
 
 
-        // Seleccionar nueva tarjeta
         tarjeta.classList.add("seleccionada");
 
 
@@ -59,9 +51,6 @@ tarjetasVivienda.forEach(tarjeta => {
 });
 
 
-/* ==========================================
-   AUMENTAR RESIDENTES
-========================================== */
 
 botonAumentar.addEventListener("click", () => {
 
@@ -76,9 +65,6 @@ botonAumentar.addEventListener("click", () => {
 });
 
 
-/* ==========================================
-   DISMINUIR RESIDENTES
-========================================== */
 
 botonDisminuir.addEventListener("click", () => {
 
@@ -93,9 +79,6 @@ botonDisminuir.addEventListener("click", () => {
 });
 
 
-/* ==========================================
-   ACTUALIZAR CONTADOR
-========================================== */
 
 function actualizarContador() {
 
@@ -105,9 +88,6 @@ function actualizarContador() {
 }
 
 
-/* ==========================================
-   VALIDAR NOMBRE
-========================================== */
 
 nombreHogar.addEventListener("input", () => {
 
@@ -120,9 +100,6 @@ nombreHogar.addEventListener("input", () => {
 });
 
 
-/* ==========================================
-   BOTÓN SIGUIENTE
-========================================== */
 
 botonSiguiente.addEventListener("click", () => {
 
@@ -130,7 +107,6 @@ botonSiguiente.addEventListener("click", () => {
         nombreHogar.value.trim();
 
 
-    // Validar nombre
     if (nombre === "") {
 
         mensajeNombre.textContent =
@@ -142,8 +118,6 @@ botonSiguiente.addEventListener("click", () => {
 
     }
 
-
-    // Mostrar información temporal
     alert(
         "¡Configuración completada!\n\n" +
 
@@ -154,19 +128,5 @@ botonSiguiente.addEventListener("click", () => {
         "Residentes: " + numeroResidentes
     );
 
-
-    /*
-        FUTURA ITERACIÓN:
-
-        Aquí posteriormente podremos pasar
-        al PASO 2 de la configuración.
-
-        Por ejemplo:
-
-        cargarHabitaciones();
-
-        Esta función será desarrollada
-        en la siguiente evolución del sistema.
-    */
 
 });
