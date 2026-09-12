@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar Nuevo Gasto - Mi Hogar Inteligente</title>
+    <!-- Google Fonts & Material Symbols -->
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    <!-- Estilos CSS -->
+    <link rel="stylesheet" href="css/Registrar-Nuevo-Producto.css">
+</head>
+
+<body class="pagina-registro-gasto">
+
+    <!-- Encabezado Superior -->
+    <header class="encabezado-superior">
+        <div class="contenedor-encabezado">
+            <button id="btnVolver" class="boton-icono" aria-label="Volver">
+                <span class="material-symbols-outlined">arrow_back</span>
+            </button>
+            <h1 class="titulo-encabezado">Registrar Nuevo Gasto</h1>
+            <div class="espaciador-vacio"></div>
+        </div>
+    </header>
+
+    <!-- Contenido Principal -->
+    <main class="contenido-principal">
+        
+        <form id="formularioGasto" class="formulario-gasto">
+            
+            <!-- Tarjeta de Entrada de Monto -->
+            <div class="tarjeta-monto">
+                <label for="inputMonto" class="etiqueta-monto">Monto Total</label>
+                <div class="contenedor-monto">
+                    <span class="simbolo-moneda">$</span>
+                    <input id="inputMonto" name="monto" class="input-monto" type="number" step="0.01" min="0" placeholder="0.00" required>
+                </div>
+            </div>
+
+            <!-- Selección de Categoría -->
+            <section class="seccion-categoria">
+                <h2 class="subtitulo-seccion">Categoría</h2>
+                <input type="hidden" id="categoriaSeleccionada" name="categoria" value="otros">
+                
+                <div class="grilla-categorias" id="grillaCategorias">
+                    <button type="button" class="tarjeta-categoria" data-categoria="alimentos">
+                        <span class="material-symbols-outlined icono-categoria icono-relleno">restaurant</span>
+                        <span class="nombre-categoria">Alimentos</span>
+                    </button>
+
+                    <button type="button" class="tarjeta-categoria" data-categoria="transporte">
+                        <span class="material-symbols-outlined icono-categoria icono-relleno">directions_car</span>
+                        <span class="nombre-categoria">Transporte</span>
+                    </button>
+
+                    <button type="button" class="tarjeta-categoria" data-categoria="vivienda">
+                        <span class="material-symbols-outlined icono-categoria icono-relleno">home</span>
+                        <span class="nombre-categoria">Vivienda</span>
+                    </button>
+
+                    <button type="button" class="tarjeta-categoria" data-categoria="ocio">
+                        <span class="material-symbols-outlined icono-categoria icono-relleno">local_activity</span>
+                        <span class="nombre-categoria">Ocio</span>
+                    </button>
+
+                    <button type="button" class="tarjeta-categoria" data-categoria="salud">
+                        <span class="material-symbols-outlined icono-categoria icono-relleno">health_and_safety</span>
+                        <span class="nombre-categoria">Salud</span>
+                    </button>
+
+                    <button type="button" class="tarjeta-categoria activo" data-categoria="otros">
+                        <span class="material-symbols-outlined icono-categoria icono-relleno">more_horiz</span>
+                        <span class="nombre-categoria">Otros</span>
+                    </button>
+                </div>
+            </section>
+
+            <!-- Detalles del Gasto -->
+            <div class="tarjeta-detalles">
+                
+                <!-- Selector de Fecha -->
+                <div class="grupo-campo">
+                    <label for="inputFecha" class="etiqueta-campo">
+                        <span class="material-symbols-outlined icono-campo">calendar_today</span>
+                        <span>Fecha</span>
+                    </label>
+                    <input id="inputFecha" name="fecha" class="input-campo" type="date" required>
+                </div>
+
+                <!-- Descripción/Notas -->
+                <div class="grupo-campo">
+                    <label for="inputDescripcion" class="etiqueta-campo">
+                        <span class="material-symbols-outlined icono-campo">notes</span>
+                        <span>Descripción</span>
+                    </label>
+                    <textarea id="inputDescripcion" name="descripcion" class="textarea-campo" rows="3" placeholder="Añadir notas o detalles del gasto..."></textarea>
+                </div>
+
+                <!-- Adjuntar Recibo -->
+                <div class="contenedor-recibo">
+                    <input type="file" id="inputRecibo" class="input-archivo-oculto" accept="image/*">
+                    <button type="button" id="btnAdjuntarRecibo" class="boton-adjuntar">
+                        <span class="material-symbols-outlined">add_a_photo</span>
+                        <span>Adjuntar Recibo</span>
+                    </button>
+                    <span id="nombreArchivoRecibo" class="nombre-archivo"></span>
+                </div>
+
+            </div>
+
+        </form>
+
+    </main>
+
+    <!-- Barra de Acción Inferior -->
+    <footer class="barra-accion-inferior">
+        <button type="submit" form="formularioGasto" class="boton-guardar">
+            <span class="material-symbols-outlined">save</span>
+            <span>Guardar Gasto</span>
+        </button>
+    </footer>
+
+    <!-- Script JavaScript -->
+    <script src="js/Registrar-Nuevo-Gasto.js"></script>
+</body>
+</html>

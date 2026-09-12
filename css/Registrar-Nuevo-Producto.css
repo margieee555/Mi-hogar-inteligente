@@ -1,0 +1,343 @@
+/* Reset y Variables Base */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body.pagina-registro-gasto {
+    font-family: 'Inter', sans-serif;
+    background-color: #f8f9ff;
+    color: #0b1c30;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 110px;
+}
+
+/* Iconos Rellenos de Material Symbols */
+.icono-relleno {
+    font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+/* Encabezado Superior */
+.encabezado-superior {
+    background-color: #f8f9ff;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.04);
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 40;
+}
+
+.contenedor-encabezado {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+    padding: 0 24px;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.boton-icono {
+    background: transparent;
+    border: none;
+    color: #434655;
+    padding: 8px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s;
+}
+
+.boton-icono:hover {
+    background-color: #eff4ff;
+}
+
+.titulo-encabezado {
+    font-size: 20px;
+    font-weight: 700;
+    color: #004ac6;
+}
+
+.espaciador-vacio {
+    width: 40px;
+}
+
+/* Contenido Principal */
+.contenido-principal {
+    flex: 1;
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 24px;
+}
+
+.formulario-gasto {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+/* Tarjeta de Entrada de Monto */
+.tarjeta-monto {
+    background-color: #ffffff;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
+    border-radius: 24px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    border-top: 4px solid #ba1a1a;
+}
+
+.etiqueta-monto {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    color: #434655;
+    text-transform: uppercase;
+}
+
+.contenedor-monto {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.simbolo-moneda {
+    font-size: 48px;
+    font-weight: 700;
+    color: #0b1c30;
+    line-height: 56px;
+}
+
+.input-monto {
+    background: transparent;
+    border: none;
+    text-align: center;
+    font-size: 48px;
+    font-weight: 700;
+    color: #0b1c30;
+    width: 100%;
+    max-width: 220px;
+    padding: 0;
+    outline: none;
+    line-height: 56px;
+}
+
+.input-monto::placeholder {
+    color: #c3c6d7;
+}
+
+/* Quitar las flechas de numero en navegadores */
+.input-monto::-webkit-outer-spin-button,
+.input-monto::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Sección Categoría */
+.seccion-categoria {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.subtitulo-seccion {
+    font-size: 20px;
+    font-weight: 600;
+    color: #0b1c30;
+}
+
+.grilla-categorias {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+@media (min-width: 640px) {
+    .grilla-categorias {
+        grid-template-columns: repeat(6, 1fr);
+    }
+}
+
+.tarjeta-categoria {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    background-color: #ffffff;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
+    border-radius: 16px;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.tarjeta-categoria:hover {
+    box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+.tarjeta-categoria.activo {
+    background-color: #eff4ff;
+    border-color: #2563eb;
+}
+
+.icono-categoria {
+    color: #2563eb;
+    font-size: 32px !important;
+    margin-bottom: 8px;
+}
+
+.nombre-categoria {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    color: #0b1c30;
+}
+
+.tarjeta-categoria.activo .nombre-categoria {
+    color: #2563eb;
+}
+
+/* Tarjeta de Detalles */
+.tarjeta-detalles {
+    background-color: #ffffff;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
+    border-radius: 24px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.grupo-campo {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.etiqueta-campo {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    color: #434655;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.icono-campo {
+    font-size: 16px !important;
+}
+
+.input-campo, .textarea-campo {
+    width: 100%;
+    background-color: #f8f9ff;
+    border: 1px solid rgba(195, 198, 215, 0.4);
+    border-radius: 16px;
+    padding: 16px;
+    font-size: 16px;
+    color: #0b1c30;
+    font-family: inherit;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.input-campo:focus, .textarea-campo:focus {
+    border-color: #2563eb;
+}
+
+.textarea-campo {
+    resize: none;
+}
+
+/* Adjuntar Recibo */
+.contenedor-recibo {
+    padding-top: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.input-archivo-oculto {
+    display: none;
+}
+
+.boton-adjuntar {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 16px;
+    border: 1px dashed #c3c6d7;
+    border-radius: 16px;
+    background-color: transparent;
+    color: #2563eb;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.boton-adjuntar:hover {
+    background-color: #eff4ff;
+}
+
+.nombre-archivo {
+    font-size: 12px;
+    color: #007432;
+    font-weight: 600;
+}
+
+/* Barra de Acción Inferior */
+.barra-accion-inferior {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #f8f9ff;
+    box-shadow: 0px -4px 20px rgba(0, 0, 0, 0.05);
+    z-index: 50;
+    padding: 24px;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+}
+
+.boton-guardar {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    background-color: #2563eb;
+    color: #eeefff;
+    border: none;
+    border-radius: 16px;
+    padding: 16px 24px;
+    font-size: 20px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    cursor: pointer;
+    box-shadow: 0px 4px 20px rgba(37, 99, 235, 0.3);
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+.boton-guardar:hover {
+    background-color: #004ac6;
+}
+
+.boton-guardar:active {
+    transform: scale(0.98);
+}

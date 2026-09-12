@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nueva Tarea - Mi Hogar Inteligente</title>
+    <!-- Fuentes e Iconos -->
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    <!-- Archivo de Estilos CSS -->
+    <link rel="stylesheet" href="css/Nueva-Tarea.css">
+</head>
+
+<body class="pagina-nueva-tarea">
+
+    <!-- Encabezado Superior -->
+    <header class="encabezado-superior">
+        <div class="contenedor-encabezado">
+            <button id="btnVolver" type="button" class="boton-icono" aria-label="Volver">
+                <span class="material-symbols-outlined">arrow_back</span>
+            </button>
+            <h1 class="titulo-encabezado">Nueva Tarea</h1>
+            <button id="btnNotificaciones" type="button" class="boton-icono" aria-label="Notificaciones">
+                <span class="material-symbols-outlined">notifications</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Contenido Principal -->
+    <main class="contenido-principal">
+        <form id="formularioTarea" class="formulario-tarea">
+            
+            <!-- Campo Nombre de la Tarea -->
+            <section class="tarjeta-campo">
+                <label for="nombreTarea" class="etiqueta-campo">Nombre de la tarea</label>
+                <div class="contenedor-input">
+                    <input id="nombreTarea" name="nombreTarea" class="input-texto" type="text" placeholder="Ej: Comprar leche" required>
+                </div>
+            </section>
+
+            <!-- Selección de Categoría -->
+            <section class="tarjeta-campo">
+                <h2 class="etiqueta-campo">Categoría</h2>
+                <div class="grilla-categorias">
+                    
+                    <label class="opcion-categoria">
+                        <input type="radio" name="categoria" value="limpieza" class="input-radio-oculto" checked>
+                        <div class="tarjeta-radio-contenido">
+                            <span class="material-symbols-outlined icono-categoria">cleaning_services</span>
+                            <span class="texto-categoria">Limpieza</span>
+                        </div>
+                    </label>
+
+                    <label class="opcion-categoria">
+                        <input type="radio" name="categoria" value="cocina" class="input-radio-oculto">
+                        <div class="tarjeta-radio-contenido">
+                            <span class="material-symbols-outlined icono-categoria">restaurant</span>
+                            <span class="texto-categoria">Cocina</span>
+                        </div>
+                    </label>
+
+                    <label class="opcion-categoria">
+                        <input type="radio" name="categoria" value="compras" class="input-radio-oculto">
+                        <div class="tarjeta-radio-contenido">
+                            <span class="material-symbols-outlined icono-categoria">shopping_cart</span>
+                            <span class="texto-categoria">Compras</span>
+                        </div>
+                    </label>
+
+                    <label class="opcion-categoria">
+                        <input type="radio" name="categoria" value="mascotas" class="input-radio-oculto">
+                        <div class="tarjeta-radio-contenido">
+                            <span class="material-symbols-outlined icono-categoria">pets</span>
+                            <span class="texto-categoria">Mascotas</span>
+                        </div>
+                    </label>
+
+                    <label class="opcion-categoria">
+                        <input type="radio" name="categoria" value="otros" class="input-radio-oculto">
+                        <div class="tarjeta-radio-contenido">
+                            <span class="material-symbols-outlined icono-categoria">category</span>
+                            <span class="texto-categoria">Otros</span>
+                        </div>
+                    </label>
+
+                </div>
+            </section>
+
+            <!-- Grilla Bento de Detalles -->
+            <div class="grilla-detalles">
+                
+                <!-- Fecha y Hora -->
+                <section class="tarjeta-campo contenedor-seccion-detalles">
+                    <div class="grupo-input">
+                        <label for="fechaVencimiento" class="etiqueta-campo">Fecha</label>
+                        <div class="contenedor-input icono-izq">
+                            <span class="material-symbols-outlined icono-input">calendar_today</span>
+                            <input id="fechaVencimiento" name="fechaVencimiento" class="input-texto" type="date" required>
+                        </div>
+                    </div>
+
+                    <div class="grupo-input">
+                        <label for="horaVencimiento" class="etiqueta-campo">Hora</label>
+                        <div class="contenedor-input icono-izq">
+                            <span class="material-symbols-outlined icono-input">schedule</span>
+                            <input id="horaVencimiento" name="horaVencimiento" class="input-texto" type="time" required>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Prioridad y Asignado -->
+                <section class="tarjeta-campo contenedor-seccion-detalles">
+                    <div class="grupo-input">
+                        <span class="etiqueta-campo">Prioridad</span>
+                        <div class="grupo-prioridades">
+                            <label class="opcion-prioridad">
+                                <input type="radio" name="prioridad" value="alta" class="input-radio-oculto">
+                                <div class="tarjeta-prioridad-contenido prioridad-alta">Alta</div>
+                            </label>
+
+                            <label class="opcion-prioridad">
+                                <input type="radio" name="prioridad" value="media" class="input-radio-oculto" checked>
+                                <div class="tarjeta-prioridad-contenido prioridad-media">Media</div>
+                            </label>
+
+                            <label class="opcion-prioridad">
+                                <input type="radio" name="prioridad" value="baja" class="input-radio-oculto">
+                                <div class="tarjeta-prioridad-contenido prioridad-baja">Baja</div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="grupo-input">
+                        <label for="asignadoA" class="etiqueta-campo">Asignar a</label>
+                        <div class="contenedor-input con-desplegable">
+                            <select id="asignadoA" name="asignadoA" class="select-campo" required>
+                                <option value="" disabled selected>Selecciona un responsable</option>
+                                <option value="carlos">Carlos</option>
+                                <option value="ana">Ana</option>
+                                <option value="luis">Luis</option>
+                            </select>
+                            <span class="material-symbols-outlined icono-desplegable">arrow_drop_down</span>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+
+            <!-- Botón de Acción -->
+            <div class="contenedor-boton-accion">
+                <button type="submit" class="boton-guardar">Guardar Tarea</button>
+            </div>
+
+        </form>
+    </main>
+
+    <!-- Archivo de Lógica JavaScript -->
+    <script src="js/Nueva-Tarea.js"></script>
+</body>
+</html>
