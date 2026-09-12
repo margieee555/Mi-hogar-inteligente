@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Mi Hogar Inteligente - Bienvenida</title>
+
+    <!-- Google Fonts e Iconos -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+
+    <!-- Hoja de Estilos Externa -->
+    <link rel="stylesheet" href="css/Bienvenida.css"/>
+</head>
+<body class="cuerpo-bienvenida">
+
+    <!-- Sección de Contenido Principal -->
+    <main class="contenedor-contenido">
+        <div class="bloque-central">
+            <div class="columna-principal">
+                
+                <!-- Logotipo de la Marca -->
+                <header class="marca-logotipo">
+                    <div class="icono-contenedor">
+                        <span class="material-symbols-outlined icono-relleno">home</span>
+                    </div>
+                    <span class="texto-marca">Mi Hogar Inteligente</span>
+                </header>
+
+                <!-- Eslogan y Descripción -->
+                <section class="seccion-texto">
+                    <h1 class="titulo-principal">
+                        Todo tu hogar, organizado en un solo lugar.
+                    </h1>
+                    <p class="descripcion-principal">
+                        Descubre la tranquilidad de tener el control total. Gestiona finanzas, tareas e inventario con una elegancia y simplicidad sin precedentes.
+                    </p>
+                </section>
+
+                <!-- Botones de Acción -->
+                <nav class="navegacion-acciones">
+                    <button id="boton-iniciar-sesion" class="boton-primario">
+                        Iniciar sesión
+                        <span class="material-symbols-outlined icono-flecha">arrow_forward</span>
+                    </button>
+                    <button id="boton-registro" class="boton-secundario">
+                        Crear cuenta
+                    </button>
+                </nav>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- Sección Visual (Imagen Decorativa) -->
+    <aside class="contenedor-visual">
+        <div class="capa-degradado"></div>
+        
+        <img class="imagen-bienvenida" 
+             alt="Fotografía arquitectónica de una sala moderna y minimalista" 
+             src="https://lh3.googleusercontent.com/aida-public/AB6AXuBdZUYudQ19ZVn-j6O6JrqeOQN7RDXjbDdDRCG8PGbu-N3Y7n2g0ZDPB60Bd0CyCyrjGHav-r1BquHKO2Lpccx0nQ8FXWPjn67NnTw6dbmMOBcUDQo9FlNKL9XotTvaJn2ZzJdnCy1Ukt576E5m3VN5WAHWWEbTJitdkSgrwUXYE_zmAEvQWz8U1F0hPnXo9uNaj5ssc4P7YwidGl97PbpSC7StjtEHmG5MoaY6VxLqibyW8wYYCNnIpw"/>
+
+        <!-- Indicador visual de estado -->
+        <div class="tarjeta-estado">
+            <div class="icono-estado-exito">
+                <span class="material-symbols-outlined icono-pequeno">check_circle</span>
+            </div>
+            <div class="texto-estado-grupo">
+                <span class="etiqueta-estado">Estado del hogar</span>
+                <span id="texto-estado-hogar" class="valor-estado">100% Organizado</span>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Archivo JS Externo -->
+    <script src="js/Bienvenida.js"></script>
+</body>
+</html>

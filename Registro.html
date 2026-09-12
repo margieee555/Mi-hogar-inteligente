@@ -1,116 +1,121 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Registro - Mi Hogar Inteligente</title>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Registro - Mi Hogar Inteligente</title>
 
-  <!-- Google Fonts & Icons -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap">
+    <!-- Tipografías e Íconos -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
 
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-
-  <!-- Archivo CSS Personalizado -->
-  <link rel="stylesheet" href="css/Registro.css">
+    <!-- Hoja de Estilos Externa -->
+    <link rel="stylesheet" href="css/Registro.css">
 </head>
-<body class="bg-background text-on-background font-body-lg min-h-[884px] flex selection:bg-primary/20 selection:text-primary">
+<body class="cuerpo-registro">
 
-  <!-- Left Side: Branding -->
-  <div class="hidden md:flex md:w-[45%] lg:w-1/2 relative overflow-hidden items-center justify-center bg-surface-variant">
-    <div class="absolute inset-0 bg-cover bg-center brand-bg-img"></div>
-    <div class="absolute inset-0 bg-gradient-to-br from-primary-fixed-dim/90 to-surface-variant/90 mix-blend-multiply backdrop-blur-sm"></div>
-    <div class="relative z-10 flex flex-col items-center text-center px-xl max-w-[500px]">
-      <div class="w-20 h-20 bg-surface-container-lowest rounded-2xl flex items-center justify-center shadow-[0px_8px_30px_rgba(0,0,0,0.08)] mb-md">
-        <span class="material-symbols-outlined text-primary text-[40px]" style="font-variation-settings: 'FILL' 1;">home_app_logo</span>
-      </div>
-      <h1 class="font-display-lg text-display-lg text-on-primary-fixed mb-sm">Mi Hogar Inteligente</h1>
-      <p class="font-title-md text-title-md text-on-primary-fixed-variant opacity-90">
-        Transformando la complejidad del hogar en una experiencia serena y estructurada.
-      </p>
-    </div>
-  </div>
-
-  <!-- Right Side: Formulario -->
-  <div class="w-full md:w-[55%] lg:w-1/2 flex items-center justify-center p-md sm:p-xl lg:p-[64px] bg-background">
-    <div class="w-full max-w-[440px] flex flex-col">
-      
-      <!-- Mobile Brand Header -->
-      <div class="md:hidden flex items-center gap-xs mb-lg justify-center">
-        <div class="w-10 h-10 bg-primary rounded-xl flex items-center justify-center shadow-[0px_4px_20px_rgba(37,99,235,0.2)]">
-          <span class="material-symbols-outlined text-on-primary" style="font-variation-settings: 'FILL' 1;">home_app_logo</span>
+    <!-- Sección Izquierda: Branding de Fondo (Escritorio) -->
+    <aside class="panel-decorativo">
+        <div class="imagen-fondo-decorativa" 
+             alt="Fotografía de un espacio interior moderno y minimalista"></div>
+        <div class="capa-degradado"></div>
+        <div class="contenido-marcado">
+            <div class="tarjeta-icono-marca">
+                <span class="material-symbols-outlined icono-grande icono-relleno">home_app_logo</span>
+            </div>
+            <h1 class="titulo-marca">Mi Hogar Inteligente</h1>
+            <p class="eslogan-marca">
+                Transformando la complejidad del hogar en una experiencia serena y estructurada.
+            </p>
         </div>
-        <span class="font-headline-lg-mobile text-headline-lg-mobile text-primary tracking-tight">Mi Hogar Inteligente</span>
-      </div>
+    </aside>
 
-      <!-- Main Form Card -->
-      <div class="bg-surface-container-lowest rounded-2xl shadow-[0px_4px_20px_rgba(0,0,0,0.05)] p-md sm:p-lg border border-outline-variant/30">
-        <div class="mb-lg">
-          <h2 class="font-headline-lg text-headline-lg text-on-surface mb-base hidden sm:block">Crea tu cuenta</h2>
-          <h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface mb-base sm:hidden">Crea tu cuenta</h2>
-          <p class="font-body-sm text-body-sm text-on-surface-variant">Comienza a organizar tu entorno familiar hoy mismo.</p>
+    <!-- Sección Derecha: Formulario de Interacción -->
+    <main class="panel-formulario">
+        <div class="contenedor-formulario">
+
+            <!-- Encabezado Móvil de la Marca -->
+            <header class="encabezado-marca-movil">
+                <div class="icono-marca-movil">
+                    <span class="material-symbols-outlined icono-relleno">home_app_logo</span>
+                </div>
+                <span class="texto-marca-movil">Mi Hogar Inteligente</span>
+            </header>
+
+            <!-- Tarjeta Principal del Formulario -->
+            <section class="tarjeta-formulario">
+                <div class="encabezado-seccion">
+                    <h2 class="titulo-formulario">Crea tu cuenta</h2>
+                    <p class="subtitulo-formulario">Comienza a organizar tu entorno familiar hoy mismo.</p>
+                </div>
+
+                <form id="formulario-registro" class="formulario-registro">
+                    
+                    <!-- Campo: Nombre -->
+                    <div class="grupo-campo">
+                        <label class="etiqueta-campo" for="nombre">Nombre completo</label>
+                        <div class="contenedor-entrada">
+                            <span class="material-symbols-outlined icono-campo">person</span>
+                            <input class="entrada-texto" id="nombre" name="nombre_completo" type="text" placeholder="Ej. Ana García" required>
+                        </div>
+                    </div>
+
+                    <!-- Campo: Correo -->
+                    <div class="grupo-campo">
+                        <label class="etiqueta-campo" for="correo">Correo electrónico</label>
+                        <div class="contenedor-entrada">
+                            <span class="material-symbols-outlined icono-campo">mail</span>
+                            <input class="entrada-texto" id="correo" name="correo_electronico" type="email" placeholder="ana@ejemplo.com" required>
+                        </div>
+                    </div>
+
+                    <!-- Campo: Contraseña -->
+                    <div class="grupo-campo">
+                        <label class="etiqueta-campo" for="contrasena">Contraseña</label>
+                        <div class="contenedor-entrada">
+                            <span class="material-symbols-outlined icono-campo">lock</span>
+                            <input class="entrada-texto" id="contrasena" name="contrasena" type="password" placeholder="••••••••" required>
+                            <button class="boton-alternar-visibilidad" id="boton-alternar-contrasena" type="button" aria-label="Mostrar u ocultar contraseña">
+                                <span class="material-symbols-outlined icono-visibilidad" id="icono-visibilidad-contrasena">visibility_off</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Campo: Confirmar Contraseña -->
+                    <div class="grupo-campo">
+                        <label class="etiqueta-campo" for="confirmar_contrasena">Confirmar contraseña</label>
+                        <div class="contenedor-entrada">
+                            <span class="material-symbols-outlined icono-campo">verified_user</span>
+                            <input class="entrada-texto" id="confirmar_contrasena" name="confirmar_contrasena" type="password" placeholder="••••••••" required>
+                        </div>
+                    </div>
+
+                    <!-- Botón Principal -->
+                    <button class="boton-primario-registro" type="submit">
+                        Crear cuenta
+                        <span class="material-symbols-outlined icono-pequeno">arrow_forward</span>
+                    </button>
+                </form>
+
+                <!-- Divisor y Enlace de Iniciar Sesión -->
+                <div class="divisor-contenedor">
+                    <div class="linea-divisora"></div>
+                    <span class="texto-divisor">O</span>
+                    <div class="linea-divisora"></div>
+                </div>
+
+                <div class="pie-tarjeta">
+                    <p class="texto-pie">
+                        ¿Ya tienes una cuenta?
+                        <a href="iniciar-sesion.html" class="enlace-inicio-sesion">Iniciar sesión</a>
+                    </p>
+                </div>
+            </section>
+
         </div>
+    </main>
 
-        <form id="registerForm" class="flex flex-col gap-sm">
-          <!-- Input: Nombre -->
-          <div class="flex flex-col gap-base">
-            <label class="font-label-caps text-label-caps text-on-surface-variant" for="name">Nombre</label>
-            <div class="relative flex items-center group">
-              <span class="material-symbols-outlined absolute left-sm text-outline group-focus-within:text-primary transition-colors">person</span>
-              <input class="w-full h-12 bg-surface-container-low border-none rounded-xl pl-xl pr-sm font-body-lg text-body-lg text-on-surface placeholder:text-outline-variant focus:ring-2 focus:ring-primary focus:bg-surface-container-lowest transition-all" id="name" name="nombre" placeholder="Ej. Ana García" type="text" required>
-            </div>
-          </div>
-
-          <!-- Input: Correo -->
-          <div class="flex flex-col gap-base">
-            <label class="font-label-caps text-label-caps text-on-surface-variant" for="email">Correo</label>
-            <div class="relative flex items-center group">
-              <span class="material-symbols-outlined absolute left-sm text-outline group-focus-within:text-primary transition-colors">mail</span>
-              <input class="w-full h-12 bg-surface-container-low border-none rounded-xl pl-xl pr-sm font-body-lg text-body-lg text-on-surface placeholder:text-outline-variant focus:ring-2 focus:ring-primary focus:bg-surface-container-lowest transition-all" id="email" name="correo" placeholder="ana@ejemplo.com" type="email" required>
-            </div>
-          </div>
-
-          <!-- Input: Contraseña -->
-          <div class="flex flex-col gap-base">
-            <label class="font-label-caps text-label-caps text-on-surface-variant" for="password">Contraseña</label>
-            <div class="relative flex items-center group">
-              <span class="material-symbols-outlined absolute left-sm text-outline group-focus-within:text-primary transition-colors">lock</span>
-              <input class="w-full h-12 bg-surface-container-low border-none rounded-xl pl-xl pr-sm font-body-lg text-body-lg text-on-surface placeholder:text-outline-variant focus:ring-2 focus:ring-primary focus:bg-surface-container-lowest transition-all" id="password" name="password" placeholder="••••••••" type="password" required>
-              <button id="togglePassword" class="absolute right-sm text-outline hover:text-on-surface-variant transition-colors flex items-center justify-center p-1" type="button" aria-label="Mostrar contraseña">
-                <span class="material-symbols-outlined text-[20px]" id="toggleIcon">visibility_off</span>
-              </button>
-            </div>
-          </div>
-
-          <!-- Input: Confirmar Contraseña -->
-          <div class="flex flex-col gap-base">
-            <label class="font-label-caps text-label-caps text-on-surface-variant" for="confirm_password">Confirmar contraseña</label>
-            <div class="relative flex items-center group">
-              <span class="material-symbols-outlined absolute left-sm text-outline group-focus-within:text-primary transition-colors">verified_user</span>
-              <input class="w-full h-12 bg-surface-container-low border-none rounded-xl pl-xl pr-sm font-body-lg text-body-lg text-on-surface placeholder:text-outline-variant focus:ring-2 focus:ring-primary focus:bg-surface-container-lowest transition-all" id="confirm_password" placeholder="••••••••" type="password" required>
-            </div>
-          </div>
-
-          <!-- Primary Action -->
-          <button id="submitBtn" class="w-full h-12 mt-xs bg-primary text-on-primary rounded-xl font-title-md text-title-md flex items-center justify-center gap-xs shadow-[0px_4px_10px_rgba(37,99,235,0.2)] hover:shadow-[0px_8px_20px_rgba(37,99,235,0.3)] hover:-translate-y-[1px] active:scale-[0.98] transition-all duration-200" type="submit">
-            <span>Crear cuenta</span>
-            <span class="material-symbols-outlined text-[20px]">arrow_forward</span>
-          </button>
-        </form>
-
-        <!-- Divider -->
-        <div class="flex items-center gap-sm my-md">
-          <div class="h-[1px] bg-outline-variant/50 flex-1"></div>
-          <span class="font-label-caps text-label-caps text-outline uppercase tracking-wider">O continúa con</span>
-          <div class="h-[1px] bg-outline-variant/50 flex-1"></div>
-        </div>
-
-      </div>
-    </div>
-  </div>
-
-  <!-- Archivo JS Personalizado desde la carpeta js/ -->
-  <script src="js/Registro.js"></script>
+    <!-- Archivo JS Externo -->
+    <script src="js/Registro.js"></script>
 </body>
 </html>

@@ -28,6 +28,7 @@ body {
     overflow: hidden;
 }
 
+/* Elementos Visuales de Fondo */
 .fondo-decorativo {
     position: absolute;
     inset: 0;
@@ -79,6 +80,7 @@ body {
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
 }
 
+/* Encabezado */
 .encabezado-login {
     display: flex;
     flex-direction: column;
@@ -117,6 +119,7 @@ body {
     line-height: 20px;
 }
 
+/* Formulario */
 .formulario-login {
     width: 100%;
     display: flex;
@@ -155,6 +158,7 @@ body {
     color: var(--color-primario-hover);
 }
 
+/* Inputs con Icono */
 .campo-con-icono {
     position: relative;
     display: flex;
@@ -220,6 +224,7 @@ body {
     font-size: 12px;
 }
 
+/* Botones de Acción */
 .boton-principal {
     width: 100%;
     height: 50px;
@@ -317,6 +322,7 @@ body {
     color: var(--color-primario-hover);
 }
 
+/* Responsividad */
 @media (max-width: 480px) {
     body {
         padding: 16px;

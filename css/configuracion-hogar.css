@@ -1,3 +1,17 @@
+:root {
+    --color-primario: #2563eb;
+    --color-primario-hover: #1d4ed8;
+    --color-fondo: #f4f7fc;
+    --color-superficie: #ffffff;
+    --color-texto-principal: #0b1c30;
+    --color-texto-secundario: #667085;
+    --color-texto-mutado: #7a8494;
+    --color-borde: #d8dee9;
+    --color-campo-fondo: #f1f5f9;
+    --color-error: #dc2626;
+    --color-error-fondo: #fef2f2;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -10,20 +24,21 @@ body {
     align-items: center;
     justify-content: center;
     padding: 30px;
-    background: #f4f7fc;
+    background: var(--color-fondo);
     font-family: "Inter", sans-serif;
-    color: #0b1c30;
+    color: var(--color-texto-principal);
 }
 
 .contenedor-principal {
     width: 100%;
     max-width: 720px;
-    background: #ffffff;
+    background: var(--color-superficie);
     border-radius: 24px;
     overflow: hidden;
     box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
 }
 
+/* Encabezado y Progreso */
 .encabezado {
     padding: 40px 48px 25px;
 }
@@ -43,7 +58,7 @@ body {
 }
 
 .progreso.activo {
-    background: #2563eb;
+    background: var(--color-primario);
 }
 
 .numero-paso {
@@ -59,16 +74,17 @@ h1 {
     font-size: 32px;
     line-height: 1.25;
     font-weight: 700;
-    color: #0b1c30;
+    color: var(--color-texto-principal);
     margin-bottom: 8px;
 }
 
 .descripcion {
-    color: #667085;
+    color: var(--color-texto-secundario);
     font-size: 15px;
     line-height: 24px;
 }
 
+/* Formulario */
 .contenido {
     padding: 20px 48px 40px;
     display: flex;
@@ -85,7 +101,7 @@ h1 {
 .grupo-formulario label {
     font-size: 18px;
     font-weight: 600;
-    color: #0b1c30;
+    color: var(--color-texto-principal);
 }
 
 #nombre-hogar {
@@ -94,8 +110,8 @@ h1 {
     padding: 0 18px;
     border: 2px solid transparent;
     border-radius: 12px;
-    background: #f1f5f9;
-    color: #0b1c30;
+    background: var(--color-campo-fondo);
+    color: var(--color-texto-principal);
     font-family: "Inter", sans-serif;
     font-size: 15px;
     outline: none;
@@ -107,18 +123,18 @@ h1 {
 }
 
 #nombre-hogar:focus {
-    background: #ffffff;
-    border-color: #2563eb;
+    background: var(--color-superficie);
+    border-color: var(--color-primario);
     box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.10);
 }
 
 #nombre-hogar.error-input {
-    border-color: #dc2626;
-    background-color: #fef2f2;
-    animation: shake 0.3s ease-in-out;
+    border-color: var(--color-error);
+    background-color: var(--color-error-fondo);
+    animation: agitar 0.3s ease-in-out;
 }
 
-@keyframes shake {
+@keyframes agitar {
     0%, 100% { transform: translateX(0); }
     25% { transform: translateX(-5px); }
     75% { transform: translateX(5px); }
@@ -126,11 +142,12 @@ h1 {
 
 .mensaje-error {
     min-height: 18px;
-    color: #dc2626;
+    color: var(--color-error);
     font-size: 13px;
     font-weight: 500;
 }
 
+/* Opciones de Tipo de Vivienda */
 .opciones-vivienda {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -144,22 +161,22 @@ h1 {
     align-items: center;
     justify-content: center;
     gap: 12px;
-    border: 2px solid #d8dee9;
+    border: 2px solid var(--color-borde);
     border-radius: 16px;
-    background: #ffffff;
+    background: var(--color-superficie);
     cursor: pointer;
     font-family: "Inter", sans-serif;
     transition: all 0.2s ease;
 }
 
 .tarjeta-vivienda:hover {
-    border-color: #2563eb;
+    border-color: var(--color-primario);
     background: #f5f8ff;
     transform: translateY(-2px);
 }
 
 .tarjeta-vivienda.seleccionada {
-    border-color: #2563eb;
+    border-color: var(--color-primario);
     background: #eff5ff;
     box-shadow: 0 4px 12px rgba(37, 99, 235, 0.10);
 }
@@ -171,7 +188,7 @@ h1 {
 }
 
 .tarjeta-vivienda.seleccionada .icono-vivienda {
-    color: #2563eb;
+    color: var(--color-primario);
     font-variation-settings: "FILL" 1;
 }
 
@@ -182,9 +199,10 @@ h1 {
 }
 
 .tarjeta-vivienda.seleccionada .nombre-vivienda {
-    color: #2563eb;
+    color: var(--color-primario);
 }
 
+/* Contador de Residentes */
 .contador {
     display: flex;
     align-items: center;
@@ -215,7 +233,7 @@ h1 {
 }
 
 .boton-contador:disabled {
-    background: #f1f5f9;
+    background: var(--color-campo-fondo);
     color: #cbd5e1;
     cursor: not-allowed;
 }
@@ -228,10 +246,11 @@ h1 {
 }
 
 .ayuda {
-    color: #7a8494;
+    color: var(--color-texto-mutado);
     font-size: 13px;
 }
 
+/* Pie de Página */
 .pie {
     padding-top: 25px;
     border-top: 1px solid #e8edf5;
@@ -246,7 +265,7 @@ h1 {
     gap: 10px;
     border: none;
     border-radius: 14px;
-    background: #2563eb;
+    background: var(--color-primario);
     color: #ffffff;
     font-family: "Inter", sans-serif;
     font-size: 16px;
@@ -256,7 +275,7 @@ h1 {
 }
 
 .boton-siguiente:hover:not(:disabled) {
-    background: #1d4ed8;
+    background: var(--color-primario-hover);
     transform: translateY(-1px);
 }
 
@@ -269,6 +288,7 @@ h1 {
     cursor: wait;
 }
 
+/* Responsividad */
 @media (max-width: 650px) {
     body { padding: 15px; }
     .encabezado { padding: 30px 25px 20px; }
