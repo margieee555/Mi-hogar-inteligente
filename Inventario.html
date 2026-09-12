@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventario del Hogar - Mi Hogar Inteligente</title>
+    <!-- Google Fonts & Material Symbols -->
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    <!-- Estilos CSS -->
+    <link rel="stylesheet" href="css/Inventario.css">
+</head>
+
+<body class="pagina-inventario">
+
+    <!-- Menú Lateral (Escritorio) -->
+    <aside class="menu-lateral">
+        <div class="usuario-perfil">
+            <img class="avatar-usuario" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAm2RAhntNqcGVqrztA6h868rjHQlRKPbvIm0EAO9oO_hAKNiMKxaX_rHyO1bBSVy-UA49fdkqbHVxz1IZp1jpLsFEbDEcLKRird5xuDfmoLHxAb5IWIDma9JCMfPOa5k6l-CdsE54cVaa186J1fjSNTbTUYWWEtb0AKeCmwNlLxOSYkD243o_GBzEfNOiOVOplwG__RUE8YW4tBvGce58S7cxBW_p8ldpCc-SLiY8aaYocacXaETuREg" alt="Foto de Perfil">
+            <div class="info-usuario">
+                <h2 class="nombre-marca">Mi Hogar Inteligente</h2>
+                <p class="rol-usuario">Administrador</p>
+            </div>
+            <span class="insignia-plan">Premium</span>
+        </div>
+
+        <nav class="navegacion-lateral">
+            <a class="enlace-menu" href="#">
+                <span class="material-symbols-outlined">calendar_month</span>
+                <span>Calendario</span>
+            </a>
+            <a class="enlace-menu activo" href="#">
+                <span class="material-symbols-outlined icono-lleno">inventory_2</span>
+                <span>Inventario</span>
+            </a>
+            <a class="enlace-menu" href="#">
+                <span class="material-symbols-outlined">analytics</span>
+                <span>Reportes</span>
+            </a>
+        </nav>
+    </aside>
+
+    <!-- Contenido Principal -->
+    <main class="contenido-principal">
+
+        <!-- Header Móvil -->
+        <header class="header-movil">
+            <img class="avatar-usuario-movil" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD89hw5vRjXFBVRCWijRddbk55SoxSZsTYgLRlLOAV9RyBHv1rxHS9mjatsWrIxpbTwrLLO5SDBO-_jVOeoiAIzbnM3Tu4bMkT2h7086CompgQ2E_ayS9zM_YqCj_NGKLSOratczcxuRfPK3AyRaPYQi_Z0QVWkkzmSZOrUiIsuZ-09Zn8nRMQrLH649olxxDA-XC8PnG4mScdOllG0khUckjIrhKzRjXee9Wnw1YsaY-wYkc1dWXFXGQ" alt="Foto de Perfil">
+            <h1 class="titulo-marca-movil">Mi Hogar Inteligente</h1>
+            <button class="boton-notificacion">
+                <span class="material-symbols-outlined">notifications</span>
+            </button>
+        </header>
+
+        <!-- Área de Trabajo / Lienzo -->
+        <div class="area-trabajo">
+            
+            <header class="encabezado-seccion">
+                <h1 class="titulo-pagina">Inventario</h1>
+                <p class="subtitulo-pagina">Gestiona y controla los suministros del hogar.</p>
+            </header>
+
+            <!-- Banner de Alerta -->
+            <div class="tarjeta-alerta">
+                <div class="alerta-contenido">
+                    <span class="material-symbols-outlined icono-alerta">warning</span>
+                    <div>
+                        <h3 class="titulo-alerta">3 productos por vencer</h3>
+                        <p class="descripcion-alerta">Revisa tu despensa antes del fin de semana.</p>
+                    </div>
+                </div>
+                <button class="boton-accion-alerta">Ver Todos</button>
+            </div>
+
+            <!-- Buscador y Filtros -->
+            <div class="controles-filtrado">
+                <div class="caja-busqueda">
+                    <span class="material-symbols-outlined icono-busqueda">search</span>
+                    <input id="inputBuscar" class="input-busqueda" type="text" placeholder="Buscar artículos...">
+                </div>
+
+                <div class="contenedor-filtros">
+                    <button class="boton-filtro activo" data-categoria="todos">Todos</button>
+                    <button class="boton-filtro" data-categoria="alimentos">Alimentos</button>
+                    <button class="boton-filtro" data-categoria="aseo">Aseo</button>
+                    <button class="boton-filtro" data-categoria="medicamentos">Medicamentos</button>
+                    <button class="boton-filtro" data-categoria="herramientas">Herramientas</button>
+                </div>
+            </div>
+
+            <!-- Grilla de Productos -->
+            <div id="grillaProductos" class="grilla-productos">
+
+                <!-- Producto 1 -->
+                <article class="tarjeta-producto" data-categoria="alimentos">
+                    <img class="imagen-producto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTo4FoCnuo4E2tF2GPxA6TGJqE_-IB3gBOVZEecHaS6Tkl8_Rmdps1NlVhG3uGpk9cKAg9lDQ5_SCs6EvTlJ7SrEsrtnakg8dMdvLUwOKCNSL-NfkHUk0fETHOik_wHmjkhQr8VBXjU9a02tT76wYnpNbLyfewYOSDL5X75tkECCB-tDTR9Shuy09ySvSm-pPgw9aQkL75ASFm-g9cGZ00d_a-JvGUj9WQOlMZw43HyPHQ7plMHyX_gw" alt="Leche Entera">
+                    <div class="detalles-producto">
+                        <div>
+                            <div class="cabecera-tarjeta">
+                                <h4 class="nombre-producto">Leche Entera</h4>
+                                <button class="boton-opciones"><span class="material-symbols-outlined">more_vert</span></button>
+                            </div>
+                            <p class="meta-vencimiento peligro">
+                                <span class="material-symbols-outlined icono-meta">schedule</span> Vence: 12 Oct
+                            </p>
+                        </div>
+                        <div class="contenedor-stock">
+                            <div class="info-stock">
+                                <span>Stock: 2L</span>
+                                <span>25%</span>
+                            </div>
+                            <div class="barra-progreso">
+                                <div class="progreso-relleno peligro" style="width: 25%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Producto 2 -->
+                <article class="tarjeta-producto" data-categoria="aseo">
+                    <img class="imagen-producto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCoLnoSMEOauJvIAQ28kqR-ezXktsvY5dYvMeS0KrZR4rJTmz_R9VdVjHkltIAGKJwlwz7lVBtKGUoS3kUCkWcMxljp-v0IVZRYMG842N5Xc9EmeGzYNWIqiJhBcEoemfqxpGLbY7sWrMKaPvVkKT94DSTed-t0Di6rFfb8FzcrBOsBBjg7W_966_mTiO0vrBnSWwuZLvVs3fjmsUAYIfNY_MRLjJnkYR5IbnhpOocwwyhXEOMvLiYIsw" alt="Detergente Ropa">
+                    <div class="detalles-producto">
+                        <div>
+                            <div class="cabecera-tarjeta">
+                                <h4 class="nombre-producto">Detergente Ropa</h4>
+                                <button class="boton-opciones"><span class="material-symbols-outlined">more_vert</span></button>
+                            </div>
+                            <p class="meta-vencimiento">
+                                <span class="material-symbols-outlined icono-meta">inventory_2</span> Aseo
+                            </p>
+                        </div>
+                        <div class="contenedor-stock">
+                            <div class="info-stock">
+                                <span>Stock: 1.5L</span>
+                                <span>70%</span>
+                            </div>
+                            <div class="barra-progreso">
+                                <div class="progreso-relleno normal" style="width: 70%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Producto 3 -->
+                <article class="tarjeta-producto" data-categoria="medicamentos">
+                    <img class="imagen-producto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCebQw_53yQfohRnRwKDwFbpSSuVtL2CagXBb3dSvtJIUyIVV4Un-p_TDDMnaKUJTeFerNkG8ccDR7cT0u5MeP2g7-2q6BBUItRtkUrNVWkAdgCsI7bC7ECUGjQT-1kIv6LZbnaeGJO5DkRagl1Bme_mFLcSU27XvafGYlE2vjvgqjSJ76SoYxMid1Sy6bhPaT9ymVuDAp-_QqJiGEf0UZLyuagY67A6qyYh-SWJtJPIy1_2vZhVLCzfQ" alt="Paracetamol">
+                    <div class="detalles-producto">
+                        <div>
+                            <div class="cabecera-tarjeta">
+                                <h4 class="nombre-producto">Paracetamol 500mg</h4>
+                                <button class="boton-opciones"><span class="material-symbols-outlined">more_vert</span></button>
+                            </div>
+                            <p class="meta-vencimiento advertencia">
+                                <span class="material-symbols-outlined icono-meta">schedule</span> Vence: 05 Nov
+                            </p>
+                        </div>
+                        <div class="contenedor-stock">
+                            <div class="info-stock">
+                                <span>Stock: 12 u.</span>
+                                <span>40%</span>
+                            </div>
+                            <div class="barra-progreso">
+                                <div class="progreso-relleno medio" style="width: 40%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+
+        <!-- Botón Flotante para Agregar -->
+        <button id="btnAgregarProducto" class="boton-flotante">
+            <span class="material-symbols-outlined">add</span>
+        </button>
+    </main>
+
+    <!-- Navegación Inferior (Móvil) -->
+    <nav class="barra-inferior-movil">
+        <a class="item-nav-movil" href="#">
+            <span class="material-symbols-outlined">home</span>
+            <span>Inicio</span>
+        </a>
+        <a class="item-nav-movil" href="#">
+            <span class="material-symbols-outlined">payments</span>
+            <span>Finanzas</span>
+        </a>
+        <a class="item-nav-movil" href="#">
+            <span class="material-symbols-outlined">shopping_cart</span>
+            <span>Compras</span>
+        </a>
+        <a class="item-nav-movil" href="#">
+            <span class="material-symbols-outlined">assignment_turned_in</span>
+            <span>Tareas</span>
+        </a>
+        <a class="item-nav-movil" href="#">
+            <span class="material-symbols-outlined">person</span>
+            <span>Perfil</span>
+        </a>
+    </nav>
+
+    <!-- Script JavaScript -->
+    <script src="js/Inventario.js"></script>
+</body>
+</html>

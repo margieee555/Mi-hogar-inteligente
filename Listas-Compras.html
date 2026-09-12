@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Compras - Mi Hogar Inteligente</title>
+    <!-- Google Fonts & Material Symbols -->
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    <!-- CSS Separado -->
+    <link rel="stylesheet" href="css/Listas-Compras.css">
+</head>
+
+<body class="pagina-compras">
+
+    <!-- Navegación Superior -->
+    <header class="barra-superior">
+        <div class="header-contenedor">
+            <div class="marca-logo">
+                <span class="material-symbols-outlined icono-marca">home_app_logo</span>
+                <span class="nombre-marca">Mi Hogar Inteligente</span>
+            </div>
+            
+            <nav class="navegacion-principal">
+                <a class="nav-enlace" href="#">Inicio</a>
+                <a class="nav-enlace" href="#">Finanzas</a>
+                <a class="nav-enlace activo" href="#">Compras</a>
+                <a class="nav-enlace" href="#">Tareas</a>
+                <a class="nav-enlace" href="#">Perfil</a>
+            </nav>
+
+            <button class="boton-notificacion">
+                <span class="material-symbols-outlined">notifications</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Contenido Principal -->
+    <main class="contenedor-principal">
+
+        <!-- Encabezado de la página -->
+        <section class="encabezado-seccion">
+            <div>
+                <h1 class="titulo-pagina">Lista de Compras</h1>
+                <p class="subtitulo-pagina">Administra el inventario del hogar y tus próximas compras.</p>
+            </div>
+            <div class="acciones-encabezado">
+                <button class="boton-secundario">
+                    <span class="material-symbols-outlined">share</span>
+                    <span>Compartir Lista</span>
+                </button>
+                <button class="boton-principal">
+                    <span class="material-symbols-outlined">add</span>
+                    <span>Agregar Producto</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- Grilla Principal -->
+        <div class="cuadrilla-contenido">
+
+            <!-- Panel de Sugerencias IA -->
+            <aside class="tarjeta-sugerencias">
+                <div class="encabezado-sugerencias">
+                    <span class="material-symbols-outlined icono-ia">auto_awesome</span>
+                    <h2 class="titulo-sugerencias">Sugerencias IA</h2>
+                </div>
+                <p class="descripcion-sugerencias">Basado en el consumo de tu hogar, podrías estar quedando sin:</p>
+
+                <div class="lista-sugerencias">
+                    <div class="item-sugerencia">
+                        <div class="sugerencia-info">
+                            <div class="icono-contenedor">
+                                <span class="material-symbols-outlined icono-item">water_drop</span>
+                            </div>
+                            <div>
+                                <p class="nombre-sugerencia">Leche</p>
+                                <p class="meta-sugerencia">Se compra semanalmente</p>
+                            </div>
+                        </div>
+                        <button class="boton-agregar-sugerencia">
+                            <span class="material-symbols-outlined">add_circle</span>
+                        </button>
+                    </div>
+
+                    <div class="item-sugerencia">
+                        <div class="sugerencia-info">
+                            <div class="icono-contenedor">
+                                <span class="material-symbols-outlined icono-item">egg</span>
+                            </div>
+                            <div>
+                                <p class="nombre-sugerencia">Huevos</p>
+                                <p class="meta-sugerencia">Inventario crítico bajo</p>
+                            </div>
+                        </div>
+                        <button class="boton-agregar-sugerencia">
+                            <span class="material-symbols-outlined">add_circle</span>
+                        </button>
+                    </div>
+
+                    <div class="item-sugerencia">
+                        <div class="sugerencia-info">
+                            <div class="icono-contenedor">
+                                <span class="material-symbols-outlined icono-item">local_laundry_service</span>
+                            </div>
+                            <div>
+                                <p class="nombre-sugerencia">Detergente</p>
+                                <p class="meta-sugerencia">Última compra hace 3 semanas</p>
+                            </div>
+                        </div>
+                        <button class="boton-agregar-sugerencia">
+                            <span class="material-symbols-outlined">add_circle</span>
+                        </button>
+                    </div>
+                </div>
+
+                <button class="boton-descartar">Descartar sugerencias</button>
+            </aside>
+
+            <!-- Sección de Listas y Productos -->
+            <section class="area-listas">
+
+                <!-- Buscador Rápido -->
+                <div class="caja-busqueda">
+                    <span class="material-symbols-outlined icono-busqueda">search</span>
+                    <input id="inputRapido" class="input-busqueda" type="text" placeholder="Agregar producto rápidamente...">
+                    <button id="btnAgregarRapido" class="boton-enviar-busqueda">
+                        <span class="material-symbols-outlined">arrow_upward</span>
+                    </button>
+                </div>
+
+                <!-- Categoría: Alimentos -->
+                <article class="tarjeta-categoria">
+                    <div class="encabezado-categoria">
+                        <div class="info-categoria">
+                            <span class="material-symbols-outlined icono-alimentos">restaurant</span>
+                            <h3 class="titulo-categoria">Alimentos</h3>
+                        </div>
+                        <span class="contador-badge">3 Productos</span>
+                    </div>
+
+                    <ul class="lista-productos">
+                        <li class="item-producto">
+                            <div class="item-izquierda">
+                                <input class="checkbox-producto" type="checkbox">
+                                <span class="nombre-producto">Pan Integral</span>
+                            </div>
+                            <div class="item-derecha">
+                                <div class="control-cantidad">
+                                    <button class="btn-cantidad"><span class="material-symbols-outlined icono-pequeno">remove</span></button>
+                                    <span class="valor-cantidad">2</span>
+                                    <button class="btn-cantidad"><span class="material-symbols-outlined icono-pequeno">add</span></button>
+                                </div>
+                                <button class="btn-eliminar">
+                                    <span class="material-symbols-outlined">delete</span>
+                                </button>
+                            </div>
+                        </li>
+
+                        <li class="item-producto">
+                            <div class="item-izquierda">
+                                <input class="checkbox-producto" type="checkbox">
+                                <span class="nombre-producto">Manzanas</span>
+                            </div>
+                            <div class="item-derecha">
+                                <div class="control-cantidad">
+                                    <button class="btn-cantidad"><span class="material-symbols-outlined icono-pequeno">remove</span></button>
+                                    <span class="valor-cantidad">1</span>
+                                    <button class="btn-cantidad"><span class="material-symbols-outlined icono-pequeno">add</span></button>
+                                </div>
+                                <button class="btn-eliminar">
+                                    <span class="material-symbols-outlined">delete</span>
+                                </button>
+                            </div>
+                        </li>
+
+                        <li class="item-producto comprado">
+                            <div class="item-izquierda">
+                                <input class="checkbox-producto" type="checkbox" checked>
+                                <span class="nombre-producto tachado">Queso Fresco</span>
+                            </div>
+                            <div class="item-derecha">
+                                <button class="btn-eliminar">
+                                    <span class="material-symbols-outlined">delete</span>
+                                </button>
+                            </div>
+                        </li>
+                    </ul>
+                </article>
+
+                <!-- Categoría: Aseo -->
+                <article class="tarjeta-categoria">
+                    <div class="encabezado-categoria">
+                        <div class="info-categoria">
+                            <span class="material-symbols-outlined icono-aseo">cleaning_services</span>
+                            <h3 class="titulo-categoria">Aseo</h3>
+                        </div>
+                        <span class="contador-badge">1 Producto</span>
+                    </div>
+
+                    <ul class="lista-productos">
+                        <li class="item-producto">
+                            <div class="item-izquierda">
+                                <input class="checkbox-producto" type="checkbox">
+                                <span class="nombre-producto">Papel Higiénico</span>
+                            </div>
+                            <div class="item-derecha">
+                                <div class="control-cantidad">
+                                    <button class="btn-cantidad"><span class="material-symbols-outlined icono-pequeno">remove</span></button>
+                                    <span class="valor-cantidad">1</span>
+                                    <button class="btn-cantidad"><span class="material-symbols-outlined icono-pequeno">add</span></button>
+                                </div>
+                                <button class="btn-eliminar">
+                                    <span class="material-symbols-outlined">delete</span>
+                                </button>
+                            </div>
+                        </li>
+                    </ul>
+                </article>
+
+            </section>
+        </div>
+
+    </main>
+
+    <!-- Navegación Inferior (Móvil) -->
+    <nav class="barra-inferior-movil">
+        <a class="nav-item-movil" href="#">
+            <span class="material-symbols-outlined">home</span>
+            <span>Inicio</span>
+        </a>
+        <a class="nav-item-movil" href="#">
+            <span class="material-symbols-outlined">account_balance_wallet</span>
+            <span>Finanzas</span>
+        </a>
+        <a class="nav-item-movil activo" href="#">
+            <span class="material-symbols-outlined icono-lleno">shopping_cart</span>
+            <span>Compras</span>
+        </a>
+        <a class="nav-item-movil" href="#">
+            <span class="material-symbols-outlined">assignment</span>
+            <span>Tareas</span>
+        </a>
+        <a class="nav-item-movil" href="#">
+            <span class="material-symbols-outlined">person</span>
+            <span>Perfil</span>
+        </a>
+    </nav>
+
+    <!-- JS Separado -->
+    <script src="js/Listas-Compras.js"></script>
+</body>
+</html>
