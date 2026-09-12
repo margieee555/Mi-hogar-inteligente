@@ -1,4 +1,4 @@
-// URL base para el Backend (Actualizar con la API cuando esté lista)
+// URL base para el Backend (Actualizar con el App Service cuando esté en Azure)
 const API_URL = "http://localhost:3000/api";
 
 // Configuración de límites
@@ -16,102 +16,117 @@ const mensajeNombre = document.getElementById("mensaje-nombre");
 const botonSiguiente = document.getElementById("boton-siguiente");
 const textoBoton = document.getElementById("texto-boton");
 
-// Estado local del formulario
+// Estado del formulario
 let estadoFormulario = {
-  nombre: "",
-  tipoVivienda: "Casa",
-  numeroResidentes: 1
+    nombre: "",
+    tipoVivienda: "Casa",
+    numeroResidentes: 1
 };
 
 // 1. Selección de Tipo de Vivienda
 tarjetasVivienda.forEach(tarjeta => {
-  tarjeta.addEventListener("click", () => {
-    tarjetasVivienda.forEach(t => {
-      t.classList.remove("border-primario", "bg-superficie-contenedor");
-      t.classList.add("border-contorno");
-      t.setAttribute("aria-checked", "false");
+    tarjeta.addEventListener("click", () => {
+        tarjetasVivienda.forEach(t => {
+            t.classList.remove("seleccionada");
+            t.setAttribute("aria-checked", "false");
+        });
+
+        tarjeta.classList.add("seleccionada");
+        tarjeta.setAttribute("aria-checked", "true");
+
+        estadoFormulario.tipoVivienda = tarjeta.dataset.vivienda;
     });
-
-    tarjeta.classList.remove("border-contorno");
-    tarjeta.classList.add("border-primario", "bg-superficie-contenedor");
-    tarjeta.setAttribute("aria-checked", "true");
-
-    estadoFormulario.tipoVivienda = tarjeta.dataset.vivienda;
-  });
 });
 
 // 2. Control de Residentes (Sumar / Restar)
 botonAumentar.addEventListener("click", () => {
-  if (estadoFormulario.numeroResidentes < MAX_RESIDENTES) {
-    estadoFormulario.numeroResidentes++;
-    actualizarContador();
-  }
+    if (estadoFormulario.numeroResidentes < MAX_RESIDENTES) {
+        estadoFormulario.numeroResidentes++;
+        actualizarContador();
+    }
 });
 
 botonDisminuir.addEventListener("click", () => {
-  if (estadoFormulario.numeroResidentes > MIN_RESIDENTES) {
-    estadoFormulario.numeroResidentes--;
-    actualizarContador();
-  }
+    if (estadoFormulario.numeroResidentes > MIN_RESIDENTES) {
+        estadoFormulario.numeroResidentes--;
+        actualizarContador();
+    }
 });
 
 function actualizarContador() {
-  cantidadResidentes.textContent = estadoFormulario.numeroResidentes;
-  botonDisminuir.disabled = estadoFormulario.numeroResidentes === MIN_RESIDENTES;
-  botonAumentar.disabled = estadoFormulario.numeroResidentes === MAX_RESIDENTES;
+    cantidadResidentes.textContent = estadoFormulario.numeroResidentes;
+    
+    // Habilitar o deshabilitar botones según los límites
+    botonDisminuir.disabled = estadoFormulario.numeroResidentes === MIN_RESIDENTES;
+    botonAumentar.disabled = estadoFormulario.numeroResidentes === MAX_RESIDENTES;
 }
 
-// 3. Validación en tiempo real del campo nombre
+// 3. Validación en tiempo real del input
 nombreHogarInput.addEventListener("input", () => {
-  if (nombreHogarInput.value.trim() !== "") {
-    mensajeNombre.textContent = "";
-    nombreHogarInput.classList.remove("border-error");
-  }
+    if (nombreHogarInput.value.trim() !== "") {
+        mensajeNombre.textContent = "";
+        nombreHogarInput.classList.remove("error-input");
+    }
 });
 
 // 4. Envío del Formulario
 formulario.addEventListener("submit", async (e) => {
-  e.preventDefault();
+    e.preventDefault();
 
-  const nombreValido = nombreHogarInput.value.trim();
+    const nombreValido = nombreHogarInput.value.trim();
 
-  if (nombreValido === "") {
-    mensajeNombre.textContent = "Por favor, escribe un nombre para tu hogar.";
-    nombreHogarInput.classList.add("border-error");
-    nombreHogarInput.focus();
-    return;
-  }
+    if (nombreValido === "") {
+        mensajeNombre.textContent = "Por favor, escribe un nombre para tu hogar.";
+        nombreHogarInput.classList.add("error-input");
+        nombreHogarInput.focus();
+        return;
+    }
 
-  estadoFormulario.nombre = nombreValido;
-  sessionStorage.setItem("datosHogarPaso1", JSON.stringify(estadoFormulario));
+    estadoFormulario.nombre = nombreValido;
 
-  await guardarConfiguracionHogar(estadoFormulario);
+    // Guardar temporalmente en sesión local por si falla la red o para usar en el Paso 2
+    sessionStorage.setItem("datosHogarPaso1", JSON.stringify(estadoFormulario));
+
+    // Procesar envío hacia el backend
+    await guardarConfiguracionHogar(estadoFormulario);
 });
 
-// 5. Integración Backend / API
+// 5. Integración con el Backend / Azure API
 async function guardarConfiguracionHogar(datos) {
-  try {
-    botonSiguiente.disabled = true;
-    if (textoBoton) textoBoton.textContent = "Guardando...";
+    try {
+        // UI Feedback: estado de carga
+        botonSiguiente.disabled = true;
+        textoBoton.textContent = "Guardando...";
 
-    /* Descomentar al integrar el Backend real
-    const respuesta = await fetch(`${API_URL}/hogares`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(datos)
-    });
+        /* 
+        // Descomentar cuando el Backend (Node.js, .NET, Python, etc.) esté activo
+        const respuesta = await fetch(`${API_URL}/hogares`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(datos)
+        });
 
-    if (!respuesta.ok) throw new Error('Error al guardar el hogar.');
-    */
+        if (!respuesta.ok) {
+            throw new Error('Error al guardar la información del hogar.');
+        }
 
-    console.log("Datos de configuración del hogar:", datos);
-    window.location.href = "paso2.html";
+        const dataRespuesta = await respuesta.json();
+        console.log("Hogar guardado en la BD con ID:", dataRespuesta.id);
+        */
 
-  } catch (error) {
-    console.error("Error API:", error);
-    mensajeNombre.textContent = "No se pudo conectar con el servidor.";
-  } finally {
-    botonSiguiente.disabled = false;
-    if (textoBoton) textoBoton.textContent = "Siguiente paso";
-  }
+        // Simulación de respuesta exitosa mientras configuras el backend
+        console.log("Datos listos para enviar a MySQL:", datos);
+
+        // Redireccionar al Paso 2
+        window.location.href = "Configuracion-Paso2.html";
+
+    } catch (error) {
+        console.error("Error al conectar con la API:", error);
+        mensajeNombre.textContent = "No se pudo conectar con el servidor. Inténtalo más tarde.";
+    } finally {
+        botonSiguiente.disabled = false;
+        textoBoton.textContent = "Siguiente paso";
+    }
 }
