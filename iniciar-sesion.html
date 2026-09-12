@@ -4,23 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Inicia sesión - Mi hogar inteligente</title>
 
     <!-- Fuentes -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
-        rel="stylesheet"
-    >
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
     <!-- Iconos -->
-    <link
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
-        rel="stylesheet"
-    >
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
 
     <!-- CSS -->
     <link rel="stylesheet" href="css/iniciar-sesion.css">
@@ -29,14 +21,10 @@
 <body>
 
     <!-- Fondo decorativo -->
-    <div class="fondo-decorativo">
-
+    <div class="fondo-decorativo" aria-hidden="true">
         <div class="decoracion-superior"></div>
-
         <div class="decoracion-inferior"></div>
-
     </div>
-
 
     <!-- CONTENIDO PRINCIPAL -->
     <main class="contenedor-principal">
@@ -46,177 +34,94 @@
 
             <!-- ENCABEZADO -->
             <header class="encabezado-login">
-
                 <div class="icono-marca">
-
-                    <span class="material-symbols-outlined">
-                        home_app_logo
-                    </span>
-
+                    <span class="material-symbols-outlined">home_app_logo</span>
                 </div>
-
-                <h1>
-                    Inicia sesión
-                </h1>
-
-                <p>
-                    Bienvenido de nuevo a tu hogar inteligente.
-                </p>
-
+                <h1>Inicia sesión</h1>
+                <p>Bienvenido de nuevo a tu hogar inteligente.</p>
             </header>
 
-
             <!-- FORMULARIO -->
-            <form
-                id="formulario-login"
-                class="formulario-login"
-            >
+            <form id="formulario-login" class="formulario-login" novalidate>
 
                 <!-- CORREO -->
                 <div class="grupo-formulario">
-
-                    <label for="correo">
-                        Correo
-                    </label>
+                    <label for="correo">Correo</label>
 
                     <div class="campo-con-icono">
-
-                        <span class="material-symbols-outlined">
-                            mail
-                        </span>
-
-                        <input
-                            type="email"
-                            id="correo"
-                            placeholder="tu@correo.com"
-                            required
+                        <span class="material-symbols-outlined" aria-hidden="true">mail</span>
+                        <input 
+                            type="email" 
+                            id="correo" 
+                            placeholder="tu@correo.com" 
+                            required 
+                            aria-describedby="mensaje-correo"
                         >
-
                     </div>
 
-                    <span
-                        id="mensaje-correo"
-                        class="mensaje-error"
-                    ></span>
-
+                    <span id="mensaje-correo" class="mensaje-error" aria-live="polite"></span>
                 </div>
-
 
                 <!-- CONTRASEÑA -->
                 <div class="grupo-formulario">
-
                     <div class="encabezado-contrasena">
-
-                        <label for="contrasena">
-                            Contraseña
-                        </label>
-
-                        <a
-                            href="#"
-                            id="enlace-contrasena"
-                        >
-                            ¿Olvidaste tu contraseña?
-                        </a>
-
+                        <label for="contrasena">Contraseña</label>
+                        <a href="#" id="enlace-contrasena">¿Olvidaste tu contraseña?</a>
                     </div>
-
 
                     <div class="campo-con-icono">
-
-                        <span class="material-symbols-outlined">
-                            lock
-                        </span>
-
-                        <input
-                            type="password"
-                            id="contrasena"
-                            placeholder="••••••••"
-                            required
+                        <span class="material-symbols-outlined" aria-hidden="true">lock</span>
+                        <input 
+                            type="password" 
+                            id="contrasena" 
+                            placeholder="••••••••" 
+                            required 
+                            aria-describedby="mensaje-contrasena"
                         >
-
-                        <button
-                            type="button"
-                            id="boton-mostrar-contrasena"
-                            class="boton-visibilidad"
+                        <button 
+                            type="button" 
+                            id="boton-mostrar-contrasena" 
+                            class="boton-visibilidad" 
                             aria-label="Mostrar contraseña"
                         >
-
-                            <span class="material-symbols-outlined">
-                                visibility_off
-                            </span>
-
+                            <span class="material-symbols-outlined">visibility_off</span>
                         </button>
-
                     </div>
 
-                    <span
-                        id="mensaje-contrasena"
-                        class="mensaje-error"
-                    ></span>
-
+                    <span id="mensaje-contrasena" class="mensaje-error" aria-live="polite"></span>
                 </div>
 
-
                 <!-- BOTÓN INICIAR SESIÓN -->
-                <button
-                    type="submit"
-                    id="boton-iniciar-sesion"
-                    class="boton-principal"
-                >
+                <button type="submit" id="boton-iniciar-sesion" class="boton-principal">
                     Iniciar sesión
                 </button>
 
             </form>
 
-
             <!-- DIVISOR -->
             <div class="divisor">
-
                 <div></div>
-
                 <span>o</span>
-
                 <div></div>
-
             </div>
 
-
             <!-- GOOGLE -->
-            <button
-                type="button"
-                id="boton-google"
-                class="boton-google"
-            >
-
-                <span class="material-symbols-outlined">
-                    account_circle
-                </span>
-
+            <button type="button" id="boton-google" class="boton-google">
+                <span class="material-symbols-outlined" aria-hidden="true">account_circle</span>
                 Continuar con Google
-
             </button>
-
 
             <!-- REGISTRO -->
             <div class="registro">
-
                 <p>
                     ¿No tienes cuenta?
-
-                    <a
-                        href="#"
-                        id="enlace-registro"
-                    >
-                        Regístrate
-                    </a>
+                    <a href="#" id="enlace-registro">Regístrate</a>
                 </p>
-
             </div>
 
         </div>
 
     </main>
-
 
     <!-- JavaScript -->
     <script src="js/iniciar-sesion.js"></script>

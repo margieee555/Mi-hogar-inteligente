@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configurar - Mi hogar inteligente</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:FILL@0..1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/configuracion-hogar.css">
+</head>
+
+<body>
+
+    <main class="contenedor-principal">
+
+        <header class="encabezado">
+            <div class="barra-progreso" role="progressbar" aria-valuenow="1" aria-valuemin="1" aria-valuemax="3">
+                <div class="progreso activo"></div>
+                <div class="progreso"></div>
+                <div class="progreso"></div>
+            </div>
+
+            <span class="numero-paso">PASO 1 DE 3</span>
+            <h1>¡Bienvenido a Mi hogar inteligente!</h1>
+            <p class="descripcion">Vamos a configurar algunos datos básicos de tu hogar.</p>
+        </header>
+
+        <form id="formulario-paso1" class="contenido" novalidate>
+
+            <!-- Grupo 1: Nombre del Hogar -->
+            <div class="grupo-formulario">
+                <label for="nombre-hogar">Nombre del hogar</label>
+                <input 
+                    type="text" 
+                    id="nombre-hogar" 
+                    name="nombreHogar"
+                    placeholder="Ej: Casa García, Mi apartamento" 
+                    maxlength="50"
+                    autocomplete="off"
+                    required
+                >
+                <span id="mensaje-nombre" class="mensaje-error" aria-live="polite"></span>
+            </div>
+
+            <!-- Grupo 2: Tipo de Vivienda -->
+            <div class="grupo-formulario">
+                <label>Tipo de vivienda</label>
+                <div class="opciones-vivienda" role="radiogroup" aria-label="Tipo de vivienda">
+
+                    <button 
+                        type="button" 
+                        class="tarjeta-vivienda seleccionada" 
+                        data-vivienda="Casa"
+                        role="radio"
+                        aria-checked="true"
+                    >
+                        <span class="material-symbols-outlined icono-vivienda">home</span>
+                        <span class="nombre-vivienda">Casa</span>
+                    </button>
+
+                    <button 
+                        type="button" 
+                        class="tarjeta-vivienda" 
+                        data-vivienda="Apartamento"
+                        role="radio"
+                        aria-checked="false"
+                    >
+                        <span class="material-symbols-outlined icono-vivienda">apartment</span>
+                        <span class="nombre-vivienda">Apartamento</span>
+                    </button>
+
+                    <button 
+                        type="button" 
+                        class="tarjeta-vivienda" 
+                        data-vivienda="Estudio"
+                        role="radio"
+                        aria-checked="false"
+                    >
+                        <span class="material-symbols-outlined icono-vivienda">night_shelter</span>
+                        <span class="nombre-vivienda">Estudio</span>
+                    </button>
+
+                    <button 
+                        type="button" 
+                        class="tarjeta-vivienda" 
+                        data-vivienda="Otro"
+                        role="radio"
+                        aria-checked="false"
+                    >
+                        <span class="material-symbols-outlined icono-vivienda">domain</span>
+                        <span class="nombre-vivienda">Otro</span>
+                    </button>
+
+                </div>
+            </div>
+
+            <!-- Grupo 3: Residentes -->
+            <div class="grupo-formulario">
+                <label>Número de residentes</label>
+                <div class="contador">
+                    <button 
+                        type="button" 
+                        id="boton-disminuir" 
+                        class="boton-contador" 
+                        aria-label="Disminuir residentes"
+                        disabled
+                    >
+                        <span class="material-symbols-outlined">remove</span>
+                    </button>
+
+                    <span id="cantidad-residentes" class="cantidad-residentes">1</span>
+
+                    <button 
+                        type="button" 
+                        id="boton-aumentar" 
+                        class="boton-contador" 
+                        aria-label="Aumentar residentes"
+                    >
+                        <span class="material-symbols-outlined">add</span>
+                    </button>
+                </div>
+                <p class="ayuda">Puedes registrar entre 1 y 20 residentes.</p>
+            </div>
+
+            <footer class="pie">
+                <button type="submit" id="boton-siguiente" class="boton-siguiente">
+                    <span id="texto-boton">Siguiente paso</span>
+                    <span class="material-symbols-outlined">arrow_forward</span>
+                </button>
+            </footer>
+
+        </form>
+
+    </main>
+
+    <script src="js/configuracion-hogar.js"></script>
+</body>
+
+</html>

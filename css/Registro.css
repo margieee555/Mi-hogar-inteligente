@@ -1,0 +1,17 @@
+@layer base {
+  :root {
+    --tw-colors-primary: #004ac6;
+  }
+}
+
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+.brand-bg-img {
+  background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDKYm98LMvPaNVKCDyBEMIU7OnHlVWSIMGM9K1CPH3bJ1PBb1eGxUF1oNRC35rO72v99t0mrQ20KzLcyENsitavbAr56PZnhTuM9vgXoGQTmMNFwu-CNNSc93MjjHeQy72zxCe8T05HsW2pHxwQsRn7F-Al9Rue_U7LFlw9iDQwzHvGfAYa6tHdBr2TMiFEPGskcsbigrsvQ5ez2LCnZzWPfP9-Bw9QdyBKxRis5OzTDulCcE8GMQvo9Q');
+}
+
+body {
+  min-height: max(884px, 100dvh);
+}
