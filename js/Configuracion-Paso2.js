@@ -102,7 +102,7 @@ async function guardarPaso2(datos) {
         */
 
         console.log("Datos del paso 2 del hogar:", datos);
-        window.location.href = "paso3.html";
+        window.location.href = "Configuracion-paso3.html";
 
     } catch (error) {
         console.error("Error API:", error);

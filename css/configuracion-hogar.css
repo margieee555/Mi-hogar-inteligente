@@ -448,3 +448,81 @@ h1 {
     background: var(--color-campo-fondo);
     border-color: #c5cedc;
 }
+/* ==========================================
+   ESTILOS ESPECÍFICOS PARA EL PASO 3
+   ========================================== */
+
+.red-zonas {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+    gap: 12px;
+}
+
+.tarjeta-zona {
+    position: relative;
+    cursor: pointer;
+    user-select: none;
+}
+
+/* Ocultar el checkbox nativo */
+.tarjeta-zona input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+/* Contenedor visual de la tarjeta */
+.contenido-tarjeta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 16px 12px;
+    border: 2px solid transparent;
+    border-radius: 14px;
+    background: var(--color-campo-fondo);
+    color: var(--color-texto-principal);
+    text-align: center;
+    transition: all 0.2s ease;
+}
+
+.icono-zona {
+    font-size: 28px;
+    color: var(--color-texto-secundario);
+    transition: color 0.2s ease;
+}
+
+.nombre-zona {
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+/* Estado al pasar el cursor */
+.tarjeta-zona:hover .contenido-tarjeta {
+    background: #e8f0fe;
+}
+
+/* Estado Seleccionado (Checked) */
+.tarjeta-zona input[type="checkbox"]:checked + .contenido-tarjeta {
+    background: var(--color-superficie);
+    border-color: var(--color-primario);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.12);
+}
+
+.tarjeta-zona input[type="checkbox"]:checked + .contenido-tarjeta .icono-zona {
+    color: var(--color-primario);
+}
+
+.tarjeta-zona input[type="checkbox"]:checked + .contenido-tarjeta .nombre-zona {
+    font-weight: 600;
+    color: var(--color-primario);
+}
+
+/* Estado Focus para accesibilidad */
+.tarjeta-zona input[type="checkbox"]:focus-visible + .contenido-tarjeta {
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.3);
+}
