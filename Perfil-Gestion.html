@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html class="light" lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Mi Hogar Inteligente - Perfil y Gestión Familiar</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/Perfil-Gestion.css">
+</head>
+<body class="page-body">
+
+    <!-- Navegación lateral (Escritorio) -->
+    <aside class="desktop-sidebar">
+        <div class="sidebar-brand">
+            <span class="material-symbols-outlined brand-logo">home_app_logo</span>
+            <span class="brand-title">Mi Hogar Inteligente</span>
+        </div>
+        <div class="sidebar-user-profile">
+            <img class="sidebar-avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdmHpbogRcyzI1psmy6zxbYHGIbnmTDQircAIcDNz5YS2pxd9-WGIx2P2qWxR94jYfHAp2gHtl4v0ZQUOtLv0uHIwHzAHu543aoyR2uUA5DCtwAiaCbT1ujXOh59OAg0mC4Pjc3PG1q_ZR5wTTlfDc9xHSSXpspNoafyoYYJoKHZ6PgmS0Qp-U7BLPrMLu7hy7rkrTlGvpLm7HRgf8LghyC7Low0NPAFtrWhU3d1OCgbZ2KsI3RQ1LeA" alt="Avatar">
+            <div>
+                <h3 class="sidebar-user-name">Mi Hogar</h3>
+                <p class="sidebar-user-role">Administrador • Premium</p>
+            </div>
+        </div>
+        <nav class="sidebar-nav">
+            <a class="nav-item" href="#">
+                <span class="material-symbols-outlined">calendar_month</span>
+                <span>Calendario</span>
+            </a>
+            <a class="nav-item" href="#">
+                <span class="material-symbols-outlined">inventory_2</span>
+                <span>Inventario</span>
+            </a>
+            <a class="nav-item" href="#">
+                <span class="material-symbols-outlined">analytics</span>
+                <span>Reportes</span>
+            </a>
+            <a class="nav-item active" href="#">
+                <span class="material-symbols-outlined icon-fill">person</span>
+                <span>Perfil</span>
+            </a>
+        </nav>
+    </aside>
+
+    <!-- Contenedor Principal -->
+    <div class="main-container">
+        
+        <!-- Top App Bar (Móvil) -->
+        <header class="mobile-top-bar">
+            <div class="mobile-brand-container">
+                <img class="mobile-top-avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBoz4aykxlTi__6qJcp9ShN0TiWz258TsE1e9rKX0cgj6lf4zkZ9LqBdDTYGePBDsSTMeVwEPKbTVz2A1Wzv-603XX09Z3pX8oLntHiWUcFQKipv_yZWsDYpgkX5xfJMHz1erbjjA36EAS4AUR3cb5sVgQYqNB83Nt6dQVgYzlxtFxQ28y_yqqbmNEwX1080wg9UzGTEviGy74lMeTiRPuCtWuTaa8K3GwLIH7P32hr4gITAvh5ffXSgg" alt="Avatar móvil">
+                <span class="mobile-title">Mi Hogar Inteligente</span>
+            </div>
+            <button class="icon-button" type="button" aria-label="Notificaciones">
+                <span class="material-symbols-outlined">notifications</span>
+            </button>
+        </header>
+
+        <!-- Contenido -->
+        <main class="content-scroll">
+            <div class="content-inner">
+                
+                <!-- Tarjeta Principal del Perfil -->
+                <section class="profile-card">
+                    <div class="profile-avatar-container group">
+                        <img class="profile-main-img" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCaMLnXonY7irP2MmMS9udzB4KXyc06gdS8MC6aXvPjGXS2XqCkndrSLUr5HeVMJN55fndW7qWyrMzLG26qyC97xfW2MejrTyRFun4ex1tYQ14yWMIj_Ov1inHe1GF7uzRS6YB4m5fvxIC7okNngPEEOVDK4do_qat7Lz7a-v-me3bRpPZo0eK7m43-oKIrpoIl5zCwg-nVqed80d-b6o5Si6nLbk5R3tH5xS-pWkvW9MXH5nLdvBnAeA" alt="Foto de perfil">
+                        <button class="avatar-edit-btn" type="button">
+                            <span class="material-symbols-outlined">edit</span>
+                        </button>
+                    </div>
+                    <div class="profile-info-text">
+                        <h1 class="profile-name">Carlos Mendoza</h1>
+                        <p class="profile-email">carlos.mendoza@gmail.com</p>
+                        <div class="profile-badges">
+                            <span class="badge-premium">Cuenta Premium</span>
+                            <span class="badge-admin">Administrador Principal</span>
+                        </div>
+                    </div>
+                    <button class="edit-profile-btn" type="button">Editar Perfil</button>
+                </section>
+
+                <!-- Grid Bento: Gestión Familiar & Ajustes / Seguridad -->
+                <div class="bento-grid">
+                    
+                    <!-- Gestión Familiar Completa -->
+                    <div class="bento-box">
+                        <div class="bento-header">
+                            <h2 class="bento-title">
+                                <span class="material-symbols-outlined text-primary">diversity_3</span>
+                                Gestión Familiar
+                            </h2>
+                            <button class="icon-button primary-hover" type="button" aria-label="Añadir miembro">
+                                <span class="material-symbols-outlined">person_add</span>
+                            </button>
+                        </div>
+                        
+                        <!-- Lista de Miembros -->
+                        <ul class="member-list">
+                            <li class="member-item">
+                                <div class="member-details">
+                                    <img class="member-avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7Wqpanf2Ht0yTeVlcgGvKNQkiM8djCXN_Hic9bDblNrpvvybUiK3eeAA8-rXn9m1BDPQ0wSm2vqBFx60mijhMKgTO9A9MXW08ZdPGG4cQSFpT4dmF24dZikX1lN1qxyFHNnKKN-ZMtlJRQskU7LMFoO0rUyfjPT-8L29jZI-VuhpRFGKaqtMlgQ6DiEPV4wj6-rzf6XLUe961Kzzs3Ht0YSyF0aVVRor-Q3-HwNXi3kb6Bd5bODbIXg" alt="Carlos">
+                                    <div>
+                                        <p class="member-name">Carlos Mendoza (Tú)</p>
+                                        <p class="member-role">Administrador</p>
+                                    </div>
+                                </div>
+                                <span class="material-symbols-outlined options-icon">more_vert</span>
+                            </li>
+                            <li class="member-item">
+                                <div class="member-details">
+                                    <img class="member-avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCb89Y92JUh2QrSjolnoSux11t10qqjy2mWDqbIW7b60PxUdG5imn7l4qkuo8u6jD-IdufrSfz1Ms14uSqGb8MfAMIykpTAPSHVtBjONjKP3FhQ6k3O-iXUtOKOnZe-RTsiC2YG-AEgmy9bOC35rPSR6hAvgKvhidrZ5gaWuE4pN7y662IGKstoChrzBFuyyghdAYrMC5jmcvNOvurG6BP8jlEmseUG1TDB-UrvpZMv9flYNCJkOaj9PQ" alt="Ana">
+                                    <div>
+                                        <p class="member-name">Ana García</p>
+                                        <p class="member-role">Miembro</p>
+                                    </div>
+                                </div>
+                                <span class="material-symbols-outlined options-icon">more_vert</span>
+                            </li>
+                            <li class="member-item">
+                                <div class="member-details">
+                                    <div class="member-avatar-fallback">L</div>
+                                    <div>
+                                        <p class="member-name">Luis Mendoza</p>
+                                        <p class="member-role">Miembro (Hijo)</p>
+                                    </div>
+                                </div>
+                                <span class="material-symbols-outlined options-icon">more_vert</span>
+                            </li>
+                        </ul>
+
+                        <!-- Invitaciones Pendientes integradas -->
+                        <div class="pending-section">
+                            <h3 class="pending-title">
+                                <span class="material-symbols-outlined text-tertiary">mail</span>
+                                Invitaciones Pendientes
+                            </h3>
+                            <div class="pending-card">
+                                <div class="pending-info">
+                                    <div class="pending-icon-wrap">
+                                        <span class="material-symbols-outlined text-sm">schedule</span>
+                                    </div>
+                                    <div>
+                                        <p class="pending-email">abuela.mendoza@email.com</p>
+                                        <p class="pending-time">Enviada hace 2 días</p>
+                                    </div>
+                                </div>
+                                <span class="pending-badge">Pendiente</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Columna Derecha: Ajustes y Seguridad -->
+                    <div class="bento-column-right">
+                        
+                        <!-- Ajustes Rápidos -->
+                        <div class="bento-box">
+                            <h2 class="bento-title border-bottom">
+                                <span class="material-symbols-outlined text-primary">tune</span>
+                                Ajustes rápidos
+                            </h2>
+                            <div class="settings-list">
+                                <div class="setting-item" id="darkModeToggle">
+                                    <div class="setting-left">
+                                        <span class="material-symbols-outlined text-on-surface-variant">dark_mode</span>
+                                        <span>Tema Oscuro</span>
+                                    </div>
+                                    <div class="toggle-switch">
+                                        <div class="toggle-dot"></div>
+                                    </div>
+                                </div>
+                                <div class="setting-item">
+                                    <div class="setting-left">
+                                        <span class="material-symbols-outlined text-on-surface-variant">language</span>
+                                        <span>Idioma</span>
+                                    </div>
+                                    <span class="setting-right-text">Español <span class="material-symbols-outlined text-sm">chevron_right</span></span>
+                                </div>
+                                <div class="setting-item">
+                                    <div class="setting-left">
+                                        <span class="material-symbols-outlined text-on-surface-variant">notifications_active</span>
+                                        <span>Notificaciones</span>
+                                    </div>
+                                    <span class="material-symbols-outlined text-primary text-sm">chevron_right</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Seguridad -->
+                        <div class="bento-box">
+                            <h2 class="bento-title border-bottom">
+                                <span class="material-symbols-outlined text-primary">security</span>
+                                Seguridad
+                            </h2>
+                            <div class="security-list">
+                                <button class="security-btn" type="button">
+                                    <span>Cambio de contraseña</span>
+                                    <span class="material-symbols-outlined text-outline text-sm">chevron_right</span>
+                                </button>
+                                <button class="security-btn" type="button">
+                                    <span>Privacidad de datos</span>
+                                    <span class="material-symbols-outlined text-outline text-sm">chevron_right</span>
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Cerrar Sesión -->
+                <div class="logout-container">
+                    <button class="logout-btn" type="button">
+                        <span class="material-symbols-outlined">logout</span>
+                        Cerrar sesión
+                    </button>
+                </div>
+
+            </div>
+        </main>
+
+        <!-- Barra de Navegación Inferior (Móvil) -->
+        <nav class="mobile-bottom-nav">
+            <a class="bottom-nav-item" href="#">
+                <span class="material-symbols-outlined">home</span>
+                <span class="bottom-nav-label">Inicio</span>
+            </a>
+            <a class="bottom-nav-item" href="#">
+                <span class="material-symbols-outlined">payments</span>
+                <span class="bottom-nav-label">Finanzas</span>
+            </a>
+            <a class="bottom-nav-item" href="#">
+                <span class="material-symbols-outlined">shopping_cart</span>
+                <span class="bottom-nav-label">Compras</span>
+            </a>
+            <a class="bottom-nav-item" href="#">
+                <span class="material-symbols-outlined">assignment_turned_in</span>
+                <span class="bottom-nav-label">Tareas</span>
+            </a>
+            <a class="bottom-nav-item active" href="#">
+                <span class="material-symbols-outlined icon-fill">person</span>
+                <span class="bottom-nav-label">Perfil</span>
+            </a>
+        </nav>
+    </div>
+
+    <script src="js/Perfil-Gestion.js"></script>
+</body>
+</html>
