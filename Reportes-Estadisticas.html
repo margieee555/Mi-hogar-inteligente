@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html class="light" lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reportes - Mi Hogar Inteligente</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="css/Reportes-Estadisticas.css">
+</head>
+<body class="app-body" data-mode="connect">
+    <svg class="inline-defs-container" aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden"></svg>
+
+    <!-- Sidebar Navigation (Desktop) / NavigationDrawer -->
+    <nav class="desktop-sidebar">
+        <!-- Header -->
+        <div class="sidebar-header">
+            <img class="sidebar-avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBeh3IRgSJVtLtKkmu-9-DbhQe0X503_MVhoCEem4zS3DkhvTq_e6XhLDBue9EqZR35ao-dMUsk3fvChG-eKR_vKyDL8KSyRrAtoJ_wP-tRk3y0r0Qpxp40JSw_wFLDUDhQpXNcwziRVshaePgy9yb-ZQwQyPGnTtXwwHuNJUqzYwONY9X24ptwfyaOimUpZI7kb8QLcbhCd2afMGeyZ2nfgMUNWubJUfGlyQpdOuRycMD3917904RmBQ" alt="Avatar">
+            <div>
+                <h2 class="sidebar-title">Mi Hogar</h2>
+                <p class="sidebar-subtitle">Administrador</p>
+                <span class="sidebar-badge">Premium</span>
+            </div>
+        </div>
+        <!-- Links -->
+        <ul class="sidebar-menu">
+            <li>
+                <a class="sidebar-link" href="#">
+                    <span class="material-symbols-outlined">calendar_month</span>
+                    <span>Calendario</span>
+                </a>
+            </li>
+            <li>
+                <a class="sidebar-link" href="#">
+                    <span class="material-symbols-outlined">inventory_2</span>
+                    <span>Inventario</span>
+                </a>
+            </li>
+            <li>
+                <a class="sidebar-link active" href="#">
+                    <span class="material-symbols-outlined fill">analytics</span>
+                    <span>Reportes</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Top App Bar (Mobile Only) -->
+    <header class="mobile-header">
+        <div class="mobile-header-brand">
+            <img class="mobile-avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6u-Qo27bjDQ7uH5gTsqwSHMOTEcz9k6y6pr3BsyS_6VjT8cgHt1E3hUj0V7hU4LDAGPTbpwuhlw6QELahFLiHuk_IQO1LdWG4O1Zayqd4Bn_Dc1kQfPhqJGgYOQ4fcgbVUee7RYf3r7gxjaQp2lrWQAyy2as2yXq9WfqGrXmGr5Pga_xtCCkX_OUSdKVvGm-3rWkQhiLx0i4EYlsHsXKcxGlWMdOEK99b3vavHWyhvh7R8f_h3-FaKQ" alt="Avatar">
+            <span>mi hogar inteligente</span>
+        </div>
+        <button class="notification-btn" aria-label="Notificaciones">
+            <span class="material-symbols-outlined">notifications</span>
+        </button>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+        <!-- Header & Actions -->
+        <div class="content-header-container">
+            <div>
+                <h1 class="main-title">Reportes</h1>
+                <p class="main-subtitle">Análisis financiero y de consumo</p>
+            </div>
+            <button class="export-btn" id="exportPdfBtn">
+                <span class="material-symbols-outlined">picture_as_pdf</span>
+                Exportar a PDF
+            </button>
+        </div>
+
+        <div class="dashboard-grid">
+            <!-- Controls (Bento Grid Item 1) -->
+            <div class="card control-card">
+                <div class="period-container">
+                    <span class="period-label">Periodo:</span>
+                    <div class="period-tabs">
+                        <button class="period-tab active" data-period="mensual">Mensual</button>
+                        <button class="period-tab" data-period="trimestral">Trimestral</button>
+                        <button class="period-tab" data-period="anual">Anual</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Evolución del Ahorro (Line Chart) -->
+            <div class="card saving-card">
+                <div class="card-header">
+                    <h3 class="card-title">
+                        <span class="material-symbols-outlined text-secondary">trending_up</span>
+                        Evolución del Ahorro
+                    </h3>
+                    <span class="saving-amount">+$1,250.00</span>
+                </div>
+                <div class="chart-box">
+                    <svg class="line-chart-svg" preserveAspectRatio="none" viewBox="0 0 100 100">
+                        <path d="M0,80 Q20,70 40,50 T80,30 T100,10" fill="none" stroke="#006e2f" stroke-linecap="round" stroke-width="3"></path>
+                        <path d="M0,80 Q20,70 40,50 T80,30 T100,10 L100,100 L0,100 Z" fill="url(#grad1)" opacity="0.2"></path>
+                        <defs>
+                            <linearGradient id="grad1" x1="0%" x2="0%" y1="0%" y2="100%">
+                                <stop offset="0%" style="stop-color:#006e2f;stop-opacity:1"></stop>
+                                <stop offset="100%" style="stop-color:#006e2f;stop-opacity:0"></stop>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                    <div class="chart-y-labels">
+                        <span>$2k</span>
+                        <span>$1.5k</span>
+                        <span>$1k</span>
+                        <span>$500</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Categoría de Mayor Gasto -->
+            <div class="card expense-card">
+                <div>
+                    <h3 class="card-title">
+                        <span class="material-symbols-outlined text-error">warning</span>
+                        Mayor Gasto
+                    </h3>
+                    <p class="card-desc">Categoría con más impacto este mes.</p>
+                </div>
+                <div class="expense-content">
+                    <div class="expense-icon-wrapper">
+                        <span class="material-symbols-outlined expense-icon">shopping_bag</span>
+                    </div>
+                    <h4 class="expense-title">Supermercado</h4>
+                    <p class="expense-val">-$840.50</p>
+                    <span class="expense-badge">+15% vs mes anterior</span>
+                </div>
+            </div>
+
+            <!-- Gráfico Comparativo (Bar Chart) -->
+            <div class="card comparative-card">
+                <h3 class="card-title mb-custom">
+                    <span class="material-symbols-outlined text-primary">bar_chart</span>
+                    Comparativo de Gastos (Últimos 3 meses)
+                </h3>
+                <div class="bar-chart-container">
+                    <div class="bar-y-labels">
+                        <span>$3k</span>
+                        <span>$2k</span>
+                        <span>$1k</span>
+                        <span>$0</span>
+                    </div>
+                    <!-- Month 1 -->
+                    <div class="bar-group">
+                        <div class="bars-wrapper">
+                            <div class="bar fixed-bar" style="height: 80%;">
+                                <div class="tooltip">$2,400</div>
+                            </div>
+                            <div class="bar saving-bar" style="height: 50%;">
+                                <div class="tooltip">$1,500</div>
+                            </div>
+                        </div>
+                        <span class="bar-label">Septiembre</span>
+                    </div>
+                    <!-- Month 2 -->
+                    <div class="bar-group">
+                        <div class="bars-wrapper">
+                            <div class="bar fixed-bar" style="height: 90%;">
+                                <div class="tooltip">$2,700</div>
+                            </div>
+                            <div class="bar saving-bar" style="height: 60%;">
+                                <div class="tooltip">$1,800</div>
+                            </div>
+                        </div>
+                        <span class="bar-label">Octubre</span>
+                    </div>
+                    <!-- Month 3 -->
+                    <div class="bar-group">
+                        <div class="bars-wrapper">
+                            <div class="bar fixed-bar" style="height: 75%;">
+                                <div class="tooltip">$2,250</div>
+                            </div>
+                            <div class="bar saving-bar" style="height: 85%;">
+                                <div class="tooltip">$2,550</div>
+                            </div>
+                        </div>
+                        <span class="bar-label">Noviembre</span>
+                    </div>
+                </div>
+                <div class="chart-legend">
+                    <div class="legend-item"><div class="legend-dot bg-primary"></div><span>Gastos Fijos</span></div>
+                    <div class="legend-item"><div class="legend-dot bg-secondary"></div><span>Ahorro Generado</span></div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Bottom App Bar (Mobile Only) -->
+    <nav class="mobile-bottom-nav">
+        <a class="bottom-nav-item" href="#">
+            <span class="material-symbols-outlined">home</span>
+            <span class="bottom-nav-label">Inicio</span>
+        </a>
+        <a class="bottom-nav-item" href="#">
+            <span class="material-symbols-outlined">payments</span>
+            <span class="bottom-nav-label">Finanzas</span>
+        </a>
+        <a class="bottom-nav-item" href="#">
+            <span class="material-symbols-outlined">shopping_cart</span>
+            <span class="bottom-nav-label">Compras</span>
+        </a>
+        <a class="bottom-nav-item active" href="#">
+            <span class="material-symbols-outlined fill">assignment_turned_in</span>
+            <span class="bottom-nav-label">Tareas</span>
+        </a>
+        <a class="bottom-nav-item" href="#">
+            <span class="material-symbols-outlined">person</span>
+            <span class="bottom-nav-label">Perfil</span>
+        </a>
+    </nav>
+
+    <!-- Custom JavaScript -->
+    <script src="js/Reportes-Estadisticas.js"></script>
+</body>
+</html>
