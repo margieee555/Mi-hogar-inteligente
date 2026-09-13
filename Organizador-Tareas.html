@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html class="light" lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Mi Hogar Inteligente - Organización de Tareas</title>
+
+  <!-- Fuentes e Iconos -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Archivo CSS Personalizado -->
+  <link rel="stylesheet" href="css/Organizador-Tareas.css">
+</head>
+<body>
+
+  <!-- Menú Lateral de Escritorio -->
+  <nav class="desktop-nav">
+    <div class="profile-section">
+      <div class="avatar-container-lg">
+        <span class="material-symbols-outlined text-primary icono-relleno">person</span>
+      </div>
+      <div>
+        <h2 class="profile-name">Mi Hogar</h2>
+        <p class="profile-role">Administrador</p>
+        <span class="profile-badge">Premium</span>
+      </div>
+    </div>
+    <div class="nav-links">
+      <a class="nav-item" href="#">
+        <span class="material-symbols-outlined">calendar_month</span>
+        <span>Calendario</span>
+      </a>
+      <a class="nav-item" href="#">
+        <span class="material-symbols-outlined">inventory_2</span>
+        <span>Inventario</span>
+      </a>
+      <a class="nav-item" href="#">
+        <span class="material-symbols-outlined">analytics</span>
+        <span>Reportes</span>
+      </a>
+    </div>
+  </nav>
+
+  <!-- Contenedor General de la Interfaz -->
+  <div class="app-layout">
+    
+    <!-- Barra Superior Móvil -->
+    <header class="mobile-header">
+      <div class="header-left">
+        <div class="avatar-container-sm">
+          <span class="material-symbols-outlined text-primary icono-relleno">person</span>
+        </div>
+        <h1 class="header-title">
+          <span>mi hogar inteligente</span>
+        </h1>
+      </div>
+      <button class="icon-button">
+        <span class="material-symbols-outlined text-primary">notifications</span>
+      </button>
+    </header>
+
+    <!-- Contenido Principal -->
+    <main class="main-content">
+      <div class="section-header-container">
+        <h2 class="main-title">Organización de tareas</h2>
+        <div class="tabs-container">
+          <button class="tab-btn active">Mis tareas</button>
+          <button class="tab-btn">Hogar</button>
+        </div>
+      </div>
+
+      <!-- Filtros Interactivos -->
+      <div class="filters-container scrollbar-hide">
+        <button onclick="filtrarTareas('pendiente')" id="btn-pendiente" class="filter-btn active-filter">Pendiente</button>
+        <button onclick="filtrarTareas('proceso')" id="btn-proceso" class="filter-btn">En proceso</button>
+        <button onclick="filtrarTareas('completado')" id="btn-completado" class="filter-btn">Completado</button>
+      </div>
+
+      <!-- Cuadrícula Dinámica de Tareas -->
+      <div id="contenedor-tareas" class="tasks-grid">
+        <!-- Renderizado por JavaScript -->
+      </div>
+    </main>
+  </div>
+
+  <!-- Barra de Navegación Inferior (Móvil) -->
+  <nav class="mobile-footer-nav">
+    <a class="footer-nav-item" href="#">
+      <span class="material-symbols-outlined">home</span>
+      <span class="footer-label">Inicio</span>
+    </a>
+    <a class="footer-nav-item" href="#">
+      <span class="material-symbols-outlined">payments</span>
+      <span class="footer-label">Finanzas</span>
+    </a>
+    <a class="footer-nav-item" href="#">
+      <span class="material-symbols-outlined">shopping_cart</span>
+      <span class="footer-label">Compras</span>
+    </a>
+    <a class="footer-nav-item active-footer-tab" href="#">
+      <span class="material-symbols-outlined icono-relleno">assignment_turned_in</span>
+      <span class="footer-label">Tareas</span>
+    </a>
+    <a class="footer-nav-item" href="#">
+      <span class="material-symbols-outlined">person</span>
+      <span class="footer-label">Perfil</span>
+    </a>
+  </nav>
+
+  <!-- Script principal -->
+  <script src="js/Organizador-Tareas.js"></script>
+</body>
+</html>

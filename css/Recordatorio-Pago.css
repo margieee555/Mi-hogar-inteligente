@@ -1,5 +1,5 @@
-/* Configuración de clases y colores del diseño original para Tailwind */
-@theme {
+/* Variables estándar nativas de CSS (Completamente válidas para cualquier versión de CSS) */
+:root {
   --color-on-tertiary-fixed-variant: #653e00;
   --color-on-primary-container: #eeefff;
   --color-primary-fixed-dim: #b4c5ff;

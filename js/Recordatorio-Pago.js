@@ -1,4 +1,4 @@
-// Configuración dinámica de la paleta personalizada para Tailwind CDN
+// Configuración completa de Tailwind mapeada mediante JavaScript (Reemplaza al @theme)
 if (window.tailwind) {
   tailwind.config = {
     darkMode: "class",
@@ -68,7 +68,7 @@ if (window.tailwind) {
   };
 }
 
-// Estructura de datos dinámica preparada para conectar con la base de datos
+// Datos simulados listos para conectar con la base de datos
 const serviciosPagos = [
   {
     id: 1,
@@ -171,7 +171,7 @@ function renderizarPagos() {
   });
 }
 
-// Función interactiva para marcar pagos (lista para conectar mediante Fetch/Axios a la BD)
+// Función interactiva para marcar pagos (preparada para backend/BD)
 function procesarPago(idServicio) {
   const servicio = serviciosPagos.find(s => s.id === idServicio);
   if (servicio && servicio.estado === "pendiente") {
