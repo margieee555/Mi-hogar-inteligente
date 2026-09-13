@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Hogar Inteligente - Gestión Financiera</title>
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Material Symbols -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="css/Gestion-Financiera.css">
+</head>
+<body class="app-body" data-mode="connect">
+
+    <!-- TopAppBar -->
+    <header class="app-header">
+        <div class="header-container">
+            <div class="header-brand">
+                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCWrafFZVD3NxQGa1qkjshFePVCRnXDkZPXDiBhehzAz7ptROZNdTG7b_dFGWab_kMlXRk3N4ZzKhQODWgHV9wxP4IlJg2tfUbyjpkcFLjVMnnu2EN2a6_-wUQlhsEdW3SUfPXI4rAdrH8Bm5Kpr_6IKJhU5yb3-MCEDuuYkRyE3aXbxYuB2J7sYL7Hi5YJQoydngaNo14vW3UW50Q505l7TDyTfqKhr4_MyAkXmtDNLGpe5E1ljoxtrg" alt="Foto de perfil del usuario" class="profile-avatar">
+                <h1><span>mi hogar digital</span></h1>
+            </div>
+            <button aria-label="notifications" class="notification-btn">
+                <span class="material-symbols-outlined">notifications</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content Canvas -->
+    <main class="main-content">
+        <div class="bento-grid">
+            <!-- Balance Card (Financial Standard) -->
+            <div class="card balance-card">
+                <div>
+                    <h2>Balance Total</h2>
+                    <p class="balance-amount">$4,250.00</p>
+                </div>
+                <div class="balance-details">
+                    <div class="stat-box">
+                        <span class="stat-label income"><span class="material-symbols-outlined">arrow_upward</span> Ingresos</span>
+                        <span class="stat-value">$5,800.00</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-label expense"><span class="material-symbols-outlined">arrow_downward</span> Gastos</span>
+                        <span class="stat-value">$1,550.00</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Expense Visualization -->
+            <div class="card expense-card">
+                <div class="card-header">
+                    <h2>Gasto por Categoría</h2>
+                    <button class="detail-btn">Ver detalle</button>
+                </div>
+                <div class="chart-container">
+                    <!-- Hogar -->
+                    <div class="chart-row">
+                        <div class="chart-label"><span class="material-symbols-outlined">home</span> Hogar</div>
+                        <div class="progress-track">
+                            <div class="progress-bar hogar" style="width: 45%;"></div>
+                        </div>
+                        <div class="chart-value">$700</div>
+                    </div>
+                    <!-- Comida -->
+                    <div class="chart-row">
+                        <div class="chart-label"><span class="material-symbols-outlined">restaurant</span> Comida</div>
+                        <div class="progress-track">
+                            <div class="progress-bar comida" style="width: 30%;"></div>
+                        </div>
+                        <div class="chart-value">$450</div>
+                    </div>
+                    <!-- Ocio -->
+                    <div class="chart-row">
+                        <div class="chart-label"><span class="material-symbols-outlined">sports_esports</span> Ocio</div>
+                        <div class="progress-track">
+                            <div class="progress-bar ocio" style="width: 15%;"></div>
+                        </div>
+                        <div class="chart-value">$250</div>
+                    </div>
+                    <!-- Salud -->
+                    <div class="chart-row">
+                        <div class="chart-label"><span class="material-symbols-outlined">medical_services</span> Salud</div>
+                        <div class="progress-track">
+                            <div class="progress-bar salud" style="width: 10%;"></div>
+                        </div>
+                        <div class="chart-value">$150</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Savings Goals Widget -->
+            <div class="card goals-card">
+                <div class="goals-header">
+                    <span class="material-symbols-outlined">target</span>
+                    <h2>Metas de ahorro</h2>
+                </div>
+                <div class="goals-list">
+                    <!-- Fondo de emergencia -->
+                    <div class="goal-item">
+                        <div class="goal-info">
+                            <span class="goal-title">Fondo de emergencia</span>
+                            <span class="goal-percentage">65%</span>
+                        </div>
+                        <div class="progress-track">
+                            <div class="progress-bar emergency" style="width: 65%;"></div>
+                        </div>
+                        <p class="goal-caption">$3,250 / $5,000</p>
+                    </div>
+                    <!-- Vacaciones -->
+                    <div class="goal-item">
+                        <div class="goal-info">
+                            <span class="goal-title">Vacaciones</span>
+                            <span class="goal-percentage">30%</span>
+                        </div>
+                        <div class="progress-track">
+                            <div class="progress-bar vacation" style="width: 30%;"></div>
+                        </div>
+                        <p class="goal-caption">$600 / $2,000</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Transactions -->
+            <div class="card transactions-card">
+                <h2>Transacciones recientes</h2>
+                <div class="transactions-list">
+                    <!-- Transaction Item 1 -->
+                    <div class="transaction-item">
+                        <div class="transaction-left">
+                            <div class="transaction-icon">
+                                <span class="material-symbols-outlined">restaurant</span>
+                            </div>
+                            <div>
+                                <h3>Supermercado</h3>
+                                <p>Comida • Hoy</p>
+                            </div>
+                        </div>
+                        <span class="transaction-amount negative">-$120.50</span>
+                    </div>
+                    <!-- Transaction Item 2 -->
+                    <div class="transaction-item">
+                        <div class="transaction-left">
+                            <div class="transaction-icon success">
+                                <span class="material-symbols-outlined">payments</span>
+                            </div>
+                            <div>
+                                <h3>Transferencia recibida</h3>
+                                <p>Ingreso • Ayer</p>
+                            </div>
+                        </div>
+                        <span class="transaction-amount positive">+$850.00</span>
+                    </div>
+                    <!-- Transaction Item 3 -->
+                    <div class="transaction-item">
+                        <div class="transaction-left">
+                            <div class="transaction-icon">
+                                <span class="material-symbols-outlined">home</span>
+                            </div>
+                            <div>
+                                <h3>Mantenimiento</h3>
+                                <p>Hogar • 12 Oct</p>
+                            </div>
+                        </div>
+                        <span class="transaction-amount negative">-$200.00</span>
+                    </div>
+                </div>
+                <button class="view-all-btn">Ver todas las transacciones</button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Floating Action Button (FAB) Contextual -->
+    <button aria-label="Registrar ingreso o gasto" class="fab-btn" id="fabBtn">
+        <span class="material-symbols-outlined fab-icon">add</span>
+    </button>
+
+    <!-- BottomNavBar (Mobile Responsive) -->
+    <nav class="bottom-nav">
+        <a class="nav-item" href="#">
+            <span class="material-symbols-outlined">home</span>
+            <span class="nav-label">Inicio</span>
+        </a>
+        <a class="nav-item active" href="#">
+            <span class="material-symbols-outlined icon-fill">payments</span>
+            <span class="nav-label">Finanzas</span>
+        </a>
+        <a class="nav-item" href="#">
+            <span class="material-symbols-outlined">shopping_cart</span>
+            <span class="nav-label">Compras</span>
+        </a>
+        <a class="nav-item" href="#">
+            <span class="material-symbols-outlined">assignment_turned_in</span>
+            <span class="nav-label">Tareas</span>
+        </a>
+        <a class="nav-item" href="#">
+            <span class="material-symbols-outlined">person</span>
+            <span class="nav-label">Perfil</span>
+        </a>
+    </nav>
+
+    <!-- Custom JavaScript -->
+    <script src="js/Gestion-Financiera.js"></script>
+</body>
+</html>
