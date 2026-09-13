@@ -1,0 +1,75 @@
+:root {
+    --color-primario: #2563eb;
+    --color-primario-hover: #004ac6;
+    --color-contenedor-primario: #2563eb;
+    --color-sobre-primario: #ffffff;
+    --color-fondo: #f8f9ff;
+    --color-superficie: #ffffff;
+    --color-superficie-bajo: #eff4ff;
+    --color-campo-fondo: #e5eeff;
+    --color-texto-principal: #0b1c30;
+    --color-texto-secundario: #434655;
+    --color-texto-mutado: #737686;
+    --color-borde: #c3c6d7;
+    --color-error: #ba1a1a;
+    --fuente-principal: "Inter", sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    font-family: var(--fuente-principal);
+}
+
+.material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+.icono-relleno {
+    font-variation-settings: 'FILL' 1 !important;
+}
+
+/* Estilos compartidos para tarjetas de autenticación */
+.tarjeta-auth {
+    background-color: var(--color-superficie);
+    border-radius: 24px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(195, 198, 215, 0.3);
+}
+
+.campo-con-icono {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.campo-con-icono > span:first-child {
+    position: absolute;
+    left: 16px;
+    color: var(--color-texto-mutado);
+    font-size: 24px;
+    pointer-events: none;
+}
+
+.campo-con-icono input {
+    width: 100%;
+    height: 48px;
+    padding: 0 44px;
+    border: none;
+    border-radius: 12px;
+    outline: none;
+    background: var(--color-campo-fondo);
+    color: var(--color-texto-principal);
+    font-size: 14px;
+    transition: background 0.2s, box-shadow 0.2s;
+}
+
+.campo-con-icono input:focus {
+    background: var(--color-superficie);
+    box-shadow: 0 0 0 2px var(--color-primario);
+}

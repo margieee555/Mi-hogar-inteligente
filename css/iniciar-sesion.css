@@ -1,21 +1,3 @@
-:root {
-    --color-primario: #2563eb;
-    --color-primario-hover: #004ac6;
-    --color-fondo: #f8f9ff;
-    --color-superficie: #ffffff;
-    --color-texto-principal: #0b1c30;
-    --color-texto-secundario: #434655;
-    --color-texto-mutado: #737686;
-    --color-campo-fondo: #e5eeff;
-    --color-error: #ba1a1a;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 body {
     min-height: 100vh;
     display: flex;
@@ -23,12 +5,9 @@ body {
     justify-content: center;
     padding: 24px;
     background: var(--color-fondo);
-    font-family: "Inter", sans-serif;
-    color: var(--color-texto-principal);
     overflow: hidden;
 }
 
-/* Elementos Visuales de Fondo */
 .fondo-decorativo {
     position: absolute;
     inset: 0;
@@ -75,12 +54,8 @@ body {
     flex-direction: column;
     gap: 32px;
     padding: 32px;
-    background: var(--color-superficie);
-    border-radius: 24px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
 }
 
-/* Encabezado */
 .encabezado-login {
     display: flex;
     flex-direction: column;
@@ -103,7 +78,6 @@ body {
 
 .icono-marca span {
     font-size: 28px;
-    font-variation-settings: "FILL" 1;
 }
 
 .encabezado-login h1 {
@@ -119,7 +93,6 @@ body {
     line-height: 20px;
 }
 
-/* Formulario */
 .formulario-login {
     width: 100%;
     display: flex;
@@ -158,44 +131,6 @@ body {
     color: var(--color-primario-hover);
 }
 
-/* Inputs con Icono */
-.campo-con-icono {
-    position: relative;
-    display: flex;
-    align-items: center;
-}
-
-.campo-con-icono > span {
-    position: absolute;
-    left: 16px;
-    color: var(--color-texto-mutado);
-    font-size: 24px;
-    pointer-events: none;
-}
-
-.campo-con-icono input {
-    width: 100%;
-    height: 48px;
-    padding: 0 44px 0 44px;
-    border: none;
-    border-radius: 12px;
-    outline: none;
-    background: var(--color-campo-fondo);
-    color: var(--color-texto-principal);
-    font-family: "Inter", sans-serif;
-    font-size: 14px;
-    transition: background 0.2s, box-shadow 0.2s;
-}
-
-.campo-con-icono input::placeholder {
-    color: var(--color-texto-mutado);
-}
-
-.campo-con-icono input:focus {
-    background: var(--color-superficie);
-    box-shadow: 0 0 0 2px var(--color-primario);
-}
-
 .boton-visibilidad {
     position: absolute;
     right: 12px;
@@ -224,7 +159,6 @@ body {
     font-size: 12px;
 }
 
-/* Botones de Acción */
 .boton-principal {
     width: 100%;
     height: 50px;
@@ -234,7 +168,6 @@ body {
     border-radius: 16px;
     background: var(--color-primario);
     color: #ffffff;
-    font-family: "Inter", sans-serif;
     font-size: 16px;
     font-weight: 600;
     cursor: pointer;
@@ -249,54 +182,6 @@ body {
 
 .boton-principal:active {
     transform: scale(0.98);
-}
-
-.divisor {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    gap: 16px;
-}
-
-.divisor div {
-    height: 1px;
-    flex: 1;
-    background: rgba(115, 118, 134, 0.30);
-}
-
-.divisor span {
-    color: var(--color-texto-mutado);
-    font-size: 14px;
-}
-
-.boton-google {
-    width: 100%;
-    height: 48px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    padding: 0 24px;
-    border: 1px solid rgba(115, 118, 134, 0.50);
-    border-radius: 16px;
-    background: transparent;
-    color: var(--color-texto-principal);
-    font-family: "Inter", sans-serif;
-    font-size: 16px;
-    cursor: pointer;
-    transition: all 0.2s ease;
-}
-
-.boton-google:hover {
-    background: #eff4ff;
-}
-
-.boton-google:active {
-    transform: scale(0.98);
-}
-
-.boton-google span {
-    font-size: 20px;
 }
 
 .registro {
@@ -322,21 +207,17 @@ body {
     color: var(--color-primario-hover);
 }
 
-/* Responsividad */
 @media (max-width: 480px) {
     body {
         padding: 16px;
     }
-
     .tarjeta-login {
         padding: 24px;
         gap: 28px;
     }
-
     .encabezado-login h1 {
         font-size: 24px;
     }
-
     .encabezado-contrasena {
         align-items: flex-start;
         flex-direction: column;

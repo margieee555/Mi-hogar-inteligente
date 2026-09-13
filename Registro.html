@@ -4,118 +4,52 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <title>Registro - Mi Hogar Inteligente</title>
-
-    <!-- Tipografías e Íconos -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
-
-    <!-- Hoja de Estilos Externa -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/Estilos-Globales.css">
     <link rel="stylesheet" href="css/Registro.css">
 </head>
 <body class="cuerpo-registro">
-
-    <!-- Sección Izquierda: Branding de Fondo (Escritorio) -->
-    <aside class="panel-decorativo">
-        <div class="imagen-fondo-decorativa" 
-             alt="Fotografía de un espacio interior moderno y minimalista"></div>
-        <div class="capa-degradado"></div>
-        <div class="contenido-marcado">
-            <div class="tarjeta-icono-marca">
-                <span class="material-symbols-outlined icono-grande icono-relleno">home_app_logo</span>
-            </div>
-            <h1 class="titulo-marca">Mi Hogar Inteligente</h1>
-            <p class="eslogan-marca">
-                Transformando la complejidad del hogar en una experiencia serena y estructurada.
-            </p>
-        </div>
-    </aside>
-
-    <!-- Sección Derecha: Formulario de Interacción -->
     <main class="panel-formulario">
         <div class="contenedor-formulario">
-
-            <!-- Encabezado Móvil de la Marca -->
-            <header class="encabezado-marca-movil">
-                <div class="icono-marca-movil">
-                    <span class="material-symbols-outlined icono-relleno">home_app_logo</span>
-                </div>
-                <span class="texto-marca-movil">Mi Hogar Inteligente</span>
-            </header>
-
-            <!-- Tarjeta Principal del Formulario -->
-            <section class="tarjeta-formulario">
+            <section class="tarjeta-formulario tarjeta-auth">
                 <div class="encabezado-seccion">
                     <h2 class="titulo-formulario">Crea tu cuenta</h2>
                     <p class="subtitulo-formulario">Comienza a organizar tu entorno familiar hoy mismo.</p>
                 </div>
-
                 <form id="formulario-registro" class="formulario-registro">
-                    
-                    <!-- Campo: Nombre -->
                     <div class="grupo-campo">
-                        <label class="etiqueta-campo" for="nombre">Nombre completo</label>
-                        <div class="contenedor-entrada">
-                            <span class="material-symbols-outlined icono-campo">person</span>
-                            <input class="entrada-texto" id="nombre" name="nombre_completo" type="text" placeholder="Ej. Ana García" required>
+                        <label class="etiqueta-campo" for="nombre_completo">Nombre completo</label>
+                        <div class="campo-con-icono">
+                            <span class="material-symbols-outlined">person</span>
+                            <input class="entrada-texto" id="nombre_completo" name="nombre_completo" type="text" placeholder="Ej. Ana García" required>
                         </div>
                     </div>
-
-                    <!-- Campo: Correo -->
                     <div class="grupo-campo">
-                        <label class="etiqueta-campo" for="correo">Correo electrónico</label>
-                        <div class="contenedor-entrada">
-                            <span class="material-symbols-outlined icono-campo">mail</span>
-                            <input class="entrada-texto" id="correo" name="correo_electronico" type="email" placeholder="ana@ejemplo.com" required>
+                        <label class="etiqueta-campo" for="correo_electronico">Correo electrónico</label>
+                        <div class="campo-con-icono">
+                            <span class="material-symbols-outlined">mail</span>
+                            <input class="entrada-texto" id="correo_electronico" name="correo_electronico" type="email" placeholder="ana@ejemplo.com" required>
                         </div>
                     </div>
-
-                    <!-- Campo: Contraseña -->
                     <div class="grupo-campo">
                         <label class="etiqueta-campo" for="contrasena">Contraseña</label>
-                        <div class="contenedor-entrada">
-                            <span class="material-symbols-outlined icono-campo">lock</span>
+                        <div class="campo-con-icono">
+                            <span class="material-symbols-outlined">lock</span>
                             <input class="entrada-texto" id="contrasena" name="contrasena" type="password" placeholder="••••••••" required>
-                            <button class="boton-alternar-visibilidad" id="boton-alternar-contrasena" type="button" aria-label="Mostrar u ocultar contraseña">
-                                <span class="material-symbols-outlined icono-visibilidad" id="icono-visibilidad-contrasena">visibility_off</span>
+                            <button class="boton-alternar-visibilidad" id="boton-alternar-contrasena" type="button">
+                                <span class="material-symbols-outlined" id="icono-visibilidad-contrasena">visibility_off</span>
                             </button>
                         </div>
                     </div>
-
-                    <!-- Campo: Confirmar Contraseña -->
-                    <div class="grupo-campo">
-                        <label class="etiqueta-campo" for="confirmar_contrasena">Confirmar contraseña</label>
-                        <div class="contenedor-entrada">
-                            <span class="material-symbols-outlined icono-campo">verified_user</span>
-                            <input class="entrada-texto" id="confirmar_contrasena" name="confirmar_contrasena" type="password" placeholder="••••••••" required>
-                        </div>
-                    </div>
-
-                    <!-- Botón Principal -->
-                    <button class="boton-primario-registro" type="submit">
-                        Crear cuenta
-                        <span class="material-symbols-outlined icono-pequeno">arrow_forward</span>
-                    </button>
+                    <button class="boton-primario-registro boton-principal" type="submit">Crear cuenta</button>
                 </form>
-
-                <!-- Divisor y Enlace de Iniciar Sesión -->
-                <div class="divisor-contenedor">
-                    <div class="linea-divisora"></div>
-                    <span class="texto-divisor">O</span>
-                    <div class="linea-divisora"></div>
-                </div>
-
-                <div class="pie-tarjeta">
-                    <p class="texto-pie">
-                        ¿Ya tienes una cuenta?
-                        <a href="iniciar-sesion.html" class="enlace-inicio-sesion">Iniciar sesión</a>
-                    </p>
+                <div class="pie-tarjeta" style="margin-top: 16px; text-align: center;">
+                    <p class="texto-pie">¿Ya tienes una cuenta? <a href="Iniciar-Sesion.html" class="enlace-inicio-sesion">Iniciar sesión</a></p>
                 </div>
             </section>
-
         </div>
     </main>
-
-    <!-- Archivo JS Externo -->
     <script src="js/Registro.js"></script>
 </body>
 </html>
