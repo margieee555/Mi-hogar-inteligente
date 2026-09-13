@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>mi hogar inteligente - Dashboard</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/Inicio-Rapido.css">
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col pt-16 pb-24 md:pb-0" data-mode="connect">
+    <!-- Barra Superior -->
+    <header class="app-header">
+        <div class="flex items-center gap-sm">
+            <span class="material-symbols-outlined text-primary dark:text-primary-fixed icon-fill">tap_and_play</span>
+            <span class="app-title">mi hogar inteligente</span>
+        </div>
+        <!-- Navegación de Escritorio -->
+        <nav class="hidden md:flex items-center gap-lg">
+            <a class="nav-link active" href="#">
+                <span class="material-symbols-outlined icon-fill">home</span>
+                Inicio
+            </a>
+            <a class="nav-link" href="#">
+                <span class="material-symbols-outlined">account_balance_wallet</span>
+                Finanzas
+            </a>
+            <a class="nav-link" href="#">
+                <span class="material-symbols-outlined">shopping_cart</span>
+                Compras
+            </a>
+            <a class="nav-link" href="#">
+                <span class="material-symbols-outlined">assignment</span>
+                Tareas
+            </a>
+        </nav>
+        <button class="notification-btn">
+            <span class="material-symbols-outlined">notifications</span>
+        </button>
+    </header>
+
+    <!-- Contenido Principal -->
+    <main class="flex-grow container mx-auto px-md py-lg max-w-container-max">
+        <!-- Tarjeta de Bienvenida -->
+        <section class="welcome-card">
+            <div class="flex-1 z-10">
+                <h1 class="welcome-title">
+                    ¡Bienvenido a casa, Julian Esteban!
+                </h1>
+                <p class="font-body-lg text-body-lg text-on-surface-variant mb-lg max-w-lg">
+                    Tu sistema de gestión del hogar está listo. Puedes empezar a organizar tu vida familiar, tareas y finanzas a tu propio ritmo.
+                </p>
+                <button class="explore-btn">
+                    <span class="material-symbols-outlined">explore</span>
+                    Explorar el Dashboard
+                </button>
+            </div>
+            <div class="welcome-image-container">
+                <div class="w-full h-full bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCJFMAXNjHs-yxx_lmym5heoHpE6sc9M_he9cJudky969BxcerEtOjWkqgnhWURF7aymReKhKyDnwcsDirUg9n8OmrxYbydWue2RQXZsJhbu3JN5drtF0pcG31vjI-Y_ukG4qsIW1redn3VP5UX55BtPgy7KeWswQN7neGy8x4hQjN6yGgXDuszU9TxCmReabZzjHRuWJX3850itHRWfjHFeIeVuztTGR6LYb8wnjXCHpVJehA1-Dqa3A')"></div>
+            </div>
+        </section>
+
+        <!-- Cuadrícula de Acciones Rápidas -->
+        <section>
+            <h2 class="font-title-md text-title-md text-on-surface mb-md">Acciones Rápidas</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-md">
+                <!-- Tareas -->
+                <article class="quick-card border-tint-primary">
+                    <div class="card-icon-wrapper bg-surface-container-high">
+                        <span class="material-symbols-outlined text-primary-container">assignment</span>
+                    </div>
+                    <h3 class="font-title-md text-title-md text-on-surface mb-xs">Añadir tu primera tarea</h3>
+                    <p class="font-body-sm text-body-sm text-on-surface-variant flex-grow mb-md">
+                        Crea una lista de compras, asigna quehaceres o establece recordatorios para el mantenimiento del hogar.
+                    </p>
+                    <button class="card-action-btn">
+                        Crear Tarea
+                    </button>
+                </article>
+                <!-- Finanzas -->
+                <article class="quick-card border-tint-secondary">
+                    <div class="card-icon-wrapper bg-surface-container-high">
+                        <span class="material-symbols-outlined text-secondary">account_balance_wallet</span>
+                    </div>
+                    <h3 class="font-title-md text-title-md text-on-surface mb-xs">Registrar un gasto</h3>
+                    <p class="font-body-sm text-body-sm text-on-surface-variant flex-grow mb-md">
+                        Mantén el control de tu presupuesto registrando los recibos, compras del súper y gastos recurrentes.
+                    </p>
+                    <button class="card-action-btn">
+                        Nuevo Gasto
+                    </button>
+                </article>
+                <!-- Miembros -->
+                <article class="quick-card border-tint-tertiary">
+                    <div class="card-icon-wrapper bg-surface-container-high">
+                        <span class="material-symbols-outlined text-tertiary">person_add</span>
+                    </div>
+                    <h3 class="font-title-md text-title-md text-on-surface mb-xs">Invitar a un miembro</h3>
+                    <p class="font-body-sm text-body-sm text-on-surface-variant flex-grow mb-md">
+                        El hogar se gestiona mejor en equipo. Invita a tu pareja, familiares o compañeros para colaborar.
+                    </p>
+                    <button class="card-action-btn">
+                        Invitar
+                    </button>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <!-- Barra de Navegación Inferior (Móvil) -->
+    <nav class="mobile-bottom-nav md:hidden">
+        <a class="mobile-nav-item active" href="#">
+            <span class="material-symbols-outlined icon-fill">home</span>
+            <span class="font-label-caps text-label-caps mt-1">Inicio</span>
+        </a>
+        <a class="mobile-nav-item" href="#">
+            <span class="material-symbols-outlined">account_balance_wallet</span>
+            <span class="font-label-caps text-label-caps mt-1">Finanzas</span>
+        </a>
+        <a class="mobile-nav-item" href="#">
+            <span class="material-symbols-outlined">shopping_cart</span>
+            <span class="font-label-caps text-label-caps mt-1">Compras</span>
+        </a>
+        <a class="mobile-nav-item" href="#">
+            <span class="material-symbols-outlined">assignment</span>
+            <span class="font-label-caps text-label-caps mt-1">Tareas</span>
+        </a>
+        <a class="mobile-nav-item" href="#">
+            <span class="material-symbols-outlined">person</span>
+            <span class="font-label-caps text-label-caps mt-1">Perfil</span>
+        </a>
+    </nav>
+
+    <script src="js/Inicio-Rapido.js"></script>
+</body>
+</html>

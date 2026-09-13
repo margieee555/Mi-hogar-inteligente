@@ -1,0 +1,223 @@
+/* ========================================================================== */
+/* Estilos Principales y Componentes - mi hogar inteligente                   */
+/* ========================================================================== */
+body {
+    font-family: 'Inter', sans-serif;
+    min-height: max(884px, 100dvh);
+}
+
+.icon-fill {
+    font-variation-settings: 'FILL' 1;
+}
+
+.app-header {
+    position: fixed;
+    z-index: 50;
+    top: 0;
+    width: 100%;
+    height: 64px;
+    padding-left: 24px;
+    padding-right: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f8f9ff;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.app-title {
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 700;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    border-radius: 0.5rem;
+    font-size: 20px;
+    line-height: 28px;
+    font-weight: 600;
+    color: #434655;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.nav-link.active, .nav-link:hover {
+    color: #004ac6;
+    background-color: rgba(211, 228, 254, 0.5);
+}
+
+.notification-btn {
+    color: #004ac6;
+    padding: 8px;
+    border-radius: 9999px;
+    transition: background-color 0.2s ease;
+}
+
+.notification-btn:hover {
+    background-color: rgba(211, 228, 254, 0.5);
+}
+
+.welcome-card {
+    background-color: #f8f9ff;
+    border-radius: 24px;
+    padding: 24px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
+    margin-bottom: 32px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+}
+
+@media (min-width: 768px) {
+    .welcome-card {
+        padding: 48px;
+        flex-direction: row;
+    }
+}
+
+.welcome-title {
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 600;
+    color: #0b1c30;
+    margin-bottom: 16px;
+}
+
+@media (min-width: 768px) {
+    .welcome-title {
+        font-size: 32px;
+        line-height: 40px;
+    }
+}
+
+.explore-btn {
+    background-color: #2563eb;
+    color: #eeefff;
+    font-size: 20px;
+    line-height: 28px;
+    font-weight: 600;
+    padding: 16px 32px;
+    border-radius: 0.75rem;
+    transition: opacity 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: max-content;
+    box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+.explore-btn:hover {
+    opacity: 0.9;
+}
+
+.welcome-image-container {
+    width: 100%;
+    height: 16rem;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    position: relative;
+    z-index: 10;
+}
+
+@media (min-width: 768px) {
+    .welcome-image-container {
+        width: 50%;
+        height: 20rem;
+    }
+}
+
+.quick-card {
+    background-color: #f8f9ff;
+    border-radius: 24px;
+    padding: 24px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
+    transition: shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.quick-card:hover {
+    box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+.border-tint-primary {
+    border-top: 4px solid #0053db;
+}
+
+.border-tint-secondary {
+    border-top: 4px solid #006e2f;
+}
+
+.border-tint-tertiary {
+    border-top: 4px solid #996100;
+}
+
+.card-icon-wrapper {
+    width: 48px;
+    height: 48px;
+    border-radius: 9999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 24px;
+}
+
+.card-action-btn {
+    width: 100%;
+    border: 1px solid #c3c6d7;
+    color: #004ac6;
+    font-size: 20px;
+    line-height: 28px;
+    font-weight: 600;
+    padding: 8px;
+    border-radius: 0.75rem;
+    transition: background-color 0.2s ease;
+}
+
+.card-action-btn:hover {
+    background-color: #eff4ff;
+}
+
+.mobile-bottom-nav {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 50;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 8px 16px;
+    background-color: #f8f9ff;
+    border-top: 1px solid rgba(195, 198, 215, 0.3);
+    border-top-left-radius: 0.75rem;
+    border-top-right-radius: 0.75rem;
+    box-shadow: 0px -4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.mobile-nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 4px 16px;
+    border-radius: 0.75rem;
+    color: #434655;
+    transition: all 0.3s ease;
+}
+
+.mobile-nav-item.active {
+    background-color: #2563eb;
+    color: #eeefff;
+}
+
+.mobile-nav-item:hover:not(.active) {
+    background-color: rgba(211, 228, 254, 0.2);
+}
