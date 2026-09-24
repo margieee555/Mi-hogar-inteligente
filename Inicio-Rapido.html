@@ -3,135 +3,424 @@
 <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <title>mi hogar inteligente - Dashboard</title>
+    <title>Mi Hogar 360 - Dashboard</title>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/Estilos-Globales.css">
     <link rel="stylesheet" href="css/Inicio-Rapido.css">
 </head>
 <body class="bg-background text-on-background min-h-screen flex flex-col pt-16 pb-24 md:pb-0" data-mode="connect">
+
     <!-- Barra Superior -->
     <header class="app-header">
         <div class="flex items-center gap-sm">
-            <span class="material-symbols-outlined text-primary dark:text-primary-fixed icon-fill">tap_and_play</span>
-            <span class="app-title">mi hogar inteligente</span>
+            <span class="material-symbols-outlined text-primary dark:text-primary-fixed icono-relleno">home_app_logo</span>
+            <span class="app-title font-bold text-lg">Mi Hogar 360</span>
         </div>
-        <!-- Navegación de Escritorio -->
         <nav class="hidden md:flex items-center gap-lg">
-            <a class="nav-link active" href="#">
-                <span class="material-symbols-outlined icon-fill">home</span>
-                Inicio
-            </a>
-            <a class="nav-link" href="#">
-                <span class="material-symbols-outlined">account_balance_wallet</span>
-                Finanzas
-            </a>
-            <a class="nav-link" href="#">
-                <span class="material-symbols-outlined">shopping_cart</span>
-                Compras
-            </a>
-            <a class="nav-link" href="#">
-                <span class="material-symbols-outlined">assignment</span>
-                Tareas
-            </a>
+            <a class="nav-link active" href="#"><span class="material-symbols-outlined icono-relleno">home</span>Inicio</a>
+            <a class="nav-link" href="Gestion-Financiera.html"><span class="material-symbols-outlined">account_balance_wallet</span>Finanzas</a>
+            <a class="nav-link" href="Listas-Compras.html"><span class="material-symbols-outlined">shopping_cart</span>Compras</a>
+            <a class="nav-link" href="Organizador-Tareas.html"><span class="material-symbols-outlined">assignment</span>Tareas</a>
+            <a class="nav-link" href="Inventario.html"><span class="material-symbols-outlined">inventory_2</span>Inventario</a>
+            <a class="nav-link" href="Reportes-Estadisticas.html"><span class="material-symbols-outlined">analytics</span>Estadísticas</a>
         </nav>
-        <button class="notification-btn">
-            <span class="material-symbols-outlined">notifications</span>
-        </button>
+        
+        <div class="flex items-center gap-2">
+            <button class="notification-btn" aria-label="Notificaciones">
+                <span class="material-symbols-outlined">notifications</span>
+            </button>
+            <button class="notification-btn" aria-label="Perfil de Usuario">
+                <span class="material-symbols-outlined">person</span>
+            </button>
+        </div>
     </header>
 
     <!-- Contenido Principal -->
-    <main class="flex-grow container mx-auto px-md py-lg max-w-container-max">
-        <!-- Tarjeta de Bienvenida -->
-        <section class="welcome-card">
-            <div class="flex-1 z-10">
-                <h1 class="welcome-title">
-                    ¡Bienvenido a casa, Julian Esteban!
-                </h1>
-                <p class="font-body-lg text-body-lg text-on-surface-variant mb-lg max-w-lg">
-                    Tu sistema de gestión del hogar está listo. Puedes empezar a organizar tu vida familiar, tareas y finanzas a tu propio ritmo.
-                </p>
-                <button class="explore-btn">
-                    <span class="material-symbols-outlined">explore</span>
-                    Explorar el Dashboard
+    <main class="flex-grow container mx-auto px-md py-lg max-w-container-max relative">
+        
+        <!-- Saludo Simple -->
+        <div class="mb-8">
+            <h1 class="text-3xl font-bold text-gray-900 tracking-tight">
+                ¡Bienvenido a Mi Hogar 360, Julian Esteban!
+            </h1>
+        </div>
+
+        <!-- SECCIÓN 1: Calendario y Eventos -->
+        <section class="mb-10">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-md gap-sm">
+                <h2 class="font-title-md text-[--color-texto-principal] font-semibold text-xl">Calendario del Hogar</h2>
+                <button class="flex items-center gap-2 bg-white border border-gray-300 text-blue-600 px-4 py-2 rounded-xl hover:bg-gray-50 transition-colors shadow-sm font-semibold text-sm cursor-pointer" id="sync-btn">
+                    <span class="material-symbols-outlined text-lg">sync</span>
+                    Sincronizar Google Calendar
                 </button>
             </div>
-            <div class="welcome-image-container">
-                <div class="w-full h-full bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCJFMAXNjHs-yxx_lmym5heoHpE6sc9M_he9cJudky969BxcerEtOjWkqgnhWURF7aymReKhKyDnwcsDirUg9n8OmrxYbydWue2RQXZsJhbu3JN5drtF0pcG31vjI-Y_ukG4qsIW1redn3VP5UX55BtPgy7KeWswQN7neGy8x4hQjN6yGgXDuszU9TxCmReabZzjHRuWJX3850itHRWfjHFeIeVuztTGR6LYb8wnjXCHpVJehA1-Dqa3A')"></div>
+
+            <div class="bento-grid">
+                <!-- Tarjeta de Calendario (Compacta) -->
+                <div class="bento-calendar">
+                    <div class="flex justify-between items-center mb-3">
+                        <h2 class="text-lg font-semibold text-gray-800" id="current-month-year">Septiembre 2026</h2>
+                        <div class="flex gap-1">
+                            <button class="p-1 rounded-full hover:bg-gray-100 text-gray-600 cursor-pointer" id="prev-month"><span class="material-symbols-outlined">chevron_left</span></button>
+                            <button class="p-1 rounded-full hover:bg-gray-100 text-gray-600 cursor-pointer" id="next-month"><span class="material-symbols-outlined">chevron_right</span></button>
+                        </div>
+                    </div>
+
+                    <!-- Leyenda Simplificada -->
+                    <div class="flex flex-wrap gap-3 mb-3 pb-3 border-b border-gray-200">
+                        <div class="flex items-center gap-1.5"><div class="w-2.5 h-2.5 rounded-full event-blue"></div><span class="text-xs text-gray-600">Pagos</span></div>
+                        <div class="flex items-center gap-1.5"><div class="w-2.5 h-2.5 rounded-full event-green"></div><span class="text-xs text-gray-600">Tareas</span></div>
+                        <div class="flex items-center gap-1.5"><div class="w-2.5 h-2.5 rounded-full event-orange"></div><span class="text-xs text-gray-600">Mantenimientos</span></div>
+                        <div class="flex items-center gap-1.5"><div class="w-2.5 h-2.5 rounded-full event-purple"></div><span class="text-xs text-gray-600">Familiar</span></div>
+                    </div>
+
+                    <!-- Días de la Semana -->
+                    <div class="grid-cols-7 text-center mb-1">
+                        <div class="text-[10px] font-semibold text-gray-400 uppercase tracking-wider">Lun</div>
+                        <div class="text-[10px] font-semibold text-gray-400 uppercase tracking-wider">Mar</div>
+                        <div class="text-[10px] font-semibold text-gray-400 uppercase tracking-wider">Mié</div>
+                        <div class="text-[10px] font-semibold text-gray-400 uppercase tracking-wider">Jue</div>
+                        <div class="text-[10px] font-semibold text-gray-400 uppercase tracking-wider">Vie</div>
+                        <div class="text-[10px] font-semibold text-gray-400 uppercase tracking-wider">Sáb</div>
+                        <div class="text-[10px] font-semibold text-gray-400 uppercase tracking-wider">Dom</div>
+                    </div>
+
+                    <!-- Grilla del Calendario -->
+                    <div class="grid-cols-7 gap-1" id="calendar-days-grid">
+                        <div class="cal-day-empty"></div> <!-- Día vacío -->
+                        <div class="cal-day" data-date="2026-09-01">1</div>
+                        <div class="cal-day" data-date="2026-09-02">2</div>
+                        <div class="cal-day" data-date="2026-09-03">3</div>
+                        <div class="cal-day" data-date="2026-09-04">4</div>
+                        <div class="cal-day" data-date="2026-09-05">5</div>
+                        <div class="cal-day" data-date="2026-09-06">6</div>
+                        <div class="cal-day" data-date="2026-09-07">7</div>
+                        <div class="cal-day" data-date="2026-09-08">8</div>
+                        <div class="cal-day" data-date="2026-09-09">9</div>
+                        <div class="cal-day" data-date="2026-09-10">10</div>
+                        <div class="cal-day" data-date="2026-09-11">11</div>
+                        <div class="cal-day" data-date="2026-09-12">12</div>
+                        <!-- Día Hoy -->
+                        <div class="cal-day active-day" data-date="2026-09-13">
+                            <span class="font-bold">13</span>
+                            <div class="flex gap-0.5 mt-0.5"><div class="w-1.5 h-1.5 rounded-full event-green"></div><div class="w-1.5 h-1.5 rounded-full event-orange"></div></div>
+                        </div>
+                        <div class="cal-day" data-date="2026-09-14">14</div>
+                        <div class="cal-day" data-date="2026-09-15">15</div>
+                        <div class="cal-day" data-date="2026-09-16">16</div>
+                        <div class="cal-day" data-date="2026-09-17">17</div>
+                        <div class="cal-day" data-date="2026-09-18">18</div>
+                        <div class="cal-day" data-date="2026-09-19">19</div>
+                        <div class="cal-day" data-date="2026-09-20">20</div>
+                        <div class="cal-day" data-date="2026-09-21">21</div>
+                        <div class="cal-day" data-date="2026-09-22">22</div>
+                        <div class="cal-day" data-date="2026-09-23">23</div>
+                        <div class="cal-day" data-date="2026-09-24">24</div>
+                        <div class="cal-day" data-date="2026-09-25">25</div>
+                        <div class="cal-day" data-date="2026-09-26">26</div>
+                        <div class="cal-day" data-date="2026-09-27">27</div>
+                        <div class="cal-day" data-date="2026-09-28">28</div>
+                        <div class="cal-day" data-date="2026-09-29">29</div>
+                        <div class="cal-day" data-date="2026-09-30">30</div>
+                    </div>
+                </div>
+
+                <!-- Lista de Eventos -->
+                <div class="bento-events">
+                    <div class="events-card">
+                        <div class="mb-3">
+                            <h3 class="font-title-md font-semibold text-gray-800">Eventos del Día</h3>
+                            <p class="text-xs text-gray-500" id="selected-date-label">Domingo, 13 de Septiembre</p>
+                        </div>
+                        <div class="flex-1 flex flex-col gap-2.5" id="events-list-container">
+                            <div class="p-2.5 rounded-xl bg-[#eff4ff] flex gap-3 items-start transition-shadow hover:shadow-sm">
+                                <div class="w-1 h-full rounded-full event-green self-stretch"></div>
+                                <div class="flex-1">
+                                    <div class="flex justify-between items-start mb-0.5">
+                                        <h4 class="text-sm font-semibold text-gray-800">Supermercado Quincenal</h4>
+                                        <span class="text-[9px] font-bold text-green-700 bg-green-100 px-1.5 py-0.5 rounded uppercase tracking-wider">Tareas</span>
+                                    </div>
+                                    <p class="text-xs text-gray-500 flex items-center gap-1">
+                                        <span class="material-symbols-outlined text-[14px]">schedule</span> 10:00 AM
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="p-2.5 rounded-xl bg-orange-50 flex gap-3 items-start transition-shadow hover:shadow-sm">
+                                <div class="w-1 h-full rounded-full event-orange self-stretch"></div>
+                                <div class="flex-1">
+                                    <div class="flex justify-between items-start mb-0.5">
+                                        <h4 class="text-sm font-semibold text-gray-800">Revisión Aire Acondicionado</h4>
+                                        <span class="text-[9px] font-bold text-orange-700 bg-orange-100 px-1.5 py-0.5 rounded uppercase tracking-wider">Mantenimiento</span>
+                                    </div>
+                                    <p class="text-xs text-gray-500 flex items-center gap-1">
+                                        <span class="material-symbols-outlined text-[14px]">schedule</span> 02:30 PM
+                                    </p>
+                                </div>
+                            </div>
+                            <button class="w-full mt-auto py-2.5 border-2 border-dashed border-gray-300 rounded-xl text-blue-600 font-semibold text-sm flex items-center justify-center gap-2 hover:bg-blue-50 hover:border-blue-600 transition-colors cursor-pointer" data-modal="modal-tarea">
+                                <span class="material-symbols-outlined text-lg">add_circle</span> Añadir Recordatorio
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <!-- Cuadrícula de Acciones Rápidas -->
-        <section>
-            <h2 class="font-title-md text-title-md text-on-surface mb-md">Acciones Rápidas</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-md">
+        <!-- SECCIÓN 2: Recordatorio de Pagos (NUEVO ORDEN - ARRIBA) -->
+        <section class="mb-10">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-4 gap-4">
+                <h2 class="font-title-md text-[--color-texto-principal] font-semibold text-xl">Próximos Pagos</h2>
+                <!-- Toggle Switch Compacto -->
+                <div class="flex items-center gap-3 bg-white px-3 py-2 rounded-xl shadow-sm border border-gray-100">
+                    <label class="text-xs font-bold text-gray-600 uppercase tracking-wider cursor-pointer select-none" for="interruptor-auto">Pago Automático</label>
+                    <label class="relative inline-flex items-center cursor-pointer">
+                        <input type="checkbox" id="interruptor-auto" class="sr-only peer" checked>
+                        <div class="w-9 h-5 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-blue-600"></div>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Grilla Dinámica de Pagos -->
+            <div id="contenedor-pagos-dashboard" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                <!-- Se renderiza desde JS con los 4 ejemplos -->
+            </div>
+        </section>
+
+        <!-- SECCIÓN 3: Acciones Rápidas (NUEVO ORDEN - ABAJO) -->
+        <section class="mb-lg">
+            <h2 class="font-title-md text-title-md text-[--color-texto-principal] mb-md font-semibold text-xl">Acciones Rápidas</h2>
+            <div class="grid-acciones-rapidas">
                 <!-- Tareas -->
-                <article class="quick-card border-tint-primary">
-                    <div class="card-icon-wrapper bg-surface-container-high">
-                        <span class="material-symbols-outlined text-primary-container">assignment</span>
-                    </div>
-                    <h3 class="font-title-md text-title-md text-on-surface mb-xs">Añadir tu primera tarea</h3>
-                    <p class="font-body-sm text-body-sm text-on-surface-variant flex-grow mb-md">
-                        Crea una lista de compras, asigna quehaceres o establece recordatorios para el mantenimiento del hogar.
-                    </p>
-                    <button class="card-action-btn">
-                        Crear Tarea
-                    </button>
+                <article class="quick-card tarjeta-auth">
+                    <div class="card-icon-wrapper"><span class="material-symbols-outlined text-[--color-primario]">assignment</span></div>
+                    <h3 class="font-title-md text-title-md text-[--color-texto-principal] mb-xs font-semibold">Añadir Tarea</h3>
+                    <p class="font-body-sm text-body-sm text-[--color-texto-secundario] flex-grow mb-md">Crea una lista de compras, asigna quehaceres o establece recordatorios.</p>
+                    <button class="card-action-btn" data-modal="modal-tarea">Crear Tarea</button>
                 </article>
                 <!-- Finanzas -->
-                <article class="quick-card border-tint-secondary">
-                    <div class="card-icon-wrapper bg-surface-container-high">
-                        <span class="material-symbols-outlined text-secondary">account_balance_wallet</span>
-                    </div>
-                    <h3 class="font-title-md text-title-md text-on-surface mb-xs">Registrar un gasto</h3>
-                    <p class="font-body-sm text-body-sm text-on-surface-variant flex-grow mb-md">
-                        Mantén el control de tu presupuesto registrando los recibos, compras del súper y gastos recurrentes.
-                    </p>
-                    <button class="card-action-btn">
-                        Nuevo Gasto
-                    </button>
+                <article class="quick-card tarjeta-auth">
+                    <div class="card-icon-wrapper"><span class="material-symbols-outlined text-[--color-primario]">account_balance_wallet</span></div>
+                    <h3 class="font-title-md text-title-md text-[--color-texto-principal] mb-xs font-semibold">Registrar un Gasto</h3>
+                    <p class="font-body-sm text-body-sm text-[--color-texto-secundario] flex-grow mb-md">Mantén el control registrando recibos, compras y gastos compartidos.</p>
+                    <button class="card-action-btn" data-modal="modal-gasto">Nuevo Gasto</button>
                 </article>
                 <!-- Miembros -->
-                <article class="quick-card border-tint-tertiary">
-                    <div class="card-icon-wrapper bg-surface-container-high">
-                        <span class="material-symbols-outlined text-tertiary">person_add</span>
-                    </div>
-                    <h3 class="font-title-md text-title-md text-on-surface mb-xs">Invitar a un miembro</h3>
-                    <p class="font-body-sm text-body-sm text-on-surface-variant flex-grow mb-md">
-                        El hogar se gestiona mejor en equipo. Invita a tu pareja, familiares o compañeros para colaborar.
-                    </p>
-                    <button class="card-action-btn">
-                        Invitar
-                    </button>
+                <article class="quick-card tarjeta-auth">
+                    <div class="card-icon-wrapper"><span class="material-symbols-outlined text-[--color-primario]">person_add</span></div>
+                    <h3 class="font-title-md text-title-md text-[--color-texto-principal] mb-xs font-semibold">Invitar a un Miembro</h3>
+                    <p class="font-body-sm text-body-sm text-[--color-texto-secundario] flex-grow mb-md">Mi Hogar 360 funciona mejor en equipo. Invita a tu familia a colaborar.</p>
+                    <button class="card-action-btn" data-modal="modal-miembro">Invitar</button>
                 </article>
             </div>
         </section>
+
     </main>
 
     <!-- Barra de Navegación Inferior (Móvil) -->
-    <nav class="mobile-bottom-nav md:hidden">
-        <a class="mobile-nav-item active" href="#">
-            <span class="material-symbols-outlined icon-fill">home</span>
-            <span class="font-label-caps text-label-caps mt-1">Inicio</span>
-        </a>
-        <a class="mobile-nav-item" href="#">
-            <span class="material-symbols-outlined">account_balance_wallet</span>
-            <span class="font-label-caps text-label-caps mt-1">Finanzas</span>
-        </a>
-        <a class="mobile-nav-item" href="#">
-            <span class="material-symbols-outlined">shopping_cart</span>
-            <span class="font-label-caps text-label-caps mt-1">Compras</span>
-        </a>
-        <a class="mobile-nav-item" href="#">
-            <span class="material-symbols-outlined">assignment</span>
-            <span class="font-label-caps text-label-caps mt-1">Tareas</span>
-        </a>
-        <a class="mobile-nav-item" href="#">
-            <span class="material-symbols-outlined">person</span>
-            <span class="font-label-caps text-label-caps mt-1">Perfil</span>
-        </a>
+    <nav class="mobile-bottom-nav overflow-x-auto">
+        <a class="mobile-nav-item active flex-shrink-0" href="#"><span class="material-symbols-outlined icono-relleno">home</span><span>Inicio</span></a>
+        <a class="mobile-nav-item flex-shrink-0" href="#"><span class="material-symbols-outlined">account_balance_wallet</span><span>Finanzas</span></a>
+        <a class="mobile-nav-item flex-shrink-0" href="#"><span class="material-symbols-outlined">shopping_cart</span><span>Compras</span></a>
+        <a class="mobile-nav-item flex-shrink-0" href="#"><span class="material-symbols-outlined">assignment</span><span>Tareas</span></a>
+        <a class="mobile-nav-item flex-shrink-0" href="#"><span class="material-symbols-outlined">inventory_2</span><span>Inventario</span></a>
+        <a class="mobile-nav-item flex-shrink-0" href="#"><span class="material-symbols-outlined">analytics</span><span>Estadísticas</span></a>
+        <a class="mobile-nav-item flex-shrink-0" href="#"><span class="material-symbols-outlined">person</span><span>Perfil</span></a>
     </nav>
 
+    <!-- ========================================== -->
+    <!--          VENTANAS EMERGENTES (MODALES)     -->
+    <!-- ========================================== -->
+
+    <!-- MODAL 1: NUEVA TAREA -->
+    <div id="modal-tarea" class="modal-overlay hidden" role="dialog" aria-modal="true">
+        <div class="modal-container">
+            <header class="modal-header">
+                <div class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-blue-600">assignment</span>
+                    <h3 class="modal-title">Nueva Tarea - Mi Hogar 360</h3>
+                </div>
+                <button type="button" class="btn-cerrar-modal" data-close="modal-tarea">
+                    <span class="material-symbols-outlined">close</span>
+                </button>
+            </header>
+            <form id="formularioTarea" class="modal-body">
+                <div class="grupo-campo">
+                    <label for="nombreTarea" class="etiqueta-campo">Nombre de la tarea</label>
+                    <input id="nombreTarea" name="nombreTarea" class="input-campo" type="text" placeholder="Ej: Pagar servicio de energía o compras" required>
+                </div>
+                <div class="grupo-campo">
+                    <label class="etiqueta-campo">Categoría</label>
+                    <div class="grilla-selector-chips">
+                        <label class="chip-opcion"><input type="radio" name="categoriaTarea" value="limpieza" checked><span class="chip-label"><span class="material-symbols-outlined text-sm">cleaning_services</span> Limpieza</span></label>
+                        <label class="chip-opcion"><input type="radio" name="categoriaTarea" value="cocina"><span class="chip-label"><span class="material-symbols-outlined text-sm">restaurant</span> Cocina</span></label>
+                        <label class="chip-opcion"><input type="radio" name="categoriaTarea" value="compras"><span class="chip-label"><span class="material-symbols-outlined text-sm">shopping_cart</span> Compras</span></label>
+                        <label class="chip-opcion"><input type="radio" name="categoriaTarea" value="mascotas"><span class="chip-label"><span class="material-symbols-outlined text-sm">pets</span> Mascotas</span></label>
+                        <label class="chip-opcion"><input type="radio" name="categoriaTarea" value="otros"><span class="chip-label"><span class="material-symbols-outlined text-sm">category</span> Otros</span></label>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="grupo-campo">
+                        <label for="fechaVencimiento" class="etiqueta-campo">Fecha</label>
+                        <input id="fechaVencimiento" name="fechaVencimiento" class="input-campo" type="date" required>
+                    </div>
+                    <div class="grupo-campo">
+                        <label for="horaVencimiento" class="etiqueta-campo">Hora</label>
+                        <input id="horaVencimiento" name="horaVencimiento" class="input-campo" type="time" required>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="grupo-campo">
+                        <label class="etiqueta-campo">Prioridad</label>
+                        <div class="flex gap-2">
+                            <label class="chip-prioridad alta flex-1 text-center"><input type="radio" name="prioridad" value="alta" class="hidden"><span>Alta</span></label>
+                            <label class="chip-prioridad media active flex-1 text-center"><input type="radio" name="prioridad" value="media" checked class="hidden"><span>Media</span></label>
+                            <label class="chip-prioridad baja flex-1 text-center"><input type="radio" name="prioridad" value="baja" class="hidden"><span>Baja</span></label>
+                        </div>
+                    </div>
+                    <div class="grupo-campo">
+                        <label for="asignadoA" class="etiqueta-campo">Asignar a</label>
+                        <select id="asignadoA" name="asignadoA" class="input-campo" required>
+                            <option value="" disabled selected>Selecciona un responsable</option>
+                            <option value="julian">Julian</option>
+                            <option value="nicol">Nicol</option>
+                            <option value="todos">Todos</option>
+                        </select>
+                    </div>
+                </div>
+                <footer class="modal-footer">
+                    <button type="button" class="btn-cancelar" data-close="modal-tarea">Cancelar</button>
+                    <button type="submit" class="btn-confirmar"><span class="material-symbols-outlined">save</span> Guardar Tarea</button>
+                </footer>
+            </form>
+        </div>
+    </div>
+
+    <!-- MODAL 2: REGISTRAR GASTO -->
+    <div id="modal-gasto" class="modal-overlay hidden" role="dialog" aria-modal="true">
+        <div class="modal-container">
+            <header class="modal-header">
+                <div class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-blue-600">account_balance_wallet</span>
+                    <h3 class="modal-title">Registrar Gasto - Mi Hogar 360</h3>
+                </div>
+                <button type="button" class="btn-cerrar-modal" data-close="modal-gasto">
+                    <span class="material-symbols-outlined">close</span>
+                </button>
+            </header>
+            <form id="formularioGasto" class="modal-body">
+                <div class="tarjeta-monto-modal">
+                    <span class="etiqueta-monto">Monto Total</span>
+                    <div class="contenedor-monto-input">
+                        <span class="simbolo-moneda">$</span>
+                        <input id="inputMonto" name="monto" class="input-monto-modal" type="number" step="0.01" min="0" placeholder="0.00" required>
+                    </div>
+                </div>
+                <div class="grupo-campo">
+                    <label class="etiqueta-campo">Categoría</label>
+                    <input type="hidden" id="categoriaSeleccionadaGasto" name="categoria" value="otros">
+                    <div class="grilla-categorias-gasto" id="grillaCategoriasGasto">
+                        <button type="button" class="tarjeta-cat-item" data-categoria="alimentos"><span class="material-symbols-outlined icono-relleno">restaurant</span><span>Alimentos</span></button>
+                        <button type="button" class="tarjeta-cat-item" data-categoria="transporte"><span class="material-symbols-outlined icono-relleno">directions_car</span><span>Transporte</span></button>
+                        <button type="button" class="tarjeta-cat-item" data-categoria="vivienda"><span class="material-symbols-outlined icono-relleno">home</span><span>Vivienda</span></button>
+                        <button type="button" class="tarjeta-cat-item" data-categoria="ocio"><span class="material-symbols-outlined icono-relleno">local_activity</span><span>Ocio</span></button>
+                        <button type="button" class="tarjeta-cat-item" data-categoria="salud"><span class="material-symbols-outlined icono-relleno">health_and_safety</span><span>Salud</span></button>
+                        <button type="button" class="tarjeta-cat-item activo" data-categoria="otros"><span class="material-symbols-outlined icono-relleno">more_horiz</span><span>Otros</span></button>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="grupo-campo">
+                        <label for="inputFechaGasto" class="etiqueta-campo">Fecha</label>
+                        <input id="inputFechaGasto" name="fecha" class="input-campo" type="date" required>
+                    </div>
+                    <div class="grupo-campo">
+                        <label for="inputDescripcionGasto" class="etiqueta-campo">Descripción / Notas</label>
+                        <input id="inputDescripcionGasto" name="descripcion" class="input-campo" type="text" placeholder="Ej: Factura de agua o súper">
+                    </div>
+                </div>
+                <div class="contenedor-recibo-modal">
+                    <input type="file" id="inputReciboModal" class="hidden" accept="image/*,.pdf">
+                    <button type="button" id="btnAdjuntarReciboModal" class="boton-adjuntar-modal"><span class="material-symbols-outlined">add_a_photo</span><span>Adjuntar Recibo (Opcional)</span></button>
+                    <span id="nombreArchivoReciboModal" class="text-xs text-green-600 font-semibold mt-1"></span>
+                </div>
+                <footer class="modal-footer">
+                    <button type="button" class="btn-cancelar" data-close="modal-gasto">Cancelar</button>
+                    <button type="submit" class="btn-confirmar"><span class="material-symbols-outlined">save</span> Guardar Gasto</button>
+                </footer>
+            </form>
+        </div>
+    </div>
+
+    <!-- MODAL 3: INVITAR MIEMBRO -->
+    <div id="modal-miembro" class="modal-overlay hidden" role="dialog" aria-modal="true">
+        <div class="modal-container">
+            <header class="modal-header">
+                <div class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-blue-600">person_add</span>
+                    <h3 class="modal-title">Invitar Miembro - Mi Hogar 360</h3>
+                </div>
+                <button type="button" class="btn-cerrar-modal" data-close="modal-miembro">
+                    <span class="material-symbols-outlined">close</span>
+                </button>
+            </header>
+            <form id="formularioMiembro" class="modal-body">
+                <div class="grupo-campo">
+                    <label class="etiqueta-campo" for="memberName">Nombre del Residente</label>
+                    <input id="memberName" name="nombre" class="input-campo" placeholder="Ej. Mamá, Hermano, Arrendatario" type="text" required>
+                </div>
+                <div class="grupo-campo">
+                    <label class="etiqueta-campo">Selecciona un Perfil</label>
+                    <input type="hidden" id="avatarSeleccionado" name="avatar" value="face">
+                    <div class="avatar-grid-modal" id="avatarGridModal">
+                        <button class="avatar-btn selected" type="button" data-avatar="face"><span class="material-symbols-outlined icono-relleno">face</span></button>
+                        <button class="avatar-btn" type="button" data-avatar="face_2"><span class="material-symbols-outlined">face_2</span></button>
+                        <button class="avatar-btn" type="button" data-avatar="face_3"><span class="material-symbols-outlined">face_3</span></button>
+                        <button class="avatar-btn" type="button" data-avatar="face_4"><span class="material-symbols-outlined">face_4</span></button>
+                        <button class="avatar-btn" type="button" data-avatar="face_5"><span class="material-symbols-outlined">face_5</span></button>
+                        <button class="avatar-btn" type="button" data-avatar="child_care"><span class="material-symbols-outlined">child_care</span></button>
+                        <button class="avatar-btn" type="button" data-avatar="pets"><span class="material-symbols-outlined">pets</span></button>
+                    </div>
+                </div>
+                <div class="grupo-campo">
+                    <label class="etiqueta-campo">Nivel de Permiso en Mi Hogar 360</label>
+                    <div class="space-y-2">
+                        <label class="permission-card-modal active">
+                            <input checked name="permission" type="radio" value="admin" class="radio-permiso">
+                            <div>
+                                <h4 class="font-bold text-sm text-slate-800">Administrador</h4>
+                                <p class="text-xs text-slate-500">Control total del hogar, finanzas y configuraciones.</p>
+                            </div>
+                        </label>
+                        <label class="permission-card-modal">
+                            <input name="permission" type="radio" value="member" class="radio-permiso">
+                            <div>
+                                <h4 class="font-bold text-sm text-slate-800">Miembro</h4>
+                                <p class="text-xs text-slate-500">Acceso estándar. Puede ver y gestionar tareas y gastos.</p>
+                            </div>
+                        </label>
+                        <label class="permission-card-modal">
+                            <input name="permission" type="radio" value="guest" class="radio-permiso">
+                            <div>
+                                <h4 class="font-bold text-sm text-slate-800">Invitado</h4>
+                                <p class="text-xs text-slate-500">Solo lectura en áreas asignadas.</p>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+                <div class="grupo-campo">
+                    <label class="etiqueta-campo" for="memberNotes">Notas o Parentesco</label>
+                    <textarea class="input-campo resize-none" id="memberNotes" name="notas" rows="2" placeholder="Detalles de contacto o parentesco..."></textarea>
+                </div>
+                <footer class="modal-footer">
+                    <button type="button" class="btn-cancelar" data-close="modal-miembro">Cancelar</button>
+                    <button type="submit" class="btn-confirmar"><span class="material-symbols-outlined">person_add</span> Guardar Residente</button>
+                </footer>
+            </form>
+        </div>
+    </div>
+
+    <!-- Script Unificado -->
     <script src="js/Inicio-Rapido.js"></script>
 </body>
 </html>

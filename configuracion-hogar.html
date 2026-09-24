@@ -5,10 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Configurar - Mi hogar inteligente</title>
-
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:FILL@0..1&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/Configuracion-Hogar.css">
+    <style>
+        .seccion-paso { display: none; }
+        .seccion-paso.activo { display: block; }
+    </style>
 </head>
 
 <body>
@@ -17,119 +20,187 @@
 
         <header class="encabezado">
             <div class="barra-progreso" role="progressbar" aria-valuenow="1" aria-valuemin="1" aria-valuemax="3">
-                <div class="progreso activo"></div>
-                <div class="progreso"></div>
-                <div class="progreso"></div>
+                <div class="progreso activo" id="progreso-1"></div>
+                <div class="progreso" id="progreso-2"></div>
+                <div class="progreso" id="progreso-3"></div>
             </div>
 
-            <span class="numero-paso">PASO 1 DE 3</span>
-            <h1>¡Bienvenido a Mi hogar inteligente!</h1>
-            <p class="descripcion">Vamos a configurar algunos datos básicos de tu hogar.</p>
+            <span class="numero-paso" id="etiqueta-numero-paso">PASO 1 DE 3</span>
+            <h1 id="titulo-paso">¡Bienvenido a Mi hogar inteligente!</h1>
+            <p class="descripcion" id="descripcion-paso">Vamos a configurar algunos datos básicos de tu hogar.</p>
         </header>
 
-        <form id="formulario-paso1" class="contenido" novalidate>
+        <form id="formulario-configuracion" class="contenido" novalidate>
 
-            <!-- Grupo 1: Nombre del Hogar -->
-            <div class="grupo-formulario">
-                <label for="nombre-hogar">Nombre del hogar</label>
-                <input 
-                    type="text" 
-                    id="nombre-hogar" 
-                    name="nombreHogar"
-                    placeholder="Ej: Casa García, Mi apartamento" 
-                    maxlength="50"
-                    autocomplete="off"
-                    required
-                >
-                <span id="mensaje-nombre" class="mensaje-error" aria-live="polite"></span>
-            </div>
-
-            <!-- Grupo 2: Tipo de Vivienda -->
-            <div class="grupo-formulario">
-                <label>Tipo de vivienda</label>
-                <div class="opciones-vivienda" role="radiogroup" aria-label="Tipo de vivienda">
-
-                    <button 
-                        type="button" 
-                        class="tarjeta-vivienda seleccionada" 
-                        data-vivienda="Casa"
-                        role="radio"
-                        aria-checked="true"
-                    >
-                        <span class="material-symbols-outlined icono-vivienda">home</span>
-                        <span class="nombre-vivienda">Casa</span>
-                    </button>
-
-                    <button 
-                        type="button" 
-                        class="tarjeta-vivienda" 
-                        data-vivienda="Apartamento"
-                        role="radio"
-                        aria-checked="false"
-                    >
-                        <span class="material-symbols-outlined icono-vivienda">apartment</span>
-                        <span class="nombre-vivienda">Apartamento</span>
-                    </button>
-
-                    <button 
-                        type="button" 
-                        class="tarjeta-vivienda" 
-                        data-vivienda="Estudio"
-                        role="radio"
-                        aria-checked="false"
-                    >
-                        <span class="material-symbols-outlined icono-vivienda">night_shelter</span>
-                        <span class="nombre-vivienda">Estudio</span>
-                    </button>
-
-                    <button 
-                        type="button" 
-                        class="tarjeta-vivienda" 
-                        data-vivienda="Otro"
-                        role="radio"
-                        aria-checked="false"
-                    >
-                        <span class="material-symbols-outlined icono-vivienda">domain</span>
-                        <span class="nombre-vivienda">Otro</span>
-                    </button>
-
+            <!-- PASO 1 -->
+            <section id="paso-1" class="seccion-paso activo">
+                <div class="grupo-formulario">
+                    <label for="nombre-hogar">Nombre del hogar</label>
+                    <input type="text" id="nombre-hogar" name="nombreHogar" placeholder="Ej: Casa García, Mi apartamento" maxlength="50" autocomplete="off" required>
+                    <span id="mensaje-nombre" class="mensaje-error" aria-live="polite"></span>
                 </div>
-            </div>
 
-            <!-- Grupo 3: Residentes -->
-            <div class="grupo-formulario">
-                <label>Número de residentes</label>
-                <div class="contador">
-                    <button 
-                        type="button" 
-                        id="boton-disminuir" 
-                        class="boton-contador" 
-                        aria-label="Disminuir residentes"
-                        disabled
-                    >
-                        <span class="material-symbols-outlined">remove</span>
-                    </button>
-
-                    <span id="cantidad-residentes" class="cantidad-residentes">1</span>
-
-                    <button 
-                        type="button" 
-                        id="boton-aumentar" 
-                        class="boton-contador" 
-                        aria-label="Aumentar residentes"
-                    >
-                        <span class="material-symbols-outlined">add</span>
-                    </button>
+                <div class="grupo-formulario">
+                    <label>Tipo de vivienda</label>
+                    <div class="opciones-vivienda" role="radiogroup" aria-label="Tipo de vivienda">
+                        <button type="button" class="tarjeta-vivienda seleccionada" data-vivienda="Casa" role="radio" aria-checked="true">
+                            <span class="material-symbols-outlined icono-vivienda">home</span>
+                            <span class="nombre-vivienda">Casa</span>
+                        </button>
+                        <button type="button" class="tarjeta-vivienda" data-vivienda="Apartamento" role="radio" aria-checked="false">
+                            <span class="material-symbols-outlined icono-vivienda">apartment</span>
+                            <span class="nombre-vivienda">Apartamento</span>
+                        </button>
+                        <button type="button" class="tarjeta-vivienda" data-vivienda="Estudio" role="radio" aria-checked="false">
+                            <span class="material-symbols-outlined icono-vivienda">night_shelter</span>
+                            <span class="nombre-vivienda">Estudio</span>
+                        </button>
+                        <button type="button" class="tarjeta-vivienda" data-vivienda="Otro" role="radio" aria-checked="false">
+                            <span class="material-symbols-outlined icono-vivienda">domain</span>
+                            <span class="nombre-vivienda">Otro</span>
+                        </button>
+                    </div>
                 </div>
-                <p class="ayuda">Puedes registrar entre 1 y 20 residentes.</p>
-            </div>
 
-            <footer class="pie">
-                <button type="submit" id="boton-siguiente" class="boton-siguiente">
-                    <span id="texto-boton">Siguiente paso</span>
-                    <span class="material-symbols-outlined">arrow_forward</span>
-                </button>
-            </footer>
+                <div class="grupo-formulario">
+                    <label>Número de residentes</label>
+                    <div class="contador">
+                        <button type="button" id="boton-disminuir" class="boton-contador" aria-label="Disminuir residentes" disabled>
+                            <span class="material-symbols-outlined">remove</span>
+                        </button>
+                        <span id="cantidad-residentes" class="cantidad-residentes">1</span>
+                        <button type="button" id="boton-aumentar" class="boton-contador" aria-label="Aumentar residentes">
+                            <span class="material-symbols-outlined">add</span>
+                        </button>
+                    </div>
+                    <p class="ayuda">Puedes registrar entre 1 y 20 residentes.</p>
+                </div>
+
+                <footer class="pie">
+                    <button type="button" id="btn-siguiente-1" class="boton-siguiente">
+                        <span>Siguiente paso</span>
+                        <span class="material-symbols-outlined">arrow_forward</span>
+                    </button>
+                </footer>
+            </section>
+
+            <!-- PASO 2 -->
+            <section id="paso-2" class="seccion-paso">
+                <div class="grupo-formulario">
+                    <label for="direccion-hogar">Dirección de la residencia <span class="opcional">(Opcional)</span></label>
+                    <input type="text" id="direccion-hogar" class="entrada-texto" name="direccionHogar" placeholder="Ej: Calle 123 # 45-67, Apto 402" maxlength="100" autocomplete="off">
+                </div>
+
+                <div class="grupo-formulario">
+                    <div class="encabezado-invitaciones">
+                        <label>Correos de invitados</label>
+                        <button type="button" id="boton-agregar-invitado" class="boton-agregar">
+                            <span class="material-symbols-outlined">add</span>
+                            <span>Añadir otro</span>
+                        </button>
+                    </div>
+
+                    <div id="lista-invitados" class="lista-invitados">
+                        <div class="fila-invitado">
+                            <input type="email" class="correo-invitado" name="correosInvitados[]" placeholder="Ej: familiar@ejemplo.com" autocomplete="off">
+                            <button type="button" class="boton-eliminar-invitado" aria-label="Eliminar invitado" style="display: none;">
+                                <span class="material-symbols-outlined">close</span>
+                            </button>
+                        </div>
+                    </div>
+                    <span id="mensaje-invitados" class="mensaje-error" aria-live="polite"></span>
+                    <p class="ayuda">Enviaremos un correo electrónico para que tus familiares o compañeros se unan a este espacio.</p>
+                </div>
+
+                <footer class="pie pie-doble-boton">
+                    <button type="button" id="btn-atras-2" class="boton-atras">
+                        <span class="material-symbols-outlined">arrow_back</span>
+                        <span>Atrás</span>
+                    </button>
+                    <button type="button" id="btn-siguiente-2" class="boton-siguiente">
+                        <span>Siguiente paso</span>
+                        <span class="material-symbols-outlined">arrow_forward</span>
+                    </button>
+                </footer>
+            </section>
+
+            <!-- PASO 3 -->
+            <section id="paso-3" class="seccion-paso">
+                <div class="grupo-formulario">
+                    <div class="red-zonas">
+                        <label class="tarjeta-zona">
+                            <input type="checkbox" name="zonas[]" value="Sala de estar" checked>
+                            <div class="contenido-tarjeta">
+                                <span class="material-symbols-outlined icono-zona">living</span>
+                                <span class="nombre-zona">Sala de estar</span>
+                            </div>
+                        </label>
+                        <label class="tarjeta-zona">
+                            <input type="checkbox" name="zonas[]" value="Habitación principal" checked>
+                            <div class="contenido-tarjeta">
+                                <span class="material-symbols-outlined icono-zona">bed</span>
+                                <span class="nombre-zona">Habitación principal</span>
+                            </div>
+                        </label>
+                        <label class="tarjeta-zona">
+                            <input type="checkbox" name="zonas[]" value="Cocina">
+                            <div class="contenido-tarjeta">
+                                <span class="material-symbols-outlined icono-zona">countertops</span>
+                                <span class="nombre-zona">Cocina</span>
+                            </div>
+                        </label>
+                        <label class="tarjeta-zona">
+                            <input type="checkbox" name="zonas[]" value="Comedor">
+                            <div class="contenido-tarjeta">
+                                <span class="material-symbols-outlined icono-zona">dining</span>
+                                <span class="nombre-zona">Comedor</span>
+                            </div>
+                        </label>
+                        <label class="tarjeta-zona">
+                            <input type="checkbox" name="zonas[]" value="Baño principal">
+                            <div class="contenido-tarjeta">
+                                <span class="material-symbols-outlined icono-zona">shower</span>
+                                <span class="nombre-zona">Baño principal</span>
+                            </div>
+                        </label>
+                        <label class="tarjeta-zona">
+                            <input type="checkbox" name="zonas[]" value="Estudio / Oficina">
+                            <div class="contenido-tarjeta">
+                                <span class="material-symbols-outlined icono-zona">desk</span>
+                                <span class="nombre-zona">Estudio / Oficina</span>
+                            </div>
+                        </label>
+                        <label class="tarjeta-zona">
+                            <input type="checkbox" name="zonas[]" value="Jardín / Patio">
+                            <div class="contenido-tarjeta">
+                                <span class="material-symbols-outlined icono-zona">yard</span>
+                                <span class="nombre-zona">Jardín / Patio</span>
+                            </div>
+                        </label>
+                        <label class="tarjeta-zona">
+                            <input type="checkbox" name="zonas[]" value="Garaje">
+                            <div class="contenido-tarjeta">
+                                <span class="material-symbols-outlined icono-zona">garage</span>
+                                <span class="nombre-zona">Garaje</span>
+                            </div>
+                        </label>
+                    </div>
+
+                    <span id="mensaje-error-zonas" class="mensaje-error" aria-live="polite"></span>
+                    <p class="ayuda">Podrás agregar, modificar o eliminar zonas en cualquier momento desde los ajustes.</p>
+                </div>
+
+                <footer class="pie pie-doble-boton">
+                    <button type="button" id="btn-atras-3" class="boton-atras">
+                        <span class="material-symbols-outlined">arrow_back</span>
+                        <span>Atrás</span>
+                    </button>
+                    <button type="submit" id="boton-finalizar" class="boton-siguiente">
+                        <span id="texto-boton-final">Finalizar configuración</span>
+                        <span class="material-symbols-outlined">check_circle</span>
+                    </button>
+                </footer>
+            </section>
 
         </form>
 

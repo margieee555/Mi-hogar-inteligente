@@ -3,205 +3,206 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inventario del Hogar - Mi Hogar Inteligente</title>
-    <!-- Google Fonts & Material Symbols -->
-    <link href="https://fonts.googleapis.com" rel="preconnect">
-    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <title>Inventario - Mi Hogar 360</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
-    <!-- Estilos CSS -->
-    <link rel="stylesheet" href="css/Inventario.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Mismos estilos base del Dashboard para consistencia -->
+    <link rel="stylesheet" href="css/Estilos-Globales.css">
+    <link rel="stylesheet" href="css/Inicio-Rapido.css">
 </head>
 
-<body class="pagina-inventario">
+<body class="bg-background text-on-background min-h-screen flex flex-col pt-16 pb-24 md:pb-0">
 
-    <!-- Menú Lateral (Escritorio) -->
-    <aside class="menu-lateral">
-        <div class="usuario-perfil">
-            <img class="avatar-usuario" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAm2RAhntNqcGVqrztA6h868rjHQlRKPbvIm0EAO9oO_hAKNiMKxaX_rHyO1bBSVy-UA49fdkqbHVxz1IZp1jpLsFEbDEcLKRird5xuDfmoLHxAb5IWIDma9JCMfPOa5k6l-CdsE54cVaa186J1fjSNTbTUYWWEtb0AKeCmwNlLxOSYkD243o_GBzEfNOiOVOplwG__RUE8YW4tBvGce58S7cxBW_p8ldpCc-SLiY8aaYocacXaETuREg" alt="Foto de Perfil">
-            <div class="info-usuario">
-                <h2 class="nombre-marca">Mi Hogar Inteligente</h2>
-                <p class="rol-usuario">Administrador</p>
-            </div>
-            <span class="insignia-plan">Premium</span>
+    <!-- Barra Superior (Idéntica a Inicio) -->
+    <header class="app-header">
+        <div class="flex items-center gap-sm">
+            <span class="material-symbols-outlined text-primary dark:text-primary-fixed icono-relleno">home_app_logo</span>
+            <span class="app-title font-bold text-lg">Mi Hogar 360</span>
         </div>
-
-        <nav class="navegacion-lateral">
-            <a class="enlace-menu" href="#">
-                <span class="material-symbols-outlined">calendar_month</span>
-                <span>Calendario</span>
-            </a>
-            <a class="enlace-menu activo" href="#">
-                <span class="material-symbols-outlined icono-lleno">inventory_2</span>
-                <span>Inventario</span>
-            </a>
-            <a class="enlace-menu" href="#">
-                <span class="material-symbols-outlined">analytics</span>
-                <span>Reportes</span>
-            </a>
+        <nav class="hidden md:flex items-center gap-lg">
+            <a class="nav-link" href="Inicio-Rapido.html"><span class="material-symbols-outlined">home</span>Inicio</a>
+            <a class="nav-link" href="Gestion-Financiera.html"><span class="material-symbols-outlined">account_balance_wallet</span>Finanzas</a>
+            <a class="nav-link" href="Listas-Compras.html"><span class="material-symbols-outlined">shopping_cart</span>Compras</a>
+            <a class="nav-link" href="Organizador-Tareas.html"><span class="material-symbols-outlined">assignment</span>Tareas</a>
+            <a class="nav-link active" href="#"><span class="material-symbols-outlined icono-relleno">inventory_2</span>Inventario</a>
+            <a class="nav-link" href="Reportes-Estadisticas.html"><span class="material-symbols-outlined">analytics</span>Estadísticas</a>
         </nav>
-    </aside>
-
-    <!-- Contenido Principal -->
-    <main class="contenido-principal">
-
-        <!-- Header Móvil -->
-        <header class="header-movil">
-            <img class="avatar-usuario-movil" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD89hw5vRjXFBVRCWijRddbk55SoxSZsTYgLRlLOAV9RyBHv1rxHS9mjatsWrIxpbTwrLLO5SDBO-_jVOeoiAIzbnM3Tu4bMkT2h7086CompgQ2E_ayS9zM_YqCj_NGKLSOratczcxuRfPK3AyRaPYQi_Z0QVWkkzmSZOrUiIsuZ-09Zn8nRMQrLH649olxxDA-XC8PnG4mScdOllG0khUckjIrhKzRjXee9Wnw1YsaY-wYkc1dWXFXGQ" alt="Foto de Perfil">
-            <h1 class="titulo-marca-movil">Mi Hogar Inteligente</h1>
-            <button class="boton-notificacion">
+        
+        <div class="flex items-center gap-2">
+            <button class="notification-btn" aria-label="Notificaciones">
                 <span class="material-symbols-outlined">notifications</span>
             </button>
-        </header>
+            <button class="notification-btn" aria-label="Perfil de Usuario">
+                <span class="material-symbols-outlined">person</span>
+            </button>
+        </div>
+    </header>
 
-        <!-- Área de Trabajo / Lienzo -->
-        <div class="area-trabajo">
-            
-            <header class="encabezado-seccion">
-                <h1 class="titulo-pagina">Inventario</h1>
-                <p class="subtitulo-pagina">Gestiona y controla los suministros del hogar.</p>
-            </header>
+    <!-- Contenido Principal -->
+    <main class="flex-grow container mx-auto px-md py-lg max-w-container-max relative">
 
-            <!-- Banner de Alerta -->
-            <div class="tarjeta-alerta">
-                <div class="alerta-contenido">
-                    <span class="material-symbols-outlined icono-alerta">warning</span>
-                    <div>
-                        <h3 class="titulo-alerta">3 productos por vencer</h3>
-                        <p class="descripcion-alerta">Revisa tu despensa antes del fin de semana.</p>
-                    </div>
+        <!-- Título de Sección -->
+        <div class="mb-8">
+            <h1 class="text-3xl font-bold text-gray-900 tracking-tight">Inventario del Hogar</h1>
+            <p class="font-body-lg text-body-lg text-[--color-texto-secundario] max-w-lg mt-2">
+                Gestiona y controla los suministros.
+            </p>
+        </div>
+
+        <!-- Banner de Alerta Estilo Bento -->
+        <div class="tarjeta-alerta bg-orange-50 border border-orange-200 rounded-2xl p-5 mb-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 shadow-sm">
+            <div class="flex items-center gap-4">
+                <div class="w-12 h-12 rounded-full bg-orange-100 flex items-center justify-center shrink-0">
+                    <span class="material-symbols-outlined text-orange-600 text-2xl">warning</span>
                 </div>
-                <button class="boton-accion-alerta">Ver Todos</button>
-            </div>
-
-            <!-- Buscador y Filtros -->
-            <div class="controles-filtrado">
-                <div class="caja-busqueda">
-                    <span class="material-symbols-outlined icono-busqueda">search</span>
-                    <input id="inputBuscar" class="input-busqueda" type="text" placeholder="Buscar artículos...">
-                </div>
-
-                <div class="contenedor-filtros">
-                    <button class="boton-filtro activo" data-categoria="todos">Todos</button>
-                    <button class="boton-filtro" data-categoria="alimentos">Alimentos</button>
-                    <button class="boton-filtro" data-categoria="aseo">Aseo</button>
-                    <button class="boton-filtro" data-categoria="medicamentos">Medicamentos</button>
-                    <button class="boton-filtro" data-categoria="herramientas">Herramientas</button>
+                <div>
+                    <h3 class="text-lg font-semibold text-orange-800">3 productos por vencer</h3>
+                    <p class="text-sm text-orange-700">Revisa tu despensa antes del fin de semana.</p>
                 </div>
             </div>
+            <button class="w-full sm:w-auto bg-orange-100 hover:bg-orange-200 text-orange-800 px-4 py-2 rounded-xl text-sm font-semibold transition-colors">
+                Ver Todos
+            </button>
+        </div>
 
-            <!-- Grilla de Productos -->
-            <div id="grillaProductos" class="grilla-productos">
+        <!-- Buscador y Filtros -->
+        <div class="flex flex-col md:flex-row gap-4 mb-8">
+            <div class="relative flex-1">
+                <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-gray-400">search</span>
+                <input id="inputBuscar" class="w-full bg-gray-50 border border-gray-200 rounded-xl py-3 pl-12 pr-4 text-gray-700 focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100 transition-all" type="text" placeholder="Buscar artículos en el inventario...">
+            </div>
 
-                <!-- Producto 1 -->
-                <article class="tarjeta-producto" data-categoria="alimentos">
-                    <img class="imagen-producto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTo4FoCnuo4E2tF2GPxA6TGJqE_-IB3gBOVZEecHaS6Tkl8_Rmdps1NlVhG3uGpk9cKAg9lDQ5_SCs6EvTlJ7SrEsrtnakg8dMdvLUwOKCNSL-NfkHUk0fETHOik_wHmjkhQr8VBXjU9a02tT76wYnpNbLyfewYOSDL5X75tkECCB-tDTR9Shuy09ySvSm-pPgw9aQkL75ASFm-g9cGZ00d_a-JvGUj9WQOlMZw43HyPHQ7plMHyX_gw" alt="Leche Entera">
-                    <div class="detalles-producto">
-                        <div>
-                            <div class="cabecera-tarjeta">
-                                <h4 class="nombre-producto">Leche Entera</h4>
-                                <button class="boton-opciones"><span class="material-symbols-outlined">more_vert</span></button>
-                            </div>
-                            <p class="meta-vencimiento peligro">
-                                <span class="material-symbols-outlined icono-meta">schedule</span> Vence: 12 Oct
-                            </p>
-                        </div>
-                        <div class="contenedor-stock">
-                            <div class="info-stock">
-                                <span>Stock: 2L</span>
-                                <span>25%</span>
-                            </div>
-                            <div class="barra-progreso">
-                                <div class="progreso-relleno peligro" style="width: 25%"></div>
-                            </div>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Producto 2 -->
-                <article class="tarjeta-producto" data-categoria="aseo">
-                    <img class="imagen-producto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCoLnoSMEOauJvIAQ28kqR-ezXktsvY5dYvMeS0KrZR4rJTmz_R9VdVjHkltIAGKJwlwz7lVBtKGUoS3kUCkWcMxljp-v0IVZRYMG842N5Xc9EmeGzYNWIqiJhBcEoemfqxpGLbY7sWrMKaPvVkKT94DSTed-t0Di6rFfb8FzcrBOsBBjg7W_966_mTiO0vrBnSWwuZLvVs3fjmsUAYIfNY_MRLjJnkYR5IbnhpOocwwyhXEOMvLiYIsw" alt="Detergente Ropa">
-                    <div class="detalles-producto">
-                        <div>
-                            <div class="cabecera-tarjeta">
-                                <h4 class="nombre-producto">Detergente Ropa</h4>
-                                <button class="boton-opciones"><span class="material-symbols-outlined">more_vert</span></button>
-                            </div>
-                            <p class="meta-vencimiento">
-                                <span class="material-symbols-outlined icono-meta">inventory_2</span> Aseo
-                            </p>
-                        </div>
-                        <div class="contenedor-stock">
-                            <div class="info-stock">
-                                <span>Stock: 1.5L</span>
-                                <span>70%</span>
-                            </div>
-                            <div class="barra-progreso">
-                                <div class="progreso-relleno normal" style="width: 70%"></div>
-                            </div>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Producto 3 -->
-                <article class="tarjeta-producto" data-categoria="medicamentos">
-                    <img class="imagen-producto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCebQw_53yQfohRnRwKDwFbpSSuVtL2CagXBb3dSvtJIUyIVV4Un-p_TDDMnaKUJTeFerNkG8ccDR7cT0u5MeP2g7-2q6BBUItRtkUrNVWkAdgCsI7bC7ECUGjQT-1kIv6LZbnaeGJO5DkRagl1Bme_mFLcSU27XvafGYlE2vjvgqjSJ76SoYxMid1Sy6bhPaT9ymVuDAp-_QqJiGEf0UZLyuagY67A6qyYh-SWJtJPIy1_2vZhVLCzfQ" alt="Paracetamol">
-                    <div class="detalles-producto">
-                        <div>
-                            <div class="cabecera-tarjeta">
-                                <h4 class="nombre-producto">Paracetamol 500mg</h4>
-                                <button class="boton-opciones"><span class="material-symbols-outlined">more_vert</span></button>
-                            </div>
-                            <p class="meta-vencimiento advertencia">
-                                <span class="material-symbols-outlined icono-meta">schedule</span> Vence: 05 Nov
-                            </p>
-                        </div>
-                        <div class="contenedor-stock">
-                            <div class="info-stock">
-                                <span>Stock: 12 u.</span>
-                                <span>40%</span>
-                            </div>
-                            <div class="barra-progreso">
-                                <div class="progreso-relleno medio" style="width: 40%"></div>
-                            </div>
-                        </div>
-                    </div>
-                </article>
-
+            <div class="flex gap-2 overflow-x-auto pb-2 md:pb-0 no-scrollbar" id="contenedorFiltros">
+                <button class="boton-filtro activo whitespace-nowrap px-4 py-2.5 rounded-xl text-sm font-semibold transition-colors" data-categoria="todos">Todos</button>
+                <button class="boton-filtro whitespace-nowrap px-4 py-2.5 rounded-xl text-sm font-semibold transition-colors bg-gray-50 text-gray-600 hover:bg-gray-100" data-categoria="alimentos">Alimentos</button>
+                <button class="boton-filtro whitespace-nowrap px-4 py-2.5 rounded-xl text-sm font-semibold transition-colors bg-gray-50 text-gray-600 hover:bg-gray-100" data-categoria="aseo">Aseo</button>
+                <button class="boton-filtro whitespace-nowrap px-4 py-2.5 rounded-xl text-sm font-semibold transition-colors bg-gray-50 text-gray-600 hover:bg-gray-100" data-categoria="medicamentos">Medicamentos</button>
+                <button class="boton-filtro whitespace-nowrap px-4 py-2.5 rounded-xl text-sm font-semibold transition-colors bg-gray-50 text-gray-600 hover:bg-gray-100" data-categoria="herramientas">Herramientas</button>
             </div>
         </div>
 
-        <!-- Botón Flotante para Agregar -->
-        <button id="btnAgregarProducto" class="boton-flotante">
-            <span class="material-symbols-outlined">add</span>
+        <!-- Grilla de Productos (Bento Style) -->
+        <div id="grillaProductos" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+            <!-- Producto 1 -->
+            <article class="tarjeta-producto bg-white border border-gray-100 rounded-2xl p-5 shadow-sm hover:shadow-md transition-shadow flex gap-4" data-categoria="alimentos">
+                <img class="w-20 h-20 rounded-xl object-cover bg-gray-50 shrink-0 border border-gray-100" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTo4FoCnuo4E2tF2GPxA6TGJqE_-IB3gBOVZEecHaS6Tkl8_Rmdps1NlVhG3uGpk9cKAg9lDQ5_SCs6EvTlJ7SrEsrtnakg8dMdvLUwOKCNSL-NfkHUk0fETHOik_wHmjkhQr8VBXjU9a02tT76wYnpNbLyfewYOSDL5X75tkECCB-tDTR9Shuy09ySvSm-pPgw9aQkL75ASFm-g9cGZ00d_a-JvGUj9WQOlMZw43HyPHQ7plMHyX_gw" alt="Leche Entera">
+                <div class="flex-1 flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-start">
+                            <h4 class="font-semibold text-gray-900 text-[15px] leading-tight">Leche Entera</h4>
+                            <button class="text-gray-400 hover:text-gray-600"><span class="material-symbols-outlined text-lg">more_vert</span></button>
+                        </div>
+                        <p class="text-xs font-semibold text-orange-600 flex items-center gap-1 mt-1">
+                            <span class="material-symbols-outlined text-[14px]">schedule</span> Vence: 12 Oct
+                        </p>
+                    </div>
+                    <div class="mt-3">
+                        <div class="flex justify-between text-xs font-semibold text-gray-500 mb-1.5">
+                            <span>Stock: 2L</span>
+                            <span class="text-orange-600">25%</span>
+                        </div>
+                        <div class="w-full bg-gray-100 rounded-full h-1.5 overflow-hidden">
+                            <div class="bg-orange-500 h-full rounded-full" style="width: 25%"></div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Producto 2 -->
+            <article class="tarjeta-producto bg-white border border-gray-100 rounded-2xl p-5 shadow-sm hover:shadow-md transition-shadow flex gap-4" data-categoria="aseo">
+                <img class="w-20 h-20 rounded-xl object-cover bg-gray-50 shrink-0 border border-gray-100" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCoLnoSMEOauJvIAQ28kqR-ezXktsvY5dYvMeS0KrZR4rJTmz_R9VdVjHkltIAGKJwlwz7lVBtKGUoS3kUCkWcMxljp-v0IVZRYMG842N5Xc9EmeGzYNWIqiJhBcEoemfqxpGLbY7sWrMKaPvVkKT94DSTed-t0Di6rFfb8FzcrBOsBBjg7W_966_mTiO0vrBnSWwuZLvVs3fjmsUAYIfNY_MRLjJnkYR5IbnhpOocwwyhXEOMvLiYIsw" alt="Detergente Ropa">
+                <div class="flex-1 flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-start">
+                            <h4 class="font-semibold text-gray-900 text-[15px] leading-tight">Detergente Ropa</h4>
+                            <button class="text-gray-400 hover:text-gray-600"><span class="material-symbols-outlined text-lg">more_vert</span></button>
+                        </div>
+                        <p class="text-xs font-semibold text-gray-500 flex items-center gap-1 mt-1">
+                            <span class="material-symbols-outlined text-[14px]">inventory_2</span> Aseo
+                        </p>
+                    </div>
+                    <div class="mt-3">
+                        <div class="flex justify-between text-xs font-semibold text-gray-500 mb-1.5">
+                            <span>Stock: 1.5L</span>
+                            <span class="text-green-600">70%</span>
+                        </div>
+                        <div class="w-full bg-gray-100 rounded-full h-1.5 overflow-hidden">
+                            <div class="bg-green-500 h-full rounded-full" style="width: 70%"></div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Producto 3 -->
+            <article class="tarjeta-producto bg-white border border-gray-100 rounded-2xl p-5 shadow-sm hover:shadow-md transition-shadow flex gap-4" data-categoria="medicamentos">
+                <img class="w-20 h-20 rounded-xl object-cover bg-gray-50 shrink-0 border border-gray-100" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCebQw_53yQfohRnRwKDwFbpSSuVtL2CagXBb3dSvtJIUyIVV4Un-p_TDDMnaKUJTeFerNkG8ccDR7cT0u5MeP2g7-2q6BBUItRtkUrNVWkAdgCsI7bC7ECUGjQT-1kIv6LZbnaeGJO5DkRagl1Bme_mFLcSU27XvafGYlE2vjvgqjSJ76SoYxMid1Sy6bhPaT9ymVuDAp-_QqJiGEf0UZLyuagY67A6qyYh-SWJtJPIy1_2vZhVLCzfQ" alt="Paracetamol">
+                <div class="flex-1 flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-start">
+                            <h4 class="font-semibold text-gray-900 text-[15px] leading-tight">Paracetamol 500mg</h4>
+                            <button class="text-gray-400 hover:text-gray-600"><span class="material-symbols-outlined text-lg">more_vert</span></button>
+                        </div>
+                        <p class="text-xs font-semibold text-yellow-600 flex items-center gap-1 mt-1">
+                            <span class="material-symbols-outlined text-[14px]">schedule</span> Vence: 05 Nov
+                        </p>
+                    </div>
+                    <div class="mt-3">
+                        <div class="flex justify-between text-xs font-semibold text-gray-500 mb-1.5">
+                            <span>Stock: 12 u.</span>
+                            <span class="text-yellow-600">40%</span>
+                        </div>
+                        <div class="w-full bg-gray-100 rounded-full h-1.5 overflow-hidden">
+                            <div class="bg-yellow-500 h-full rounded-full" style="width: 40%"></div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+
+        <!-- Botón Flotante para Agregar (FAB) -->
+        <button id="btnAgregarProducto" class="fixed bottom-24 md:bottom-10 right-6 md:right-10 w-14 h-14 bg-blue-600 hover:bg-blue-700 text-white rounded-2xl shadow-lg flex items-center justify-center transition-transform hover:scale-105 z-40">
+            <span class="material-symbols-outlined text-2xl">add</span>
         </button>
+
     </main>
 
-    <!-- Navegación Inferior (Móvil) -->
-    <nav class="barra-inferior-movil">
-        <a class="item-nav-movil" href="#">
-            <span class="material-symbols-outlined">home</span>
-            <span>Inicio</span>
-        </a>
-        <a class="item-nav-movil" href="#">
-            <span class="material-symbols-outlined">payments</span>
-            <span>Finanzas</span>
-        </a>
-        <a class="item-nav-movil" href="#">
-            <span class="material-symbols-outlined">shopping_cart</span>
-            <span>Compras</span>
-        </a>
-        <a class="item-nav-movil" href="#">
-            <span class="material-symbols-outlined">assignment_turned_in</span>
-            <span>Tareas</span>
-        </a>
-        <a class="item-nav-movil" href="#">
-            <span class="material-symbols-outlined">person</span>
-            <span>Perfil</span>
-        </a>
+    <!-- Barra de Navegación Inferior (Móvil) (Idéntica a Inicio) -->
+    <nav class="mobile-bottom-nav overflow-x-auto">
+        <a class="mobile-nav-item flex-shrink-0" href="#"><span class="material-symbols-outlined">home</span><span>Inicio</span></a>
+        <a class="mobile-nav-item flex-shrink-0" href="#"><span class="material-symbols-outlined">account_balance_wallet</span><span>Finanzas</span></a>
+        <a class="mobile-nav-item flex-shrink-0" href="#"><span class="material-symbols-outlined">shopping_cart</span><span>Compras</span></a>
+        <a class="mobile-nav-item flex-shrink-0" href="#"><span class="material-symbols-outlined">assignment</span><span>Tareas</span></a>
+        <a class="mobile-nav-item active flex-shrink-0" href="#"><span class="material-symbols-outlined icono-relleno">inventory_2</span><span>Inventario</span></a>
+        <a class="mobile-nav-item flex-shrink-0" href="#"><span class="material-symbols-outlined">analytics</span><span>Estad.</span></a>
+        <a class="mobile-nav-item flex-shrink-0" href="#"><span class="material-symbols-outlined">person</span><span>Perfil</span></a>
     </nav>
 
-    <!-- Script JavaScript -->
+    <!-- Script de Filtros JS -->
     <script src="js/Inventario.js"></script>
+    <script>
+        // Actualizar diseño de botones de filtro activos dinámicamente
+        document.addEventListener('DOMContentLoaded', () => {
+            const botones = document.querySelectorAll('.boton-filtro');
+            botones.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    botones.forEach(b => {
+                        b.classList.remove('activo', 'bg-blue-600', 'text-white');
+                        b.classList.add('bg-gray-50', 'text-gray-600');
+                    });
+                    btn.classList.add('activo', 'bg-blue-600', 'text-white');
+                    btn.classList.remove('bg-gray-50', 'text-gray-600');
+                });
+            });
+            // Setear el activo por defecto
+            const defaultActivo = document.querySelector('.boton-filtro.activo');
+            if(defaultActivo){
+                 defaultActivo.classList.add('bg-blue-600', 'text-white');
+                 defaultActivo.classList.remove('bg-gray-50', 'text-gray-600');
+            }
+        });
+    </script>
 </body>
 </html>

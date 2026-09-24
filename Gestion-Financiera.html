@@ -3,205 +3,243 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Hogar Inteligente - Gestión Financiera</title>
-    <!-- Google Fonts: Inter -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    <!-- Material Symbols -->
+    <title>Finanzas - Mi Hogar 360</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
-    <!-- Custom Stylesheet -->
-    <link rel="stylesheet" href="css/Gestion-Financiera.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Mismos estilos base del Dashboard para consistencia -->
+    <link rel="stylesheet" href="css/Estilos-Globales.css">
+    <link rel="stylesheet" href="css/Inicio-Rapido.css">
 </head>
-<body class="app-body" data-mode="connect">
 
-    <!-- TopAppBar -->
+<body class="bg-background text-on-background min-h-screen flex flex-col pt-16 pb-24 md:pb-0">
+
+    <!-- Barra Superior -->
     <header class="app-header">
-        <div class="header-container">
-            <div class="header-brand">
-                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCWrafFZVD3NxQGa1qkjshFePVCRnXDkZPXDiBhehzAz7ptROZNdTG7b_dFGWab_kMlXRk3N4ZzKhQODWgHV9wxP4IlJg2tfUbyjpkcFLjVMnnu2EN2a6_-wUQlhsEdW3SUfPXI4rAdrH8Bm5Kpr_6IKJhU5yb3-MCEDuuYkRyE3aXbxYuB2J7sYL7Hi5YJQoydngaNo14vW3UW50Q505l7TDyTfqKhr4_MyAkXmtDNLGpe5E1ljoxtrg" alt="Foto de perfil del usuario" class="profile-avatar">
-                <h1><span>mi hogar digital</span></h1>
-            </div>
-            <button aria-label="notifications" class="notification-btn">
+        <div class="flex items-center gap-sm">
+            <span class="material-symbols-outlined text-primary dark:text-primary-fixed icono-relleno">home_app_logo</span>
+            <span class="app-title font-bold text-lg">Mi Hogar 360</span>
+        </div>
+        <nav class="hidden md:flex items-center gap-lg">
+            <a class="nav-link" href="#"><span class="material-symbols-outlined">home</span>Inicio</a>
+            <!-- Finanzas Activo -->
+            <a class="nav-link active" href="#"><span class="material-symbols-outlined icono-relleno">account_balance_wallet</span>Finanzas</a>
+            <a class="nav-link" href="Listas-Compras.html"><span class="material-symbols-outlined">shopping_cart</span>Compras</a>
+            <a class="nav-link" href="Organizador-Tareas.html"><span class="material-symbols-outlined">assignment</span>Tareas</a>
+            <a class="nav-link" href="Inventario.html"><span class="material-symbols-outlined">inventory_2</span>Inventario</a>
+            <a class="nav-link" href="Reportes-Estadisticas.html"><span class="material-symbols-outlined">analytics</span>Estadísticas</a>
+        </nav>
+        
+        <div class="flex items-center gap-2">
+            <button class="notification-btn" aria-label="Notificaciones">
                 <span class="material-symbols-outlined">notifications</span>
+            </button>
+            <button class="notification-btn" aria-label="Perfil de Usuario">
+                <span class="material-symbols-outlined">person</span>
             </button>
         </div>
     </header>
 
-    <!-- Main Content Canvas -->
-    <main class="main-content">
-        <div class="bento-grid">
-            <!-- Balance Card (Financial Standard) -->
-            <div class="card balance-card">
+    <!-- Contenido Principal -->
+    <main class="flex-grow container mx-auto px-md py-lg max-w-container-max relative">
+
+        <!-- Título de Sección -->
+        <div class="mb-8 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+            <div>
+                <h1 class="text-3xl font-bold text-gray-900 tracking-tight">Gestión Financiera</h1>
+                <p class="font-body-lg text-body-lg text-[--color-texto-secundario] max-w-lg mt-2">
+                    Controla tu balance, gastos por categoría y metas de ahorro.
+                </p>
+            </div>
+            <button class="flex items-center gap-2 bg-white border border-gray-300 text-gray-700 px-4 py-2 rounded-xl hover:bg-gray-50 transition-colors shadow-sm font-semibold text-sm">
+                <span class="material-symbols-outlined text-lg">download</span>
+                Descargar Reporte
+            </button>
+        </div>
+
+        <!-- Estructura Bento Grid de Finanzas -->
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+
+            <!-- Tarjeta 1: Balance Total -->
+            <div class="bg-white border border-gray-100 border-t-4 border-t-blue-600 rounded-2xl p-6 shadow-sm col-span-1 md:col-span-12 lg:col-span-4 flex flex-col justify-between">
                 <div>
-                    <h2>Balance Total</h2>
-                    <p class="balance-amount">$4,250.00</p>
+                    <h2 class="text-lg font-semibold text-gray-600 mb-2">Balance Total</h2>
+                    <p class="text-4xl md:text-5xl font-bold text-blue-600 tracking-tight">$4,250.00</p>
                 </div>
-                <div class="balance-details">
-                    <div class="stat-box">
-                        <span class="stat-label income"><span class="material-symbols-outlined">arrow_upward</span> Ingresos</span>
-                        <span class="stat-value">$5,800.00</span>
+                <div class="flex gap-4 mt-8">
+                    <div class="flex-1 bg-green-50 p-4 rounded-xl">
+                        <span class="text-xs font-bold text-green-700 uppercase tracking-wider flex items-center gap-1 mb-1">
+                            <span class="material-symbols-outlined text-[16px]">arrow_upward</span> Ingresos
+                        </span>
+                        <span class="text-lg font-bold text-gray-900">$5,800.00</span>
                     </div>
-                    <div class="stat-box">
-                        <span class="stat-label expense"><span class="material-symbols-outlined">arrow_downward</span> Gastos</span>
-                        <span class="stat-value">$1,550.00</span>
+                    <div class="flex-1 bg-red-50 p-4 rounded-xl">
+                        <span class="text-xs font-bold text-red-700 uppercase tracking-wider flex items-center gap-1 mb-1">
+                            <span class="material-symbols-outlined text-[16px]">arrow_downward</span> Gastos
+                        </span>
+                        <span class="text-lg font-bold text-gray-900">$1,550.00</span>
                     </div>
                 </div>
             </div>
 
-            <!-- Expense Visualization -->
-            <div class="card expense-card">
-                <div class="card-header">
-                    <h2>Gasto por Categoría</h2>
-                    <button class="detail-btn">Ver detalle</button>
+            <!-- Tarjeta 2: Gasto por Categoría -->
+            <div class="bg-white border border-gray-100 rounded-2xl p-6 shadow-sm col-span-1 md:col-span-12 lg:col-span-8 flex flex-col">
+                <div class="flex justify-between items-center mb-6">
+                    <h2 class="text-lg font-semibold text-gray-900">Gasto por Categoría</h2>
+                    <button class="text-sm font-semibold text-blue-600 hover:bg-blue-50 px-3 py-1.5 rounded-lg transition-colors">Ver detalle</button>
                 </div>
-                <div class="chart-container">
+                <div class="flex-1 flex flex-col justify-center gap-5">
                     <!-- Hogar -->
-                    <div class="chart-row">
-                        <div class="chart-label"><span class="material-symbols-outlined">home</span> Hogar</div>
-                        <div class="progress-track">
-                            <div class="progress-bar hogar" style="width: 45%;"></div>
+                    <div class="flex items-center gap-4">
+                        <div class="w-24 text-sm font-medium text-gray-600 flex items-center gap-2">
+                            <span class="material-symbols-outlined text-gray-400">home</span> Hogar
                         </div>
-                        <div class="chart-value">$700</div>
+                        <div class="flex-1 h-2.5 bg-gray-100 rounded-full overflow-hidden">
+                            <div class="h-full bg-blue-600 rounded-full" style="width: 45%;"></div>
+                        </div>
+                        <div class="w-16 text-right text-sm font-bold text-gray-900">$700</div>
                     </div>
                     <!-- Comida -->
-                    <div class="chart-row">
-                        <div class="chart-label"><span class="material-symbols-outlined">restaurant</span> Comida</div>
-                        <div class="progress-track">
-                            <div class="progress-bar comida" style="width: 30%;"></div>
+                    <div class="flex items-center gap-4">
+                        <div class="w-24 text-sm font-medium text-gray-600 flex items-center gap-2">
+                            <span class="material-symbols-outlined text-gray-400">restaurant</span> Comida
                         </div>
-                        <div class="chart-value">$450</div>
+                        <div class="flex-1 h-2.5 bg-gray-100 rounded-full overflow-hidden">
+                            <div class="h-full bg-orange-500 rounded-full" style="width: 30%;"></div>
+                        </div>
+                        <div class="w-16 text-right text-sm font-bold text-gray-900">$450</div>
                     </div>
                     <!-- Ocio -->
-                    <div class="chart-row">
-                        <div class="chart-label"><span class="material-symbols-outlined">sports_esports</span> Ocio</div>
-                        <div class="progress-track">
-                            <div class="progress-bar ocio" style="width: 15%;"></div>
+                    <div class="flex items-center gap-4">
+                        <div class="w-24 text-sm font-medium text-gray-600 flex items-center gap-2">
+                            <span class="material-symbols-outlined text-gray-400">sports_esports</span> Ocio
                         </div>
-                        <div class="chart-value">$250</div>
+                        <div class="flex-1 h-2.5 bg-gray-100 rounded-full overflow-hidden">
+                            <div class="h-full bg-purple-500 rounded-full" style="width: 15%;"></div>
+                        </div>
+                        <div class="w-16 text-right text-sm font-bold text-gray-900">$250</div>
                     </div>
                     <!-- Salud -->
-                    <div class="chart-row">
-                        <div class="chart-label"><span class="material-symbols-outlined">medical_services</span> Salud</div>
-                        <div class="progress-track">
-                            <div class="progress-bar salud" style="width: 10%;"></div>
+                    <div class="flex items-center gap-4">
+                        <div class="w-24 text-sm font-medium text-gray-600 flex items-center gap-2">
+                            <span class="material-symbols-outlined text-gray-400">medical_services</span> Salud
                         </div>
-                        <div class="chart-value">$150</div>
+                        <div class="flex-1 h-2.5 bg-gray-100 rounded-full overflow-hidden">
+                            <div class="h-full bg-red-500 rounded-full" style="width: 10%;"></div>
+                        </div>
+                        <div class="w-16 text-right text-sm font-bold text-gray-900">$150</div>
                     </div>
                 </div>
             </div>
 
-            <!-- Savings Goals Widget -->
-            <div class="card goals-card">
-                <div class="goals-header">
-                    <span class="material-symbols-outlined">target</span>
-                    <h2>Metas de ahorro</h2>
+            <!-- Tarjeta 3: Metas de Ahorro -->
+            <div class="bg-white border border-gray-100 rounded-2xl p-6 shadow-sm col-span-1 md:col-span-12 lg:col-span-5 flex flex-col">
+                <div class="flex items-center gap-2 mb-6">
+                    <span class="material-symbols-outlined text-blue-600">target</span>
+                    <h2 class="text-lg font-semibold text-gray-900">Metas de ahorro</h2>
                 </div>
-                <div class="goals-list">
+                <div class="flex flex-col gap-6">
                     <!-- Fondo de emergencia -->
-                    <div class="goal-item">
-                        <div class="goal-info">
-                            <span class="goal-title">Fondo de emergencia</span>
-                            <span class="goal-percentage">65%</span>
+                    <div>
+                        <div class="flex justify-between items-end mb-2">
+                            <span class="text-sm font-semibold text-gray-900">Fondo de emergencia</span>
+                            <span class="text-sm font-bold text-green-600">65%</span>
                         </div>
-                        <div class="progress-track">
-                            <div class="progress-bar emergency" style="width: 65%;"></div>
+                        <div class="h-2.5 bg-gray-100 rounded-full overflow-hidden">
+                            <div class="h-full bg-green-500 rounded-full" style="width: 65%;"></div>
                         </div>
-                        <p class="goal-caption">$3,250 / $5,000</p>
+                        <p class="text-xs font-semibold text-gray-500 mt-2 text-right">$3,250 / $5,000</p>
                     </div>
                     <!-- Vacaciones -->
-                    <div class="goal-item">
-                        <div class="goal-info">
-                            <span class="goal-title">Vacaciones</span>
-                            <span class="goal-percentage">30%</span>
+                    <div>
+                        <div class="flex justify-between items-end mb-2">
+                            <span class="text-sm font-semibold text-gray-900">Vacaciones</span>
+                            <span class="text-sm font-bold text-blue-600">30%</span>
                         </div>
-                        <div class="progress-track">
-                            <div class="progress-bar vacation" style="width: 30%;"></div>
+                        <div class="h-2.5 bg-gray-100 rounded-full overflow-hidden">
+                            <div class="h-full bg-blue-500 rounded-full" style="width: 30%;"></div>
                         </div>
-                        <p class="goal-caption">$600 / $2,000</p>
+                        <p class="text-xs font-semibold text-gray-500 mt-2 text-right">$600 / $2,000</p>
                     </div>
                 </div>
             </div>
 
-            <!-- Recent Transactions -->
-            <div class="card transactions-card">
-                <h2>Transacciones recientes</h2>
-                <div class="transactions-list">
-                    <!-- Transaction Item 1 -->
-                    <div class="transaction-item">
-                        <div class="transaction-left">
-                            <div class="transaction-icon">
-                                <span class="material-symbols-outlined">restaurant</span>
+            <!-- Tarjeta 4: Transacciones Recientes -->
+            <div class="bg-white border border-gray-100 rounded-2xl p-6 shadow-sm col-span-1 md:col-span-12 lg:col-span-7 flex flex-col">
+                <h2 class="text-lg font-semibold text-gray-900 mb-4">Transacciones recientes</h2>
+                <div class="flex flex-col gap-2 flex-1">
+                    
+                    <!-- Item 1 -->
+                    <div class="flex items-center justify-between p-3 rounded-xl hover:bg-gray-50 border border-transparent hover:border-gray-100 transition-all cursor-pointer">
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 rounded-full bg-orange-50 flex items-center justify-center text-orange-600">
+                                <span class="material-symbols-outlined text-[20px]">restaurant</span>
                             </div>
                             <div>
-                                <h3>Supermercado</h3>
-                                <p>Comida • Hoy</p>
+                                <h3 class="text-sm font-semibold text-gray-900">Supermercado</h3>
+                                <p class="text-xs text-gray-500">Comida • Hoy</p>
                             </div>
                         </div>
-                        <span class="transaction-amount negative">-$120.50</span>
+                        <span class="text-sm font-bold text-gray-900">-$120.50</span>
                     </div>
-                    <!-- Transaction Item 2 -->
-                    <div class="transaction-item">
-                        <div class="transaction-left">
-                            <div class="transaction-icon success">
-                                <span class="material-symbols-outlined">payments</span>
+
+                    <!-- Item 2 -->
+                    <div class="flex items-center justify-between p-3 rounded-xl hover:bg-gray-50 border border-transparent hover:border-gray-100 transition-all cursor-pointer">
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 rounded-full bg-green-50 flex items-center justify-center text-green-600">
+                                <span class="material-symbols-outlined text-[20px]">payments</span>
                             </div>
                             <div>
-                                <h3>Transferencia recibida</h3>
-                                <p>Ingreso • Ayer</p>
+                                <h3 class="text-sm font-semibold text-gray-900">Transferencia recibida</h3>
+                                <p class="text-xs text-gray-500">Ingreso • Ayer</p>
                             </div>
                         </div>
-                        <span class="transaction-amount positive">+$850.00</span>
+                        <span class="text-sm font-bold text-green-600">+$850.00</span>
                     </div>
-                    <!-- Transaction Item 3 -->
-                    <div class="transaction-item">
-                        <div class="transaction-left">
-                            <div class="transaction-icon">
-                                <span class="material-symbols-outlined">home</span>
+
+                    <!-- Item 3 -->
+                    <div class="flex items-center justify-between p-3 rounded-xl hover:bg-gray-50 border border-transparent hover:border-gray-100 transition-all cursor-pointer">
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center text-blue-600">
+                                <span class="material-symbols-outlined text-[20px]">home</span>
                             </div>
                             <div>
-                                <h3>Mantenimiento</h3>
-                                <p>Hogar • 12 Oct</p>
+                                <h3 class="text-sm font-semibold text-gray-900">Mantenimiento</h3>
+                                <p class="text-xs text-gray-500">Hogar • 12 Oct</p>
                             </div>
                         </div>
-                        <span class="transaction-amount negative">-$200.00</span>
+                        <span class="text-sm font-bold text-gray-900">-$200.00</span>
                     </div>
+
                 </div>
-                <button class="view-all-btn">Ver todas las transacciones</button>
+                <button class="w-full mt-4 py-3 bg-gray-50 hover:bg-gray-100 text-blue-600 font-semibold text-sm rounded-xl transition-colors">
+                    Ver todas las transacciones
+                </button>
             </div>
+
         </div>
+
+        <!-- Botón Flotante para Agregar (FAB) -->
+        <button id="fabBtn" class="fixed bottom-24 md:bottom-10 right-6 md:right-10 w-14 h-14 bg-blue-600 hover:bg-blue-700 text-white rounded-2xl shadow-lg flex items-center justify-center transition-transform hover:scale-105 z-40" aria-label="Registrar ingreso o gasto">
+            <span class="material-symbols-outlined text-2xl">add</span>
+        </button>
+
     </main>
 
-    <!-- Floating Action Button (FAB) Contextual -->
-    <button aria-label="Registrar ingreso o gasto" class="fab-btn" id="fabBtn">
-        <span class="material-symbols-outlined fab-icon">add</span>
-    </button>
-
-    <!-- BottomNavBar (Mobile Responsive) -->
-    <nav class="bottom-nav">
-        <a class="nav-item" href="#">
-            <span class="material-symbols-outlined">home</span>
-            <span class="nav-label">Inicio</span>
-        </a>
-        <a class="nav-item active" href="#">
-            <span class="material-symbols-outlined icon-fill">payments</span>
-            <span class="nav-label">Finanzas</span>
-        </a>
-        <a class="nav-item" href="#">
-            <span class="material-symbols-outlined">shopping_cart</span>
-            <span class="nav-label">Compras</span>
-        </a>
-        <a class="nav-item" href="#">
-            <span class="material-symbols-outlined">assignment_turned_in</span>
-            <span class="nav-label">Tareas</span>
-        </a>
-        <a class="nav-item" href="#">
-            <span class="material-symbols-outlined">person</span>
-            <span class="nav-label">Perfil</span>
-        </a>
+    <!-- Barra de Navegación Inferior (Móvil) -->
+    <nav class="mobile-bottom-nav overflow-x-auto no-scrollbar">
+        <a class="mobile-nav-item flex-shrink-0" href="#"><span class="material-symbols-outlined">home</span><span>Inicio</span></a>
+        <!-- Finanzas Activo -->
+        <a class="mobile-nav-item active flex-shrink-0" href="#"><span class="material-symbols-outlined icono-relleno">account_balance_wallet</span><span>Finanzas</span></a>
+        <a class="mobile-nav-item flex-shrink-0" href="#"><span class="material-symbols-outlined">shopping_cart</span><span>Compras</span></a>
+        <a class="mobile-nav-item flex-shrink-0" href="#"><span class="material-symbols-outlined">assignment</span><span>Tareas</span></a>
+        <a class="mobile-nav-item flex-shrink-0" href="#"><span class="material-symbols-outlined">inventory_2</span><span>Inventario</span></a>
+        <a class="mobile-nav-item flex-shrink-0" href="#"><span class="material-symbols-outlined">analytics</span><span>Estad.</span></a>
+        <a class="mobile-nav-item flex-shrink-0" href="#"><span class="material-symbols-outlined">person</span><span>Perfil</span></a>
     </nav>
 
-    <!-- Custom JavaScript -->
+    <!-- Script de Finanzas -->
     <script src="js/Gestion-Financiera.js"></script>
 </body>
 </html>

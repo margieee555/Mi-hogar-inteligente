@@ -1,248 +1,314 @@
 <!DOCTYPE html>
-<html class="light" lang="es">
+<html lang="es">
 <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <title>Mi Hogar Inteligente - Perfil y Gestión Familiar</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <title>Perfil y Gestión - Mi Hogar 360</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/Perfil-Gestion.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Estilos base del Dashboard -->
+    <link rel="stylesheet" href="css/Estilos-Globales.css">
+    <link rel="stylesheet" href="css/Inicio-Rapido.css">
 </head>
-<body class="page-body">
 
-    <!-- Navegación lateral (Escritorio) -->
-    <aside class="desktop-sidebar">
-        <div class="sidebar-brand">
-            <span class="material-symbols-outlined brand-logo">home_app_logo</span>
-            <span class="brand-title">Mi Hogar Inteligente</span>
+<body class="bg-background text-on-background min-h-screen flex flex-col pt-16 pb-24 md:pb-0">
+
+    <!-- Barra Superior -->
+    <header class="app-header">
+        <div class="flex items-center gap-sm">
+            <span class="material-symbols-outlined text-primary dark:text-primary-fixed icono-relleno">home_app_logo</span>
+            <span class="app-title font-bold text-lg">Mi Hogar 360</span>
         </div>
-        <div class="sidebar-user-profile">
-            <img class="sidebar-avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdmHpbogRcyzI1psmy6zxbYHGIbnmTDQircAIcDNz5YS2pxd9-WGIx2P2qWxR94jYfHAp2gHtl4v0ZQUOtLv0uHIwHzAHu543aoyR2uUA5DCtwAiaCbT1ujXOh59OAg0mC4Pjc3PG1q_ZR5wTTlfDc9xHSSXpspNoafyoYYJoKHZ6PgmS0Qp-U7BLPrMLu7hy7rkrTlGvpLm7HRgf8LghyC7Low0NPAFtrWhU3d1OCgbZ2KsI3RQ1LeA" alt="Avatar">
-            <div>
-                <h3 class="sidebar-user-name">Mi Hogar</h3>
-                <p class="sidebar-user-role">Administrador • Premium</p>
-            </div>
-        </div>
-        <nav class="sidebar-nav">
-            <a class="nav-item" href="#">
-                <span class="material-symbols-outlined">calendar_month</span>
-                <span>Calendario</span>
-            </a>
-            <a class="nav-item" href="#">
-                <span class="material-symbols-outlined">inventory_2</span>
-                <span>Inventario</span>
-            </a>
-            <a class="nav-item" href="#">
-                <span class="material-symbols-outlined">analytics</span>
-                <span>Reportes</span>
-            </a>
-            <a class="nav-item active" href="#">
-                <span class="material-symbols-outlined icon-fill">person</span>
-                <span>Perfil</span>
-            </a>
+        <nav class="hidden md:flex items-center gap-lg">
+            <a class="nav-link" href="Inicio-Rapido.html"><span class="material-symbols-outlined">home</span>Inicio</a>
+            <a class="nav-link" href="Gestion-Financiera.html"><span class="material-symbols-outlined">account_balance_wallet</span>Finanzas</a>
+            <a class="nav-link" href="Listas-Compras.html"><span class="material-symbols-outlined">shopping_cart</span>Compras</a>
+            <a class="nav-link" href="Organizador-Tareas.html"><span class="material-symbols-outlined">assignment</span>Tareas</a>
+            <a class="nav-link" href="Inventario.html"><span class="material-symbols-outlined">inventory_2</span>Inventario</a>
+            <a class="nav-link" href="Reportes-Estadisticas.html"><span class="material-symbols-outlined">analytics</span>Estadísticas</a>
+            <!-- Perfil Activo (Escritorio) -->
+            <a class="nav-link active" href="#"><span class="material-symbols-outlined icono-relleno">person</span>Perfil</a>
         </nav>
-    </aside>
-
-    <!-- Contenedor Principal -->
-    <div class="main-container">
         
-        <!-- Top App Bar (Móvil) -->
-        <header class="mobile-top-bar">
-            <div class="mobile-brand-container">
-                <img class="mobile-top-avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBoz4aykxlTi__6qJcp9ShN0TiWz258TsE1e9rKX0cgj6lf4zkZ9LqBdDTYGePBDsSTMeVwEPKbTVz2A1Wzv-603XX09Z3pX8oLntHiWUcFQKipv_yZWsDYpgkX5xfJMHz1erbjjA36EAS4AUR3cb5sVgQYqNB83Nt6dQVgYzlxtFxQ28y_yqqbmNEwX1080wg9UzGTEviGy74lMeTiRPuCtWuTaa8K3GwLIH7P32hr4gITAvh5ffXSgg" alt="Avatar móvil">
-                <span class="mobile-title">Mi Hogar Inteligente</span>
-            </div>
-            <button class="icon-button" type="button" aria-label="Notificaciones">
+        <div class="flex items-center gap-2">
+            <button class="notification-btn" aria-label="Notificaciones">
                 <span class="material-symbols-outlined">notifications</span>
             </button>
-        </header>
+        </div>
+    </header>
 
-        <!-- Contenido -->
-        <main class="content-scroll">
-            <div class="content-inner">
-                
-                <!-- Tarjeta Principal del Perfil -->
-                <section class="profile-card">
-                    <div class="profile-avatar-container group">
-                        <img class="profile-main-img" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCaMLnXonY7irP2MmMS9udzB4KXyc06gdS8MC6aXvPjGXS2XqCkndrSLUr5HeVMJN55fndW7qWyrMzLG26qyC97xfW2MejrTyRFun4ex1tYQ14yWMIj_Ov1inHe1GF7uzRS6YB4m5fvxIC7okNngPEEOVDK4do_qat7Lz7a-v-me3bRpPZo0eK7m43-oKIrpoIl5zCwg-nVqed80d-b6o5Si6nLbk5R3tH5xS-pWkvW9MXH5nLdvBnAeA" alt="Foto de perfil">
-                        <button class="avatar-edit-btn" type="button">
-                            <span class="material-symbols-outlined">edit</span>
+    <!-- Contenido Principal -->
+    <main class="flex-grow container mx-auto px-md py-lg max-w-container-max relative">
+
+        <div class="mb-6">
+            <h1 class="text-3xl font-bold text-gray-900 tracking-tight">Perfil y Configuración</h1>
+            <p class="font-body-lg text-body-lg text-[--color-texto-secundario] mt-2">
+                Administra tu cuenta, miembros del hogar y preferencias.
+            </p>
+        </div>
+
+        <!-- Tarjeta Principal del Perfil -->
+        <section class="bg-white border border-gray-100 rounded-3xl p-6 md:p-8 shadow-sm mb-8 flex flex-col md:flex-row items-center md:items-start text-center md:text-left gap-6 md:gap-8 relative overflow-hidden">
+            <!-- Fondo decorativo -->
+            <div class="absolute top-0 left-0 w-full h-24 bg-gradient-to-b from-blue-50 to-transparent"></div>
+            
+            <div class="relative z-10 group">
+                <img class="w-28 h-28 md:w-32 md:h-32 rounded-full object-cover border-4 border-white shadow-md" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCaMLnXonY7irP2MmMS9udzB4KXyc06gdS8MC6aXvPjGXS2XqCkndrSLUr5HeVMJN55fndW7qWyrMzLG26qyC97xfW2MejrTyRFun4ex1tYQ14yWMIj_Ov1inHe1GF7uzRS6YB4m5fvxIC7okNngPEEOVDK4do_qat7Lz7a-v-me3bRpPZo0eK7m43-oKIrpoIl5zCwg-nVqed80d-b6o5Si6nLbk5R3tH5xS-pWkvW9MXH5nLdvBnAeA" alt="Tu foto de perfil">
+                <button class="absolute bottom-0 right-0 bg-blue-600 text-white p-2 rounded-full shadow-lg hover:bg-blue-700 transition-colors">
+                    <span class="material-symbols-outlined text-[18px]">edit</span>
+                </button>
+            </div>
+            
+            <div class="relative z-10 flex-1 flex flex-col justify-center h-full pt-2 md:pt-4">
+                <h2 class="text-2xl font-bold text-gray-900 mb-1">Julian Esteban</h2>
+                <p class="text-gray-500 mb-4">julian.esteban@mihogar360.com</p>
+                <div class="flex flex-wrap justify-center md:justify-start gap-2">
+                    <span class="bg-blue-50 text-blue-600 border border-blue-100 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Cuenta Premium</span>
+                    <span class="bg-green-50 text-green-700 border border-green-100 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Administrador</span>
+                </div>
+            </div>
+
+            <div class="relative z-10 mt-4 md:mt-0 md:self-center">
+                <button class="bg-gray-50 hover:bg-gray-100 text-blue-600 font-semibold px-6 py-3 rounded-xl border border-gray-200 transition-colors w-full md:w-auto">
+                    Editar Perfil
+                </button>
+            </div>
+        </section>
+
+        <!-- Bento Grid: Gestión Familiar y Ajustes -->
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+
+            <!-- Columna Izquierda: Gestión Familiar -->
+            <div class="col-span-1 md:col-span-12 lg:col-span-7 flex flex-col gap-6">
+                <div class="bg-white border border-gray-100 rounded-3xl p-6 shadow-sm flex-1">
+                    <div class="flex justify-between items-center mb-6 pb-4 border-b border-gray-100">
+                        <div class="flex items-center gap-2">
+                            <span class="material-symbols-outlined text-blue-600 text-2xl">diversity_3</span>
+                            <h3 class="text-lg font-semibold text-gray-900">Gestión Familiar</h3>
+                        </div>
+                        <button class="bg-blue-50 text-blue-600 w-10 h-10 rounded-full flex items-center justify-center hover:bg-blue-100 transition-colors">
+                            <span class="material-symbols-outlined">person_add</span>
                         </button>
                     </div>
-                    <div class="profile-info-text">
-                        <h1 class="profile-name">Carlos Mendoza</h1>
-                        <p class="profile-email">carlos.mendoza@gmail.com</p>
-                        <div class="profile-badges">
-                            <span class="badge-premium">Cuenta Premium</span>
-                            <span class="badge-admin">Administrador Principal</span>
-                        </div>
-                    </div>
-                    <button class="edit-profile-btn" type="button">Editar Perfil</button>
-                </section>
-
-                <!-- Grid Bento: Gestión Familiar & Ajustes / Seguridad -->
-                <div class="bento-grid">
                     
-                    <!-- Gestión Familiar Completa -->
-                    <div class="bento-box">
-                        <div class="bento-header">
-                            <h2 class="bento-title">
-                                <span class="material-symbols-outlined text-primary">diversity_3</span>
-                                Gestión Familiar
-                            </h2>
-                            <button class="icon-button primary-hover" type="button" aria-label="Añadir miembro">
-                                <span class="material-symbols-outlined">person_add</span>
-                            </button>
-                        </div>
-                        
-                        <!-- Lista de Miembros -->
-                        <ul class="member-list">
-                            <li class="member-item">
-                                <div class="member-details">
-                                    <img class="member-avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7Wqpanf2Ht0yTeVlcgGvKNQkiM8djCXN_Hic9bDblNrpvvybUiK3eeAA8-rXn9m1BDPQ0wSm2vqBFx60mijhMKgTO9A9MXW08ZdPGG4cQSFpT4dmF24dZikX1lN1qxyFHNnKKN-ZMtlJRQskU7LMFoO0rUyfjPT-8L29jZI-VuhpRFGKaqtMlgQ6DiEPV4wj6-rzf6XLUe961Kzzs3Ht0YSyF0aVVRor-Q3-HwNXi3kb6Bd5bODbIXg" alt="Carlos">
-                                    <div>
-                                        <p class="member-name">Carlos Mendoza (Tú)</p>
-                                        <p class="member-role">Administrador</p>
-                                    </div>
+                    <!-- Lista de Miembros (Clicables para abrir modal) -->
+                    <ul class="flex flex-col gap-2">
+                        <!-- Tú -->
+                        <li class="flex items-center justify-between p-3 rounded-xl bg-gray-50 border border-gray-100">
+                            <div class="flex items-center gap-4">
+                                <img class="w-12 h-12 rounded-full object-cover shadow-sm" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCaMLnXonY7irP2MmMS9udzB4KXyc06gdS8MC6aXvPjGXS2XqCkndrSLUr5HeVMJN55fndW7qWyrMzLG26qyC97xfW2MejrTyRFun4ex1tYQ14yWMIj_Ov1inHe1GF7uzRS6YB4m5fvxIC7okNngPEEOVDK4do_qat7Lz7a-v-me3bRpPZo0eK7m43-oKIrpoIl5zCwg-nVqed80d-b6o5Si6nLbk5R3tH5xS-pWkvW9MXH5nLdvBnAeA" alt="Tú">
+                                <div>
+                                    <p class="font-semibold text-gray-900">Julian Esteban (Tú)</p>
+                                    <p class="text-xs text-gray-500 font-medium">Administrador</p>
                                 </div>
-                                <span class="material-symbols-outlined options-icon">more_vert</span>
-                            </li>
-                            <li class="member-item">
-                                <div class="member-details">
-                                    <img class="member-avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCb89Y92JUh2QrSjolnoSux11t10qqjy2mWDqbIW7b60PxUdG5imn7l4qkuo8u6jD-IdufrSfz1Ms14uSqGb8MfAMIykpTAPSHVtBjONjKP3FhQ6k3O-iXUtOKOnZe-RTsiC2YG-AEgmy9bOC35rPSR6hAvgKvhidrZ5gaWuE4pN7y662IGKstoChrzBFuyyghdAYrMC5jmcvNOvurG6BP8jlEmseUG1TDB-UrvpZMv9flYNCJkOaj9PQ" alt="Ana">
-                                    <div>
-                                        <p class="member-name">Ana García</p>
-                                        <p class="member-role">Miembro</p>
-                                    </div>
-                                </div>
-                                <span class="material-symbols-outlined options-icon">more_vert</span>
-                            </li>
-                            <li class="member-item">
-                                <div class="member-details">
-                                    <div class="member-avatar-fallback">L</div>
-                                    <div>
-                                        <p class="member-name">Luis Mendoza</p>
-                                        <p class="member-role">Miembro (Hijo)</p>
-                                    </div>
-                                </div>
-                                <span class="material-symbols-outlined options-icon">more_vert</span>
-                            </li>
-                        </ul>
-
-                        <!-- Invitaciones Pendientes integradas -->
-                        <div class="pending-section">
-                            <h3 class="pending-title">
-                                <span class="material-symbols-outlined text-tertiary">mail</span>
-                                Invitaciones Pendientes
-                            </h3>
-                            <div class="pending-card">
-                                <div class="pending-info">
-                                    <div class="pending-icon-wrap">
-                                        <span class="material-symbols-outlined text-sm">schedule</span>
-                                    </div>
-                                    <div>
-                                        <p class="pending-email">abuela.mendoza@email.com</p>
-                                        <p class="pending-time">Enviada hace 2 días</p>
-                                    </div>
-                                </div>
-                                <span class="pending-badge">Pendiente</span>
                             </div>
+                        </li>
+
+                        <!-- Miembro 2 (Ana) - Activa el Modal -->
+                        <li class="flex items-center justify-between p-3 rounded-xl hover:bg-blue-50 border border-transparent hover:border-blue-100 cursor-pointer transition-all group" data-modal="modal-detalle-miembro">
+                            <div class="flex items-center gap-4">
+                                <img class="w-12 h-12 rounded-full object-cover shadow-sm" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCb89Y92JUh2QrSjolnoSux11t10qqjy2mWDqbIW7b60PxUdG5imn7l4qkuo8u6jD-IdufrSfz1Ms14uSqGb8MfAMIykpTAPSHVtBjONjKP3FhQ6k3O-iXUtOKOnZe-RTsiC2YG-AEgmy9bOC35rPSR6hAvgKvhidrZ5gaWuE4pN7y662IGKstoChrzBFuyyghdAYrMC5jmcvNOvurG6BP8jlEmseUG1TDB-UrvpZMv9flYNCJkOaj9PQ" alt="Ana">
+                                <div>
+                                    <p class="font-semibold text-gray-900 group-hover:text-blue-700 transition-colors">Nicol García</p>
+                                    <p class="text-xs text-gray-500 font-medium">Miembro</p>
+                                </div>
+                            </div>
+                            <span class="material-symbols-outlined text-gray-400 group-hover:text-blue-600">chevron_right</span>
+                        </li>
+
+                        <!-- Miembro 3 -->
+                        <li class="flex items-center justify-between p-3 rounded-xl hover:bg-blue-50 border border-transparent hover:border-blue-100 cursor-pointer transition-all group" data-modal="modal-detalle-miembro">
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 rounded-full bg-orange-100 text-orange-700 font-bold text-lg flex items-center justify-center shadow-sm">L</div>
+                                <div>
+                                    <p class="font-semibold text-gray-900 group-hover:text-blue-700 transition-colors">Luis Mendoza</p>
+                                    <p class="text-xs text-gray-500 font-medium">Invitado</p>
+                                </div>
+                            </div>
+                            <span class="material-symbols-outlined text-gray-400 group-hover:text-blue-600">chevron_right</span>
+                        </li>
+                    </ul>
+
+                    <!-- Invitaciones Pendientes -->
+                    <div class="mt-8 pt-6 border-t border-gray-100">
+                        <div class="flex items-center gap-2 mb-4">
+                            <span class="material-symbols-outlined text-orange-500 text-xl">mail</span>
+                            <h4 class="text-sm font-semibold text-gray-800">Invitaciones Pendientes</h4>
+                        </div>
+                        <div class="flex items-center justify-between p-3 rounded-xl border border-dashed border-gray-300 bg-gray-50">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-full bg-orange-50 text-orange-500 flex items-center justify-center">
+                                    <span class="material-symbols-outlined text-[20px]">schedule</span>
+                                </div>
+                                <div>
+                                    <p class="text-sm font-medium text-gray-800">familia@email.com</p>
+                                    <p class="text-[11px] text-gray-500">Enviada hace 2 días</p>
+                                </div>
+                            </div>
+                            <span class="bg-orange-100 text-orange-700 px-2 py-1 rounded-lg text-[10px] font-bold uppercase">Pendiente</span>
                         </div>
                     </div>
+                </div>
+            </div>
 
-                    <!-- Columna Derecha: Ajustes y Seguridad -->
-                    <div class="bento-column-right">
-                        
-                        <!-- Ajustes Rápidos -->
-                        <div class="bento-box">
-                            <h2 class="bento-title border-bottom">
-                                <span class="material-symbols-outlined text-primary">tune</span>
-                                Ajustes rápidos
-                            </h2>
-                            <div class="settings-list">
-                                <div class="setting-item" id="darkModeToggle">
-                                    <div class="setting-left">
-                                        <span class="material-symbols-outlined text-on-surface-variant">dark_mode</span>
-                                        <span>Tema Oscuro</span>
-                                    </div>
-                                    <div class="toggle-switch">
-                                        <div class="toggle-dot"></div>
-                                    </div>
-                                </div>
-                                <div class="setting-item">
-                                    <div class="setting-left">
-                                        <span class="material-symbols-outlined text-on-surface-variant">language</span>
-                                        <span>Idioma</span>
-                                    </div>
-                                    <span class="setting-right-text">Español <span class="material-symbols-outlined text-sm">chevron_right</span></span>
-                                </div>
-                                <div class="setting-item">
-                                    <div class="setting-left">
-                                        <span class="material-symbols-outlined text-on-surface-variant">notifications_active</span>
-                                        <span>Notificaciones</span>
-                                    </div>
-                                    <span class="material-symbols-outlined text-primary text-sm">chevron_right</span>
-                                </div>
+            <!-- Columna Derecha: Ajustes & Seguridad -->
+            <div class="col-span-1 md:col-span-12 lg:col-span-5 flex flex-col gap-6">
+                <!-- Ajustes -->
+                <div class="bg-white border border-gray-100 rounded-3xl p-6 shadow-sm">
+                    <div class="flex items-center gap-2 mb-4 pb-4 border-b border-gray-100">
+                        <span class="material-symbols-outlined text-blue-600 text-xl">tune</span>
+                        <h3 class="font-semibold text-gray-900">Ajustes Rápidos</h3>
+                    </div>
+                    <ul class="flex flex-col gap-1">
+                        <!-- Switch Tema Oscuro -->
+                        <li class="flex items-center justify-between p-3 rounded-xl hover:bg-gray-50 transition-colors cursor-pointer" id="darkModeToggle">
+                            <div class="flex items-center gap-3 text-gray-700">
+                                <span class="material-symbols-outlined text-gray-400">dark_mode</span>
+                                <span class="font-medium text-sm">Tema Oscuro</span>
                             </div>
-                        </div>
-
-                        <!-- Seguridad -->
-                        <div class="bento-box">
-                            <h2 class="bento-title border-bottom">
-                                <span class="material-symbols-outlined text-primary">security</span>
-                                Seguridad
-                            </h2>
-                            <div class="security-list">
-                                <button class="security-btn" type="button">
-                                    <span>Cambio de contraseña</span>
-                                    <span class="material-symbols-outlined text-outline text-sm">chevron_right</span>
-                                </button>
-                                <button class="security-btn" type="button">
-                                    <span>Privacidad de datos</span>
-                                    <span class="material-symbols-outlined text-outline text-sm">chevron_right</span>
-                                </button>
+                            <div class="w-10 h-6 bg-gray-200 rounded-full relative transition-colors duration-300 toggle-track">
+                                <div class="w-4 h-4 bg-white rounded-full absolute top-1 left-1 shadow-sm transition-transform duration-300 toggle-dot"></div>
                             </div>
-                        </div>
+                        </li>
+                        <li class="flex items-center justify-between p-3 rounded-xl hover:bg-gray-50 transition-colors cursor-pointer">
+                            <div class="flex items-center gap-3 text-gray-700">
+                                <span class="material-symbols-outlined text-gray-400">language</span>
+                                <span class="font-medium text-sm">Idioma</span>
+                            </div>
+                            <div class="flex items-center text-sm font-semibold text-blue-600">
+                                Español <span class="material-symbols-outlined text-[18px]">chevron_right</span>
+                            </div>
+                        </li>
+                        <li class="flex items-center justify-between p-3 rounded-xl hover:bg-gray-50 transition-colors cursor-pointer">
+                            <div class="flex items-center gap-3 text-gray-700">
+                                <span class="material-symbols-outlined text-gray-400">notifications_active</span>
+                                <span class="font-medium text-sm">Notificaciones</span>
+                            </div>
+                            <span class="material-symbols-outlined text-gray-400 text-[18px]">chevron_right</span>
+                        </li>
+                    </ul>
+                </div>
 
+                <!-- Seguridad -->
+                <div class="bg-white border border-gray-100 rounded-3xl p-6 shadow-sm">
+                    <div class="flex items-center gap-2 mb-4 pb-4 border-b border-gray-100">
+                        <span class="material-symbols-outlined text-blue-600 text-xl">security</span>
+                        <h3 class="font-semibold text-gray-900">Seguridad</h3>
+                    </div>
+                    <ul class="flex flex-col gap-2">
+                        <li class="flex justify-between items-center p-3 rounded-xl border border-gray-100 hover:border-gray-200 hover:bg-gray-50 cursor-pointer transition-all">
+                            <span class="text-sm font-medium text-gray-700">Cambio de contraseña</span>
+                            <span class="material-symbols-outlined text-gray-400 text-[18px]">chevron_right</span>
+                        </li>
+                        <li class="flex justify-between items-center p-3 rounded-xl border border-gray-100 hover:border-gray-200 hover:bg-gray-50 cursor-pointer transition-all">
+                            <span class="text-sm font-medium text-gray-700">Privacidad de datos</span>
+                            <span class="material-symbols-outlined text-gray-400 text-[18px]">chevron_right</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Botón Cerrar Sesión -->
+                <button class="w-full mt-2 py-3 border border-red-200 text-red-600 hover:bg-red-50 font-bold rounded-xl flex items-center justify-center gap-2 transition-colors">
+                    <span class="material-symbols-outlined text-[20px]">logout</span> Cerrar Sesión
+                </button>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Barra de Navegación Inferior (Móvil) -->
+    <nav class="mobile-bottom-nav overflow-x-auto no-scrollbar">
+        <a class="mobile-nav-item flex-shrink-0" href="#"><span class="material-symbols-outlined">home</span><span>Inicio</span></a>
+        <a class="mobile-nav-item flex-shrink-0" href="#"><span class="material-symbols-outlined">account_balance_wallet</span><span>Finanzas</span></a>
+        <a class="mobile-nav-item flex-shrink-0" href="#"><span class="material-symbols-outlined">shopping_cart</span><span>Compras</span></a>
+        <a class="mobile-nav-item flex-shrink-0" href="#"><span class="material-symbols-outlined">assignment</span><span>Tareas</span></a>
+        <a class="mobile-nav-item flex-shrink-0" href="#"><span class="material-symbols-outlined">inventory_2</span><span>Inventario</span></a>
+        <a class="mobile-nav-item flex-shrink-0" href="#"><span class="material-symbols-outlined">analytics</span><span>Estad.</span></a>
+        <!-- Perfil Activo (Móvil) -->
+        <a class="mobile-nav-item active flex-shrink-0" href="#"><span class="material-symbols-outlined icono-relleno">person</span><span>Perfil</span></a>
+    </nav>
+
+    <!-- ========================================== -->
+    <!--  MODAL: INFORMACIÓN DETALLADA DEL MIEMBRO  -->
+    <!-- ========================================== -->
+    <div id="modal-detalle-miembro" class="modal-overlay hidden" role="dialog" aria-modal="true">
+        <div class="modal-container bg-white" style="max-width: 500px;"> <!-- Ligeramente más estrecho para un perfil -->
+            <header class="modal-header border-b-0 pb-0">
+                <div class="flex items-center gap-2 text-gray-500 hover:text-gray-800 cursor-pointer transition-colors" data-close="modal-detalle-miembro">
+                    <span class="material-symbols-outlined text-lg">arrow_back</span>
+                    <span class="text-sm font-semibold">Volver</span>
+                </div>
+            </header>
+
+            <div class="modal-body pt-0">
+                <!-- Cabecera Perfil -->
+                <div class="flex flex-col items-center text-center mt-2">
+                    <img class="w-24 h-24 rounded-full object-cover border-4 border-white shadow-md mb-4" alt="Nicol" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCb89Y92JUh2QrSjolnoSux11t10qqjy2mWDqbIW7b60PxUdG5imn7l4qkuo8u6jD-IdufrSfz1Ms14uSqGb8MfAMIykpTAPSHVtBjONjKP3FhQ6k3O-iXUtOKOnZe-RTsiC2YG-AEgmy9bOC35rPSR6hAvgKvhidrZ5gaWuE4pN7y662IGKstoChrzBFuyyghdAYrMC5jmcvNOvurG6BP8jlEmseUG1TDB-UrvpZMv9flYNCJkOaj9PQ">
+                    <h2 class="text-xl font-bold text-gray-900">Nicol García</h2>
+                    <p class="text-sm text-gray-500 mb-3">nicol@mihogar360.com</p>
+                    <span class="bg-blue-50 text-blue-600 border border-blue-100 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider flex items-center gap-1">
+                        <span class="material-symbols-outlined text-[14px]">person</span> Miembro
+                    </span>
+                </div>
+
+                <!-- Estadísticas Resumidas -->
+                <div class="grid grid-cols-2 gap-4 mt-4">
+                    <div class="bg-gray-50 p-4 rounded-2xl border border-gray-100 flex flex-col items-center justify-center text-center">
+                        <div class="w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center mb-2"><span class="material-symbols-outlined text-[16px]">task_alt</span></div>
+                        <p class="text-2xl font-bold text-gray-900">12</p>
+                        <p class="text-[10px] font-bold text-gray-500 uppercase tracking-wider mt-1">Tareas Listas</p>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-2xl border border-gray-100 flex flex-col items-center justify-center text-center">
+                        <div class="w-8 h-8 rounded-full bg-green-100 text-green-600 flex items-center justify-center mb-2"><span class="material-symbols-outlined text-[16px]">savings</span></div>
+                        <p class="text-2xl font-bold text-gray-900">$450</p>
+                        <p class="text-[10px] font-bold text-gray-500 uppercase tracking-wider mt-1">Ahorro Mensual</p>
                     </div>
                 </div>
 
-                <!-- Cerrar Sesión -->
-                <div class="logout-container">
-                    <button class="logout-btn" type="button">
-                        <span class="material-symbols-outlined">logout</span>
-                        Cerrar sesión
+                <!-- Tareas Asignadas -->
+                <div class="mt-2">
+                    <div class="flex justify-between items-center mb-3">
+                        <h3 class="text-sm font-semibold text-gray-900">Tareas asignadas</h3>
+                        <span class="text-xs font-bold text-blue-600 cursor-pointer hover:underline">Ver todas</span>
+                    </div>
+                    <ul class="flex flex-col gap-2">
+                        <li class="task-modal-item flex items-center gap-3 p-3 bg-white border border-gray-200 rounded-xl cursor-pointer hover:bg-gray-50 transition-colors">
+                            <span class="material-symbols-outlined text-gray-400 task-checkbox">radio_button_unchecked</span>
+                            <div>
+                                <p class="text-sm font-semibold text-gray-800 task-name">Pagar recibo de luz</p>
+                                <div class="flex gap-2 mt-1">
+                                    <span class="bg-red-50 text-red-600 text-[9px] font-bold uppercase px-2 py-0.5 rounded">Alta Prioridad</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="task-modal-item flex items-center gap-3 p-3 bg-white border border-gray-200 rounded-xl cursor-pointer hover:bg-gray-50 transition-colors">
+                            <span class="material-symbols-outlined text-gray-400 task-checkbox">radio_button_unchecked</span>
+                            <div>
+                                <p class="text-sm font-semibold text-gray-800 task-name">Comprar despensa semanal</p>
+                                <div class="flex gap-2 mt-1">
+                                    <span class="bg-gray-100 text-gray-600 text-[9px] font-bold uppercase px-2 py-0.5 rounded">En curso</span>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Acciones Rápidas del Miembro -->
+                <div class="flex flex-col gap-2 mt-4 pt-4 border-t border-gray-100">
+                    <button class="w-full bg-blue-50 hover:bg-blue-100 text-blue-700 font-semibold text-sm py-3 rounded-xl flex items-center justify-center gap-2 transition-colors">
+                        <span class="material-symbols-outlined text-[18px]">manage_accounts</span> Editar Permisos
+                    </button>
+                    <button class="w-full bg-white hover:bg-red-50 border border-red-100 text-red-600 font-semibold text-sm py-3 rounded-xl flex items-center justify-center gap-2 transition-colors mt-2">
+                        <span class="material-symbols-outlined text-[18px]">person_remove</span> Eliminar del Hogar
                     </button>
                 </div>
-
             </div>
-        </main>
-
-        <!-- Barra de Navegación Inferior (Móvil) -->
-        <nav class="mobile-bottom-nav">
-            <a class="bottom-nav-item" href="#">
-                <span class="material-symbols-outlined">home</span>
-                <span class="bottom-nav-label">Inicio</span>
-            </a>
-            <a class="bottom-nav-item" href="#">
-                <span class="material-symbols-outlined">payments</span>
-                <span class="bottom-nav-label">Finanzas</span>
-            </a>
-            <a class="bottom-nav-item" href="#">
-                <span class="material-symbols-outlined">shopping_cart</span>
-                <span class="bottom-nav-label">Compras</span>
-            </a>
-            <a class="bottom-nav-item" href="#">
-                <span class="material-symbols-outlined">assignment_turned_in</span>
-                <span class="bottom-nav-label">Tareas</span>
-            </a>
-            <a class="bottom-nav-item active" href="#">
-                <span class="material-symbols-outlined icon-fill">person</span>
-                <span class="bottom-nav-label">Perfil</span>
-            </a>
-        </nav>
+        </div>
     </div>
 
+    <!-- JS Externo -->
     <script src="js/Perfil-Gestion.js"></script>
 </body>
 </html>

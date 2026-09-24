@@ -3,253 +3,189 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista de Compras - Mi Hogar Inteligente</title>
-    <!-- Google Fonts & Material Symbols -->
-    <link href="https://fonts.googleapis.com" rel="preconnect">
-    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <title>Lista de Compras - Mi Hogar 360</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
-    <!-- CSS Separado -->
-    <link rel="stylesheet" href="css/Listas-Compras.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Mismos estilos base del Dashboard para consistencia -->
+    <link rel="stylesheet" href="css/Estilos-Globales.css">
+    <link rel="stylesheet" href="css/Inicio-Rapido.css">
 </head>
 
-<body class="pagina-compras">
+<body class="bg-background text-on-background min-h-screen flex flex-col pt-16 pb-24 md:pb-0">
 
-    <!-- Navegación Superior -->
-    <header class="barra-superior">
-        <div class="header-contenedor">
-            <div class="marca-logo">
-                <span class="material-symbols-outlined icono-marca">home_app_logo</span>
-                <span class="nombre-marca">Mi Hogar Inteligente</span>
-            </div>
-            
-            <nav class="navegacion-principal">
-                <a class="nav-enlace" href="#">Inicio</a>
-                <a class="nav-enlace" href="#">Finanzas</a>
-                <a class="nav-enlace activo" href="#">Compras</a>
-                <a class="nav-enlace" href="#">Tareas</a>
-                <a class="nav-enlace" href="#">Perfil</a>
-            </nav>
-
-            <button class="boton-notificacion">
+    <!-- Barra Superior -->
+    <header class="app-header">
+        <div class="flex items-center gap-sm">
+            <span class="material-symbols-outlined text-primary dark:text-primary-fixed icono-relleno">home_app_logo</span>
+            <span class="app-title font-bold text-lg">Mi Hogar 360</span>
+        </div>
+        <nav class="hidden md:flex items-center gap-lg">
+            <a class="nav-link" href="Inicio-Rapido.html"><span class="material-symbols-outlined">home</span>Inicio</a>
+            <a class="nav-link" href="Gestion-Financiera.html"><span class="material-symbols-outlined">account_balance_wallet</span>Finanzas</a>
+            <!-- Compras Activo -->
+            <a class="nav-link active" href="#"><span class="material-symbols-outlined icono-relleno">shopping_cart</span>Compras</a>
+            <a class="nav-link" href="Organizador-Tareas.html"><span class="material-symbols-outlined">assignment</span>Tareas</a>
+            <a class="nav-link" href="Inventario.html"><span class="material-symbols-outlined">inventory_2</span>Inventario</a>
+            <a class="nav-link" href="Reportes-Estadisticas.html"><span class="material-symbols-outlined">analytics</span>Estadísticas</a>
+        </nav>
+        
+        <div class="flex items-center gap-2">
+            <button class="notification-btn" aria-label="Notificaciones">
                 <span class="material-symbols-outlined">notifications</span>
+            </button>
+            <button class="notification-btn" aria-label="Perfil de Usuario">
+                <span class="material-symbols-outlined">person</span>
             </button>
         </div>
     </header>
 
     <!-- Contenido Principal -->
-    <main class="contenedor-principal">
+    <main class="flex-grow container mx-auto px-md py-lg max-w-container-max relative">
 
-        <!-- Encabezado de la página -->
-        <section class="encabezado-seccion">
-            <div>
-                <h1 class="titulo-pagina">Lista de Compras</h1>
-                <p class="subtitulo-pagina">Administra el inventario del hogar y tus próximas compras.</p>
-            </div>
-            <div class="acciones-encabezado">
-                <button class="boton-secundario">
-                    <span class="material-symbols-outlined">share</span>
-                    <span>Compartir Lista</span>
-                </button>
-                <button class="boton-principal">
-                    <span class="material-symbols-outlined">add</span>
-                    <span>Agregar Producto</span>
-                </button>
-            </div>
-        </section>
-
-        <!-- Grilla Principal -->
-        <div class="cuadrilla-contenido">
-
-            <!-- Panel de Sugerencias IA -->
-            <aside class="tarjeta-sugerencias">
-                <div class="encabezado-sugerencias">
-                    <span class="material-symbols-outlined icono-ia">auto_awesome</span>
-                    <h2 class="titulo-sugerencias">Sugerencias IA</h2>
+        <!-- Contenedor centralizado para no extenderse demasiado en escritorio -->
+        <div class="max-w-4xl mx-auto w-full">
+            
+            <!-- Título de Sección -->
+            <div class="mb-8 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+                <div>
+                    <h1 class="text-3xl font-bold text-gray-900 tracking-tight">Lista de Compras</h1>
+                    <p class="font-body-lg text-body-lg text-[--color-texto-secundario] max-w-lg mt-2">
+                        Administra tus próximas compras e inventario del hogar.
+                    </p>
                 </div>
-                <p class="descripcion-sugerencias">Basado en el consumo de tu hogar, podrías estar quedando sin:</p>
-
-                <div class="lista-sugerencias">
-                    <div class="item-sugerencia">
-                        <div class="sugerencia-info">
-                            <div class="icono-contenedor">
-                                <span class="material-symbols-outlined icono-item">water_drop</span>
-                            </div>
-                            <div>
-                                <p class="nombre-sugerencia">Leche</p>
-                                <p class="meta-sugerencia">Se compra semanalmente</p>
-                            </div>
-                        </div>
-                        <button class="boton-agregar-sugerencia">
-                            <span class="material-symbols-outlined">add_circle</span>
-                        </button>
-                    </div>
-
-                    <div class="item-sugerencia">
-                        <div class="sugerencia-info">
-                            <div class="icono-contenedor">
-                                <span class="material-symbols-outlined icono-item">egg</span>
-                            </div>
-                            <div>
-                                <p class="nombre-sugerencia">Huevos</p>
-                                <p class="meta-sugerencia">Inventario crítico bajo</p>
-                            </div>
-                        </div>
-                        <button class="boton-agregar-sugerencia">
-                            <span class="material-symbols-outlined">add_circle</span>
-                        </button>
-                    </div>
-
-                    <div class="item-sugerencia">
-                        <div class="sugerencia-info">
-                            <div class="icono-contenedor">
-                                <span class="material-symbols-outlined icono-item">local_laundry_service</span>
-                            </div>
-                            <div>
-                                <p class="nombre-sugerencia">Detergente</p>
-                                <p class="meta-sugerencia">Última compra hace 3 semanas</p>
-                            </div>
-                        </div>
-                        <button class="boton-agregar-sugerencia">
-                            <span class="material-symbols-outlined">add_circle</span>
-                        </button>
-                    </div>
+                <div class="flex w-full md:w-auto gap-3">
+                    <button class="flex-1 md:flex-none flex items-center justify-center gap-2 bg-white border border-gray-300 text-gray-700 px-4 py-2.5 rounded-xl hover:bg-gray-50 transition-colors shadow-sm font-semibold text-sm">
+                        <span class="material-symbols-outlined text-[20px]">share</span> Compartir
+                    </button>
+                    <button class="flex-1 md:flex-none flex items-center justify-center gap-2 bg-blue-600 text-white px-4 py-2.5 rounded-xl hover:bg-blue-700 transition-colors shadow-sm font-semibold text-sm">
+                        <span class="material-symbols-outlined text-[20px]">add</span> Agregar
+                    </button>
                 </div>
+            </div>
 
-                <button class="boton-descartar">Descartar sugerencias</button>
-            </aside>
-
-            <!-- Sección de Listas y Productos -->
-            <section class="area-listas">
+            <!-- Área de Listas Activas -->
+            <div class="flex flex-col gap-6 area-listas">
 
                 <!-- Buscador Rápido -->
-                <div class="caja-busqueda">
-                    <span class="material-symbols-outlined icono-busqueda">search</span>
-                    <input id="inputRapido" class="input-busqueda" type="text" placeholder="Agregar producto rápidamente...">
-                    <button id="btnAgregarRapido" class="boton-enviar-busqueda">
-                        <span class="material-symbols-outlined">arrow_upward</span>
+                <div class="bg-white border border-gray-100 rounded-2xl p-2 shadow-sm flex items-center gap-2">
+                    <span class="material-symbols-outlined text-gray-400 ml-3">search</span>
+                    <input id="inputRapido" class="flex-1 bg-transparent border-none focus:ring-0 text-gray-700 placeholder-gray-400 text-sm py-3" type="text" placeholder="Agregar producto a la lista rápidamente...">
+                    <button id="btnAgregarRapido" class="bg-blue-600 hover:bg-blue-700 text-white p-2.5 rounded-xl transition-colors flex items-center justify-center">
+                        <span class="material-symbols-outlined text-[20px]">arrow_upward</span>
                     </button>
                 </div>
 
                 <!-- Categoría: Alimentos -->
-                <article class="tarjeta-categoria">
-                    <div class="encabezado-categoria">
-                        <div class="info-categoria">
-                            <span class="material-symbols-outlined icono-alimentos">restaurant</span>
-                            <h3 class="titulo-categoria">Alimentos</h3>
+                <div class="bg-white border border-gray-100 rounded-2xl p-6 shadow-sm">
+                    <div class="flex justify-between items-center border-b border-gray-100 pb-4 mb-4">
+                        <div class="flex items-center gap-2 text-orange-600">
+                            <span class="material-symbols-outlined text-[22px]">restaurant</span>
+                            <h3 class="text-lg font-semibold text-gray-900">Alimentos</h3>
                         </div>
-                        <span class="contador-badge">3 Productos</span>
+                        <span class="text-xs font-bold text-gray-500 bg-gray-100 px-3 py-1 rounded-full uppercase tracking-wider">3 Productos</span>
                     </div>
 
-                    <ul class="lista-productos">
-                        <li class="item-producto">
-                            <div class="item-izquierda">
-                                <input class="checkbox-producto" type="checkbox">
-                                <span class="nombre-producto">Pan Integral</span>
+                    <ul class="flex flex-col gap-2">
+                        <!-- Item 1 -->
+                        <li class="item-producto flex items-center justify-between p-2.5 rounded-xl hover:bg-gray-50 transition-colors group">
+                            <div class="flex items-center gap-3">
+                                <input class="checkbox-producto w-5 h-5 accent-blue-600 border-gray-300 rounded cursor-pointer" type="checkbox">
+                                <span class="nombre-producto text-[15px] font-medium text-gray-800 transition-all">Pan Integral</span>
                             </div>
-                            <div class="item-derecha">
-                                <div class="control-cantidad">
-                                    <button class="btn-cantidad"><span class="material-symbols-outlined icono-pequeno">remove</span></button>
-                                    <span class="valor-cantidad">2</span>
-                                    <button class="btn-cantidad"><span class="material-symbols-outlined icono-pequeno">add</span></button>
+                            <div class="flex items-center gap-4">
+                                <div class="flex items-center bg-blue-50 rounded-lg p-1">
+                                    <button class="w-6 h-6 flex items-center justify-center text-gray-500 hover:text-blue-600 transition-colors"><span class="material-symbols-outlined text-[16px]">remove</span></button>
+                                    <span class="text-sm font-semibold text-gray-900 w-6 text-center">2</span>
+                                    <button class="w-6 h-6 flex items-center justify-center text-gray-500 hover:text-blue-600 transition-colors"><span class="material-symbols-outlined text-[16px]">add</span></button>
                                 </div>
-                                <button class="btn-eliminar">
-                                    <span class="material-symbols-outlined">delete</span>
+                                <button class="btn-eliminar text-gray-400 hover:text-red-500 transition-colors opacity-0 group-hover:opacity-100 focus:opacity-100">
+                                    <span class="material-symbols-outlined text-[20px]">delete</span>
                                 </button>
                             </div>
                         </li>
 
-                        <li class="item-producto">
-                            <div class="item-izquierda">
-                                <input class="checkbox-producto" type="checkbox">
-                                <span class="nombre-producto">Manzanas</span>
+                        <!-- Item 2 -->
+                        <li class="item-producto flex items-center justify-between p-2.5 rounded-xl hover:bg-gray-50 transition-colors group">
+                            <div class="flex items-center gap-3">
+                                <input class="checkbox-producto w-5 h-5 accent-blue-600 border-gray-300 rounded cursor-pointer" type="checkbox">
+                                <span class="nombre-producto text-[15px] font-medium text-gray-800 transition-all">Manzanas</span>
                             </div>
-                            <div class="item-derecha">
-                                <div class="control-cantidad">
-                                    <button class="btn-cantidad"><span class="material-symbols-outlined icono-pequeno">remove</span></button>
-                                    <span class="valor-cantidad">1</span>
-                                    <button class="btn-cantidad"><span class="material-symbols-outlined icono-pequeno">add</span></button>
+                            <div class="flex items-center gap-4">
+                                <div class="flex items-center bg-blue-50 rounded-lg p-1">
+                                    <button class="w-6 h-6 flex items-center justify-center text-gray-500 hover:text-blue-600 transition-colors"><span class="material-symbols-outlined text-[16px]">remove</span></button>
+                                    <span class="text-sm font-semibold text-gray-900 w-6 text-center">1</span>
+                                    <button class="w-6 h-6 flex items-center justify-center text-gray-500 hover:text-blue-600 transition-colors"><span class="material-symbols-outlined text-[16px]">add</span></button>
                                 </div>
-                                <button class="btn-eliminar">
-                                    <span class="material-symbols-outlined">delete</span>
+                                <button class="btn-eliminar text-gray-400 hover:text-red-500 transition-colors opacity-0 group-hover:opacity-100 focus:opacity-100">
+                                    <span class="material-symbols-outlined text-[20px]">delete</span>
                                 </button>
                             </div>
                         </li>
 
-                        <li class="item-producto comprado">
-                            <div class="item-izquierda">
-                                <input class="checkbox-producto" type="checkbox" checked>
-                                <span class="nombre-producto tachado">Queso Fresco</span>
+                        <!-- Item 3 (Comprado) -->
+                        <li class="item-producto flex items-center justify-between p-2.5 rounded-xl hover:bg-gray-50 transition-colors group opacity-60 comprado">
+                            <div class="flex items-center gap-3">
+                                <input class="checkbox-producto w-5 h-5 accent-blue-600 border-gray-300 rounded cursor-pointer" type="checkbox" checked>
+                                <span class="nombre-producto text-[15px] font-medium text-gray-400 line-through transition-all tachado">Queso Fresco</span>
                             </div>
-                            <div class="item-derecha">
-                                <button class="btn-eliminar">
-                                    <span class="material-symbols-outlined">delete</span>
+                            <div class="flex items-center gap-4">
+                                <button class="btn-eliminar text-gray-400 hover:text-red-500 transition-colors opacity-0 group-hover:opacity-100 focus:opacity-100">
+                                    <span class="material-symbols-outlined text-[20px]">delete</span>
                                 </button>
                             </div>
                         </li>
                     </ul>
-                </article>
+                </div>
 
                 <!-- Categoría: Aseo -->
-                <article class="tarjeta-categoria">
-                    <div class="encabezado-categoria">
-                        <div class="info-categoria">
-                            <span class="material-symbols-outlined icono-aseo">cleaning_services</span>
-                            <h3 class="titulo-categoria">Aseo</h3>
+                <div class="bg-white border border-gray-100 rounded-2xl p-6 shadow-sm">
+                    <div class="flex justify-between items-center border-b border-gray-100 pb-4 mb-4">
+                        <div class="flex items-center gap-2 text-green-600">
+                            <span class="material-symbols-outlined text-[22px]">cleaning_services</span>
+                            <h3 class="text-lg font-semibold text-gray-900">Aseo</h3>
                         </div>
-                        <span class="contador-badge">1 Producto</span>
+                        <span class="text-xs font-bold text-gray-500 bg-gray-100 px-3 py-1 rounded-full uppercase tracking-wider">1 Producto</span>
                     </div>
 
-                    <ul class="lista-productos">
-                        <li class="item-producto">
-                            <div class="item-izquierda">
-                                <input class="checkbox-producto" type="checkbox">
-                                <span class="nombre-producto">Papel Higiénico</span>
+                    <ul class="flex flex-col gap-2">
+                        <!-- Item 1 -->
+                        <li class="item-producto flex items-center justify-between p-2.5 rounded-xl hover:bg-gray-50 transition-colors group">
+                            <div class="flex items-center gap-3">
+                                <input class="checkbox-producto w-5 h-5 accent-blue-600 border-gray-300 rounded cursor-pointer" type="checkbox">
+                                <span class="nombre-producto text-[15px] font-medium text-gray-800 transition-all">Papel Higiénico</span>
                             </div>
-                            <div class="item-derecha">
-                                <div class="control-cantidad">
-                                    <button class="btn-cantidad"><span class="material-symbols-outlined icono-pequeno">remove</span></button>
-                                    <span class="valor-cantidad">1</span>
-                                    <button class="btn-cantidad"><span class="material-symbols-outlined icono-pequeno">add</span></button>
+                            <div class="flex items-center gap-4">
+                                <div class="flex items-center bg-blue-50 rounded-lg p-1">
+                                    <button class="w-6 h-6 flex items-center justify-center text-gray-500 hover:text-blue-600 transition-colors"><span class="material-symbols-outlined text-[16px]">remove</span></button>
+                                    <span class="text-sm font-semibold text-gray-900 w-6 text-center">1</span>
+                                    <button class="w-6 h-6 flex items-center justify-center text-gray-500 hover:text-blue-600 transition-colors"><span class="material-symbols-outlined text-[16px]">add</span></button>
                                 </div>
-                                <button class="btn-eliminar">
-                                    <span class="material-symbols-outlined">delete</span>
+                                <button class="btn-eliminar text-gray-400 hover:text-red-500 transition-colors opacity-0 group-hover:opacity-100 focus:opacity-100">
+                                    <span class="material-symbols-outlined text-[20px]">delete</span>
                                 </button>
                             </div>
                         </li>
                     </ul>
-                </article>
-
-            </section>
+                </div>
+            </div>
         </div>
-
     </main>
 
-    <!-- Navegación Inferior (Móvil) -->
-    <nav class="barra-inferior-movil">
-        <a class="nav-item-movil" href="#">
-            <span class="material-symbols-outlined">home</span>
-            <span>Inicio</span>
-        </a>
-        <a class="nav-item-movil" href="#">
-            <span class="material-symbols-outlined">account_balance_wallet</span>
-            <span>Finanzas</span>
-        </a>
-        <a class="nav-item-movil activo" href="#">
-            <span class="material-symbols-outlined icono-lleno">shopping_cart</span>
-            <span>Compras</span>
-        </a>
-        <a class="nav-item-movil" href="#">
-            <span class="material-symbols-outlined">assignment</span>
-            <span>Tareas</span>
-        </a>
-        <a class="nav-item-movil" href="#">
-            <span class="material-symbols-outlined">person</span>
-            <span>Perfil</span>
-        </a>
+    <!-- Barra de Navegación Inferior (Móvil) -->
+    <nav class="mobile-bottom-nav overflow-x-auto no-scrollbar">
+        <a class="mobile-nav-item flex-shrink-0" href="#"><span class="material-symbols-outlined">home</span><span>Inicio</span></a>
+        <a class="mobile-nav-item flex-shrink-0" href="#"><span class="material-symbols-outlined">account_balance_wallet</span><span>Finanzas</span></a>
+        <!-- Compras Activo -->
+        <a class="mobile-nav-item active flex-shrink-0" href="#"><span class="material-symbols-outlined icono-relleno">shopping_cart</span><span>Compras</span></a>
+        <a class="mobile-nav-item flex-shrink-0" href="#"><span class="material-symbols-outlined">assignment</span><span>Tareas</span></a>
+        <a class="mobile-nav-item flex-shrink-0" href="#"><span class="material-symbols-outlined">inventory_2</span><span>Inventario</span></a>
+        <a class="mobile-nav-item flex-shrink-0" href="#"><span class="material-symbols-outlined">analytics</span><span>Estad.</span></a>
+        <a class="mobile-nav-item flex-shrink-0" href="#"><span class="material-symbols-outlined">person</span><span>Perfil</span></a>
     </nav>
 
-    <!-- JS Separado -->
+    <!-- JS Compras -->
     <script src="js/Listas-Compras.js"></script>
 </body>
 </html>
